@@ -3,4 +3,4 @@ A practical handbook on causal inference methods for evaluating policy intervent
 
 🚨Work In Progress - To Be Completed by Dec 2025🚨
 
-DHSC Evaluation Festival presentation slides have been added here for the time being.
+DHSC Evaluation Festival presentation slides and a work in progress version of the causal study design selection diagram have been added here for the time being.
