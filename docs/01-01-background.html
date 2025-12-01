@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>12&nbsp; Difference-in-Differences – Causal Inference for Intervention &amp; Service Evaluations</title>
+<title>1&nbsp; Background &amp; Motivation for Causal Inference in Service Evaluations – Causal Inference for Intervention &amp; Service Evaluations</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,7 +20,27 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -30,8 +50,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./03-02-its.html" rel="next">
-<link href="./03-00-quasi-methods.html" rel="prev">
+<link href="./01-02-history.html" rel="next">
+<link href="./01-00-intro.html" rel="prev">
 <link href="./images/NHS_England.jpg" rel="icon" type="image/jpeg">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
@@ -83,7 +103,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./03-00-quasi-methods.html">Quasi-Experimental Methods</a></li><li class="breadcrumb-item"><a href="./03-01-did.html"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Difference-in-Differences</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./01-00-intro.html">Introduction</a></li><li class="breadcrumb-item"><a href="./01-01-background.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Background &amp; Motivation for Causal Inference in Service Evaluations</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -152,7 +172,7 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./01-01-background.html" class="sidebar-item-text sidebar-link">
+  <a href="./01-01-background.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Background &amp; Motivation for Causal Inference in Service Evaluations</span></span></a>
   </div>
 </li>
@@ -240,7 +260,7 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./03-01-did.html" class="sidebar-item-text sidebar-link active">
+  <a href="./03-01-did.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Difference-in-Differences</span></span></a>
   </div>
 </li>
@@ -393,9 +413,9 @@ ul.task-list li input[type="checkbox"] {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./03-00-quasi-methods.html">Quasi-Experimental Methods</a></li><li class="breadcrumb-item"><a href="./03-01-did.html"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Difference-in-Differences</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./01-00-intro.html">Introduction</a></li><li class="breadcrumb-item"><a href="./01-01-background.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Background &amp; Motivation for Causal Inference in Service Evaluations</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Difference-in-Differences</span></h1>
+<h1 class="title"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Background &amp; Motivation for Causal Inference in Service Evaluations</span></h1>
 </div>
 
 
@@ -412,9 +432,17 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>TBC</p>
+<p>When performing evaluations of healthcare services or interventions in the NHS, our key evaluation question of interest is almost always causal in nature: • Has our new breast cancer screening programme reduced mortality? • Did implementing a community-based model of care divert patients away from A&amp;E services? • Did implementing a hub and spoke model reduce clinical harm and lower patient waiting times?</p>
+<p>Yet many of the methods currently used to evaluate interventions within the NHS are often descriptive in nature. Dashboards are frequently used in this manner, where any changes in an outcome of interest are fully attributed to a single change in implementation in services, without considering whether there are alternative explanations and/or other confounding factors are involved that could instead explain the change instead.</p>
+<p>To better illustrate this point, Tyler Vigen publishes great examples of spurious correlations on his webpage (https://tylervigen.com/spurious-correlations), from which I’ve attached an example of below <span class="citation" data-cites="vigenTylerVigenSpurious2024">Vigen (<a href="references.html#ref-vigenTylerVigenSpurious2024" role="doc-biblioref">2024</a>)</span>:</p>
+<p><img src="images/vigen_butter_consumption.png" class="img-fluid"></p>
 
 
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
+<div id="ref-vigenTylerVigenSpurious2024" class="csl-entry" role="listitem">
+Vigen, Tyler. 2024. <span>“Tyler <span>Vigen Spurious Correlation</span> #1,172: <span>Butter</span> Consumption Correlates with <span>Economic</span> Output of <span>Washington</span> Metro Area.”</span> TylerVigen.com. January 2024. <a href="https://tylervigen.com/spurious/correlation/1172_butter-consumption_correlates-with_economic-output-of-washington-metro-area">https://tylervigen.com/spurious/correlation/1172_butter-consumption_correlates-with_economic-output-of-washington-metro-area</a>.
+</div>
+</div>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -818,13 +846,13 @@ ul.task-list li input[type="checkbox"] {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./03-00-quasi-methods.html" class="pagination-link" aria-label="Quasi-Experimental Methods">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Quasi-Experimental Methods</span>
+      <a href="./01-00-intro.html" class="pagination-link" aria-label="Introduction">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Introduction</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./03-02-its.html" class="pagination-link" aria-label="Interrupted Time Series">
-        <span class="nav-page-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Interrupted Time Series</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./01-02-history.html" class="pagination-link" aria-label="A Brief History on Conceptualising Causality">
+        <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">A Brief History on Conceptualising Causality</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
@@ -836,7 +864,7 @@ ul.task-list li input[type="checkbox"] {
 </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions"><ul><li><a href="https://github.com/nhsengland/causal-handbook/edit/main/03-01-did.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li></ul></div></div>
+    <div class="toc-actions"><ul><li><a href="https://github.com/nhsengland/causal-handbook/edit/main/01-01-background.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li></ul></div></div>
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
     <li class="nav-item compact">

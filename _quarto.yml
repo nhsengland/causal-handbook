@@ -3,13 +3,46 @@ project:
   output-dir: docs
 
 book:
-  title: "Causal Inference for Intervention & Service Evaluations"
-  author: "Jamie Wong"
-  date: "12/1/2025"
+  title: "Causal Inference for Intervention & Service Evaluations: A Practical Handbook"
+  author:
+    - name: "Jamie Wong"
+      orcid: 0000-0002-0052-5144
+      email: jamie.wong@ucl.ac.uk
+      url: https://profiles.ucl.ac.uk/95883-jamie-wong
+      affiliation:
+        - name: "University College London"
+          url: https://www.ucl.ac.uk/
+        - name: "NHS England Data Science"
+          url: https://nhsengland.github.io/datascience/about/
+        - name: "NHS North Central London ICB"
+          url: https://nclhealthandcare.org.uk/icb/about/
+  date: last-modified
+  date-format: "DD MMM YYYY"
+  search: true
+  repo-url: https://github.com/nhsengland/causal-handbook
+  repo-actions: [edit]
+  downloads: [pdf]
+  sharing: [twitter, facebook, linkedin]
+  page-navigation: true
+  page-footer: 
+    left: "Copyright 2025, Jamie Wong" 
+    right: 
+      - icon: github
+        href: https://github.com/nhsengland/causal-handbook
+  favicon: images/NHS_England.jpg
   chapters:
+
     - index.qmd
 
-    - 01-intro.qmd
+    - part: 01-00-intro.qmd
+      chapters:
+      - 01-01-background.qmd
+      - 01-02-history.qmd
+      - 01-03-assumptions.qmd
+      - 01-04-existing-guidance.qmd
+      - 01-05-selection-diagram.qmd
+      - 01-06-key-resources.qmd
+      - 01-07-text-method-coverage.qmd
 
     - part: 02-00-key-concepts.qmd
       chapters:
@@ -60,6 +93,3 @@ format:
       - brand
   pdf:
     documentclass: scrreprt
-
-
-
