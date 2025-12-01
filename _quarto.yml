@@ -29,7 +29,7 @@ book:
     right: 
       - icon: github
         href: https://github.com/nhsengland/causal-handbook
-  favicon: images/NHS_England.jpg
+  favicon: images/nhs-logo-square.jpg
   chapters:
 
     - index.qmd
