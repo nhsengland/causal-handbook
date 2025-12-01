@@ -49,6 +49,8 @@ book:
 
     - 99-about.qmd
 
+    - references.qmd
+
 bibliography: references.bib
 
 format:
