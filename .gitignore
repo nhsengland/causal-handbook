@@ -44,3 +44,7 @@ po/*~
 
 # RStudio Connect folder
 rsconnect/
+
+# Quarto temporary files
+.quarto/
+/.quarto/

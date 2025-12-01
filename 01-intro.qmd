@@ -1,0 +1,15 @@
+# Introduction
+
+## Background & Motivation for Causal Inference in Service Evaluations
+
+## A Brief History on Conceptualising Causality
+
+## Common Assumptions in Causal Inference Methodology
+
+## Existing Guidance on Study Design Selection
+
+## New Unifying Guidance on Choosing Causal Inference Methods (Method Selection Tree)
+
+## Key Resources
+
+## Coverage of Causal Inference Methods in Key Texts

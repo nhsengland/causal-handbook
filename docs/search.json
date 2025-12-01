@@ -4,39 +4,423 @@
     "href": "index.html",
     "title": "Causal Inference for Intervention & Service Evaluations",
     "section": "",
-    "text": "Welcome\nThis is a practical handbook on causal inference methods for evaluating policy interventions and service changes within the NHS, with a focus on leveraging observational real-world data to generate robust evidence.\nThe handbook was written initially as part of an NHS England PhD Internship, and will continue to be periodically updated with revisions following feedback from academics, data scientists, and public health practitioners.",
+    "text": "Welcome\nThis is a practical handbook on causal inference methods for evaluating policy interventions and service changes within the NHS, with a focus on leveraging observational real-world data to generate robust evidence.\nThe handbook was written initially as part of an NHS England PhD Internship done jointly with the NHS North Central London Integrated Care Board and University College London, and will continue to be periodically updated with revisions following feedback from academics, data scientists, and public health practitioners.",
     "crumbs": [
       "Welcome"
     ]
   },
   {
-    "objectID": "intro.html",
-    "href": "intro.html",
+    "objectID": "01-intro.html",
+    "href": "01-intro.html",
     "title": "1  Introduction",
     "section": "",
-    "text": "This is a book created from markdown and executable code.\nSee Knuth (1984) for additional discussion of literate programming.\n\n\n\n\nKnuth, Donald E. 1984. “Literate Programming.” Comput. J. 27 (2): 97–111. https://doi.org/10.1093/comjnl/27.2.97.",
+    "text": "1.1 Background & Motivation for Causal Inference in Service Evaluations",
     "crumbs": [
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction</span>"
     ]
   },
   {
-    "objectID": "summary.html",
-    "href": "summary.html",
-    "title": "2  Summary",
-    "section": "",
-    "text": "In summary, this book has no content whatsoever.",
+    "objectID": "01-intro.html#a-brief-history-on-conceptualising-causality",
+    "href": "01-intro.html#a-brief-history-on-conceptualising-causality",
+    "title": "1  Introduction",
+    "section": "1.2 A Brief History on Conceptualising Causality",
+    "text": "1.2 A Brief History on Conceptualising Causality",
     "crumbs": [
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Summary</span>"
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction</span>"
     ]
   },
   {
-    "objectID": "references.html",
-    "href": "references.html",
-    "title": "References",
-    "section": "",
-    "text": "Knuth, Donald E. 1984. “Literate Programming.” Comput.\nJ. 27 (2): 97–111. https://doi.org/10.1093/comjnl/27.2.97.",
+    "objectID": "01-intro.html#common-assumptions-in-causal-inference-methodology",
+    "href": "01-intro.html#common-assumptions-in-causal-inference-methodology",
+    "title": "1  Introduction",
+    "section": "1.3 Common Assumptions in Causal Inference Methodology",
+    "text": "1.3 Common Assumptions in Causal Inference Methodology",
     "crumbs": [
-      "References"
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction</span>"
+    ]
+  },
+  {
+    "objectID": "01-intro.html#existing-guidance-on-study-design-selection",
+    "href": "01-intro.html#existing-guidance-on-study-design-selection",
+    "title": "1  Introduction",
+    "section": "1.4 Existing Guidance on Study Design Selection",
+    "text": "1.4 Existing Guidance on Study Design Selection",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction</span>"
+    ]
+  },
+  {
+    "objectID": "01-intro.html#new-unifying-guidance-on-choosing-causal-inference-methods-method-selection-tree",
+    "href": "01-intro.html#new-unifying-guidance-on-choosing-causal-inference-methods-method-selection-tree",
+    "title": "1  Introduction",
+    "section": "1.5 New Unifying Guidance on Choosing Causal Inference Methods (Method Selection Tree)",
+    "text": "1.5 New Unifying Guidance on Choosing Causal Inference Methods (Method Selection Tree)",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction</span>"
+    ]
+  },
+  {
+    "objectID": "01-intro.html#key-resources",
+    "href": "01-intro.html#key-resources",
+    "title": "1  Introduction",
+    "section": "1.6 Key Resources",
+    "text": "1.6 Key Resources",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction</span>"
+    ]
+  },
+  {
+    "objectID": "01-intro.html#coverage-of-causal-inference-methods-in-key-texts",
+    "href": "01-intro.html#coverage-of-causal-inference-methods-in-key-texts",
+    "title": "1  Introduction",
+    "section": "1.7 Coverage of Causal Inference Methods in Key Texts",
+    "text": "1.7 Coverage of Causal Inference Methods in Key Texts",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction</span>"
+    ]
+  },
+  {
+    "objectID": "02-00-key-concepts.html",
+    "href": "02-00-key-concepts.html",
+    "title": "Key Concepts in Causal Inference",
+    "section": "",
+    "text": "TBC",
+    "crumbs": [
+      "Key Concepts in Causal Inference"
+    ]
+  },
+  {
+    "objectID": "02-01-rct.html",
+    "href": "02-01-rct.html",
+    "title": "2  Randomized Controlled Trials",
+    "section": "",
+    "text": "TBC",
+    "crumbs": [
+      "Key Concepts in Causal Inference",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Randomized Controlled Trials</span>"
+    ]
+  },
+  {
+    "objectID": "02-02-dag.html",
+    "href": "02-02-dag.html",
+    "title": "3  Directed Acyclic Graphs",
+    "section": "",
+    "text": "TBC",
+    "crumbs": [
+      "Key Concepts in Causal Inference",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Directed Acyclic Graphs</span>"
+    ]
+  },
+  {
+    "objectID": "02-03-tte.html",
+    "href": "02-03-tte.html",
+    "title": "4  Target Trial Emulation",
+    "section": "",
+    "text": "TBC",
+    "crumbs": [
+      "Key Concepts in Causal Inference",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Target Trial Emulation</span>"
+    ]
+  },
+  {
+    "objectID": "02-04-strategies.html",
+    "href": "02-04-strategies.html",
+    "title": "5  Defining Treatment Strategies",
+    "section": "",
+    "text": "TBC",
+    "crumbs": [
+      "Key Concepts in Causal Inference",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Defining Treatment Strategies</span>"
+    ]
+  },
+  {
+    "objectID": "03-00-quasi-methods.html",
+    "href": "03-00-quasi-methods.html",
+    "title": "Quasi-Experimental Methods",
+    "section": "",
+    "text": "TBC",
+    "crumbs": [
+      "Quasi-Experimental Methods"
+    ]
+  },
+  {
+    "objectID": "03-01-did.html",
+    "href": "03-01-did.html",
+    "title": "6  Difference-in-Differences",
+    "section": "",
+    "text": "TBC",
+    "crumbs": [
+      "Quasi-Experimental Methods",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Difference-in-Differences</span>"
+    ]
+  },
+  {
+    "objectID": "03-02-its.html",
+    "href": "03-02-its.html",
+    "title": "7  Interrupted Time Series",
+    "section": "",
+    "text": "7.1 Standard Interrupted Time Series Analysis\nTBC",
+    "crumbs": [
+      "Quasi-Experimental Methods",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Interrupted Time Series</span>"
+    ]
+  },
+  {
+    "objectID": "03-02-its.html#controlled-interrupted-time-series-analysis",
+    "href": "03-02-its.html#controlled-interrupted-time-series-analysis",
+    "title": "7  Interrupted Time Series",
+    "section": "7.2 Controlled Interrupted Time Series Analysis",
+    "text": "7.2 Controlled Interrupted Time Series Analysis",
+    "crumbs": [
+      "Quasi-Experimental Methods",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Interrupted Time Series</span>"
+    ]
+  },
+  {
+    "objectID": "03-03-synth.html",
+    "href": "03-03-synth.html",
+    "title": "8  Synthetic Controls",
+    "section": "",
+    "text": "TBC",
+    "crumbs": [
+      "Quasi-Experimental Methods",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Synthetic Controls</span>"
+    ]
+  },
+  {
+    "objectID": "03-04-rdd.html",
+    "href": "03-04-rdd.html",
+    "title": "9  Regression Discontinuity",
+    "section": "",
+    "text": "TBC",
+    "crumbs": [
+      "Quasi-Experimental Methods",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Regression Discontinuity</span>"
+    ]
+  },
+  {
+    "objectID": "03-05-iv.html",
+    "href": "03-05-iv.html",
+    "title": "10  Instrumental Variables",
+    "section": "",
+    "text": "TBC",
+    "crumbs": [
+      "Quasi-Experimental Methods",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Instrumental Variables</span>"
+    ]
+  },
+  {
+    "objectID": "03-06-ext.html",
+    "href": "03-06-ext.html",
+    "title": "11  Extensions of Quasi-Experimental Designs",
+    "section": "",
+    "text": "11.1 Negative Controls\nTBC",
+    "crumbs": [
+      "Quasi-Experimental Methods",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Extensions of Quasi-Experimental Designs</span>"
+    ]
+  },
+  {
+    "objectID": "03-06-ext.html#sensitivity-analysis",
+    "href": "03-06-ext.html#sensitivity-analysis",
+    "title": "11  Extensions of Quasi-Experimental Designs",
+    "section": "11.2 Sensitivity Analysis",
+    "text": "11.2 Sensitivity Analysis",
+    "crumbs": [
+      "Quasi-Experimental Methods",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Extensions of Quasi-Experimental Designs</span>"
+    ]
+  },
+  {
+    "objectID": "04-00-adj-methods.html",
+    "href": "04-00-adj-methods.html",
+    "title": "Adjustment-Based Methods",
+    "section": "",
+    "text": "TBC",
+    "crumbs": [
+      "Adjustment-Based Methods"
+    ]
+  },
+  {
+    "objectID": "04-01-outreg.html",
+    "href": "04-01-outreg.html",
+    "title": "12  Outcome Regression (Selection on Observables)",
+    "section": "",
+    "text": "TBC",
+    "crumbs": [
+      "Adjustment-Based Methods",
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Outcome Regression (Selection on Observables)</span>"
+    ]
+  },
+  {
+    "objectID": "04-02-match.html",
+    "href": "04-02-match.html",
+    "title": "13  Matching (Exact & Covariate)",
+    "section": "",
+    "text": "TBC",
+    "crumbs": [
+      "Adjustment-Based Methods",
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Matching (Exact & Covariate)</span>"
+    ]
+  },
+  {
+    "objectID": "04-03-propensity.html",
+    "href": "04-03-propensity.html",
+    "title": "14  Propensity Scores",
+    "section": "",
+    "text": "14.1 Estimating Propensity Scores\nTBC",
+    "crumbs": [
+      "Adjustment-Based Methods",
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>Propensity Scores</span>"
+    ]
+  },
+  {
+    "objectID": "04-03-propensity.html#propensity-score-matching",
+    "href": "04-03-propensity.html#propensity-score-matching",
+    "title": "14  Propensity Scores",
+    "section": "14.2 Propensity Score Matching",
+    "text": "14.2 Propensity Score Matching",
+    "crumbs": [
+      "Adjustment-Based Methods",
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>Propensity Scores</span>"
+    ]
+  },
+  {
+    "objectID": "04-04-gmethods.html",
+    "href": "04-04-gmethods.html",
+    "title": "15  G-Methods: An Introduction",
+    "section": "",
+    "text": "TBC",
+    "crumbs": [
+      "Adjustment-Based Methods",
+      "<span class='chapter-number'>15</span>  <span class='chapter-title'>G-Methods: An Introduction</span>"
+    ]
+  },
+  {
+    "objectID": "04-05-ipw.html",
+    "href": "04-05-ipw.html",
+    "title": "16  G-Methods 1: Inverse Probability Weighting",
+    "section": "",
+    "text": "TBC",
+    "crumbs": [
+      "Adjustment-Based Methods",
+      "<span class='chapter-number'>16</span>  <span class='chapter-title'>G-Methods 1: Inverse Probability Weighting</span>"
+    ]
+  },
+  {
+    "objectID": "04-06-gformula.html",
+    "href": "04-06-gformula.html",
+    "title": "17  G-Methods 2: Parametric G-Formula",
+    "section": "",
+    "text": "17.1 Parametric G-Formula (Non-Iterative Expectation)",
+    "crumbs": [
+      "Adjustment-Based Methods",
+      "<span class='chapter-number'>17</span>  <span class='chapter-title'>G-Methods 2: Parametric G-Formula</span>"
+    ]
+  },
+  {
+    "objectID": "04-06-gformula.html#iterative-conditional-expectation-ice-g-formula",
+    "href": "04-06-gformula.html#iterative-conditional-expectation-ice-g-formula",
+    "title": "17  G-Methods 2: Parametric G-Formula",
+    "section": "17.2 Iterative Conditional Expectation (ICE) G-Formula",
+    "text": "17.2 Iterative Conditional Expectation (ICE) G-Formula",
+    "crumbs": [
+      "Adjustment-Based Methods",
+      "<span class='chapter-number'>17</span>  <span class='chapter-title'>G-Methods 2: Parametric G-Formula</span>"
+    ]
+  },
+  {
+    "objectID": "04-07-ext.html",
+    "href": "04-07-ext.html",
+    "title": "18  Extensions of Adjustment-Based Methods",
+    "section": "",
+    "text": "TBC",
+    "crumbs": [
+      "Adjustment-Based Methods",
+      "<span class='chapter-number'>18</span>  <span class='chapter-title'>Extensions of Adjustment-Based Methods</span>"
+    ]
+  },
+  {
+    "objectID": "05-00-case-studies.html",
+    "href": "05-00-case-studies.html",
+    "title": "Applying Causal Methods: Worked Examples in the NHS",
+    "section": "",
+    "text": "TBC",
+    "crumbs": [
+      "Applying Causal Methods: Worked Examples in the NHS"
+    ]
+  },
+  {
+    "objectID": "05-01-doac-h2h.html",
+    "href": "05-01-doac-h2h.html",
+    "title": "19  Case Study 1a: DOAC Head-to-Head Emulated Trial",
+    "section": "",
+    "text": "TBC",
+    "crumbs": [
+      "Applying Causal Methods: Worked Examples in the NHS",
+      "<span class='chapter-number'>19</span>  <span class='chapter-title'>Case Study 1a: DOAC Head-to-Head Emulated Trial</span>"
+    ]
+  },
+  {
+    "objectID": "05-02-doac-its.html",
+    "href": "05-02-doac-its.html",
+    "title": "20  Case Study 1b: DOAC Policy Prescription Change Interrupted Time Series Analyses",
+    "section": "",
+    "text": "TBC",
+    "crumbs": [
+      "Applying Causal Methods: Worked Examples in the NHS",
+      "<span class='chapter-number'>20</span>  <span class='chapter-title'>Case Study 1b: DOAC Policy Prescription Change Interrupted Time Series Analyses</span>"
+    ]
+  },
+  {
+    "objectID": "05-03-oph-its.html",
+    "href": "05-03-oph-its.html",
+    "title": "21  # Case Study 2: Ophthalmology Hub of Care Model Interrupted Time Series Analyses",
+    "section": "",
+    "text": "TBC",
+    "crumbs": [
+      "Applying Causal Methods: Worked Examples in the NHS",
+      "<span class='chapter-number'>21</span>  <span class='chapter-title'>Case Study 2: Ophthalmology Hub of Care Model Interrupted Time Series Analyses</span>"
+    ]
+  },
+  {
+    "objectID": "06-barriers.html",
+    "href": "06-barriers.html",
+    "title": "22  Practical Barriers to Implementation: Common Challenges in Causal Inference",
+    "section": "",
+    "text": "TBC",
+    "crumbs": [
+      "<span class='chapter-number'>22</span>  <span class='chapter-title'>Practical Barriers to Implementation: Common Challenges in Causal Inference</span>"
+    ]
+  },
+  {
+    "objectID": "07-conclusion.html",
+    "href": "07-conclusion.html",
+    "title": "23  Conclusion",
+    "section": "",
+    "text": "TBC",
+    "crumbs": [
+      "<span class='chapter-number'>23</span>  <span class='chapter-title'>Conclusion</span>"
+    ]
+  },
+  {
+    "objectID": "99-about.html",
+    "href": "99-about.html",
+    "title": "24  About the Author & Acknowledgements",
+    "section": "",
+    "text": "24.1 About Me\nHi, my name is Jamie and I’m an MRC funded PhD student at UCL, focusing on the application of causal inference methods within Epidemiology, Data Science, and Health Economics.\nBefore my PhD, I previously graduated with a BSc in Population Health Sciences (Data Science) from UCL, and an NIHR funded MSc in Epidemiology from the London School of Hygiene and Tropical Medicine.\nPrior to my PhD, my interest in researching the application of causal inference methods in observational data stemmed from my varied experience working across multiple areas of public health research, including: • Performing secondary analysis on a nutritional labelling RCT at the NIHR Obesity Policy Research Unit • Supporting cancer trials as a Clinical Trials Assistant in the MRC Clinical Trials Unit • Identifying barriers to STI testing at the NIHR Health Protection Research Unit in Blood Borne and Sexually Transmitted Infections • Quantifying the effects of acute and long-term exposure of air pollutants on respiratory related hospital admissions and related outcomes at UCL • Evaluating the risk of long-term adverse events in cancer survivors using electronic health record data at LSHTM\nHaving worked with both randomized trials and observational data, focusing my research on causal inference in real-world data felt like a natural next step.\nIf you have any questions do feel free to reach out to me via email at jamie.wong@ucl.ac.uk",
+    "crumbs": [
+      "<span class='chapter-number'>24</span>  <span class='chapter-title'>About the Author & Acknowledgements</span>"
+    ]
+  },
+  {
+    "objectID": "99-about.html#acknowledgements",
+    "href": "99-about.html#acknowledgements",
+    "title": "24  About the Author & Acknowledgements",
+    "section": "24.2 Acknowledgements",
+    "text": "24.2 Acknowledgements\nThis handbook was written during my PhD placement with NHS England and the North Central London Integrated Care Board as part of the NHS England Data science PhD internship programme, supervised by Jonathan Pearson (NHSE) and Emily Baldwin (NCL ICB).",
+    "crumbs": [
+      "<span class='chapter-number'>24</span>  <span class='chapter-title'>About the Author & Acknowledgements</span>"
     ]
   }
 ]

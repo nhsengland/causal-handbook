@@ -1,0 +1,6 @@
+# G-Methods 2: Parametric G-Formula
+
+## Parametric G-Formula (Non-Iterative Expectation)
+
+
+## Iterative Conditional Expectation (ICE) G-Formula

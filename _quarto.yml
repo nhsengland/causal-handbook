@@ -1,0 +1,63 @@
+project:
+  type: book
+  output-dir: docs
+
+book:
+  title: "Causal Inference for Intervention & Service Evaluations"
+  author: "Jamie Wong"
+  date: "12/1/2025"
+  chapters:
+    - index.qmd
+
+    - 01-intro.qmd
+
+    - part: 02-00-key-concepts.qmd
+      chapters:
+      - 02-01-rct.qmd
+      - 02-02-dag.qmd
+      - 02-03-tte.qmd
+      - 02-04-strategies.qmd
+
+    - part: 03-00-quasi-methods.qmd
+      chapters:
+      - 03-01-did.qmd
+      - 03-02-its.qmd
+      - 03-03-synth.qmd
+      - 03-04-rdd.qmd
+      - 03-05-iv.qmd
+      - 03-06-ext.qmd
+
+    - part: 04-00-adj-methods.qmd
+      chapters:
+      - 04-01-outreg.qmd
+      - 04-02-match.qmd
+      - 04-03-propensity.qmd
+      - 04-04-gmethods.qmd
+      - 04-05-ipw.qmd
+      - 04-06-gformula.qmd
+      - 04-07-ext.qmd
+
+    - part: 05-00-case-studies.qmd
+      chapters:
+      - 05-01-doac-h2h.qmd
+      - 05-02-doac-its.qmd
+      - 05-03-oph-its.qmd
+
+    - 06-barriers.qmd
+
+    - 07-conclusion.qmd
+
+    - 99-about.qmd
+
+bibliography: references.bib
+
+format:
+  html:
+    theme:
+      - cosmo
+      - brand
+  pdf:
+    documentclass: scrreprt
+
+
+

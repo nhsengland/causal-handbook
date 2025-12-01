@@ -1,0 +1,19 @@
+# About the Author & Acknowledgements
+
+## About Me
+
+Hi, my name is Jamie and I’m an MRC funded PhD student at UCL, focusing on the application of causal inference methods within Epidemiology, Data Science, and Health Economics.
+
+Before my PhD, I previously graduated with a BSc in Population Health Sciences (Data Science) from UCL, and an NIHR funded MSc in Epidemiology from the London School of Hygiene and Tropical Medicine.
+
+Prior to my PhD, my interest in researching the application of causal inference methods in observational data stemmed from my varied experience working across multiple areas of public health research, including: • Performing secondary analysis on a nutritional labelling RCT at the NIHR Obesity Policy Research Unit • Supporting cancer trials as a Clinical Trials Assistant in the MRC Clinical Trials Unit • Identifying barriers to STI testing at the NIHR Health Protection Research Unit in Blood Borne and Sexually Transmitted Infections • Quantifying the effects of acute and long-term exposure of air pollutants on respiratory related hospital admissions and related outcomes at UCL • Evaluating the risk of long-term adverse events in cancer survivors using electronic health record data at LSHTM
+
+Having worked with both randomized trials and observational data, focusing my research on causal inference in real-world data felt like a natural next step.
+
+If you have any questions do feel free to reach out to me via email at jamie.wong\@ucl.ac.uk
+
+<br>
+
+## Acknowledgements
+
+This handbook was written during my PhD placement with NHS England and the North Central London Integrated Care Board as part of the NHS England Data science PhD internship programme, supervised by Jonathan Pearson (NHSE) and Emily Baldwin (NCL ICB).
