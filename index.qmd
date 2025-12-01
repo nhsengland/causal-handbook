@@ -4,14 +4,14 @@ This is a practical handbook on causal inference methods for evaluating policy i
 
 The handbook was written initially as part of an NHS England PhD Internship done jointly with the NHS North Central London Integrated Care Board and University College London, and will continue to be periodically updated with revisions following feedback from academics, data scientists, and public health practitioners.
 
-<br>
+\
 
-::: {#nhs-logos layout-ncol=2 layout-valign="center"}
+::: {layout="[1,2,1]" layout-valign="center" .center}
 
-![](images/NHS_England.jpg){width="130"}
+![](images/NHS_England.jpg){width=100}
 
-![](images/NHS_NCL_ICB.png){width="300"}
+![](images/NHS_NCL_ICB.png){width=230}
+
+![](images/UCL.png){width=180}
 
 :::
-
-![](images/UCL.png){width="200"}

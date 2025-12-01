@@ -10,9 +10,13 @@ Prior to my PhD, my interest in researching the application of causal inference 
 
 Having worked with both randomized trials and observational data, focusing my research on causal inference in real-world data felt like a natural next step.
 
-If you have any questions do feel free to reach out to me via email at jamie.wong\@ucl.ac.uk
+If you have any questions do feel free to reach out to me via the following channels: 
+UCL Email: jamie.wong [at] ucl.ac.uk
+NHS Email: laichunjamie.wong [at] nhs.net
+LinkedIn: https://www.linkedin.com/in/jamiewlc/
+GitHub: https://github.com/jamiewlc
 
-<br>
+\
 
 ## Acknowledgements
 
