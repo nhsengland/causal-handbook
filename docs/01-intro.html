@@ -20,7 +20,27 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -345,6 +365,12 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="background-motivation-for-causal-inference-in-service-evaluations" class="level2" data-number="1.1">
 <h2 data-number="1.1" class="anchored" data-anchor-id="background-motivation-for-causal-inference-in-service-evaluations"><span class="header-section-number">1.1</span> Background &amp; Motivation for Causal Inference in Service Evaluations</h2>
+<p>When performing evaluations of healthcare services or interventions in the NHS, our key evaluation question of interest is almost always causal in nature: • Has our new breast cancer screening programme reduced mortality? • Did implementing a community-based model of care divert patients away from A&amp;E services? • Did implementing a hub and spoke model reduce clinical harm and lower patient waiting times?</p>
+<p>Yet many of the methods currently used to evaluate interventions within the NHS are often descriptive in nature. Dashboards are frequently used in this manner, where any changes in an outcome of interest are fully attributed to a single change in implementation in services, without considering whether there are alternative explanations and/or other confounding factors are involved that could instead explain the change instead.</p>
+<p>To better illustrate this point, Tyler Vigen publishes great examples of spurious correlations on his webpage (https://tylervigen.com/spurious-correlations), from which I’ve attached an example of below <span class="citation" data-cites="vigenTylerVigenSpurious2024">Vigen (<a href="#ref-vigenTylerVigenSpurious2024" role="doc-biblioref">2024</a>)</span>:</p>
+<p><img src="images/vigen_butter_consumption.png" class="img-fluid"></p>
+<p><br>
+</p>
 </section>
 <section id="a-brief-history-on-conceptualising-causality" class="level2" data-number="1.2">
 <h2 data-number="1.2" class="anchored" data-anchor-id="a-brief-history-on-conceptualising-causality"><span class="header-section-number">1.2</span> A Brief History on Conceptualising Causality</h2>
@@ -365,6 +391,11 @@ ul.task-list li input[type="checkbox"] {
 <h2 data-number="1.7" class="anchored" data-anchor-id="coverage-of-causal-inference-methods-in-key-texts"><span class="header-section-number">1.7</span> Coverage of Causal Inference Methods in Key Texts</h2>
 
 
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-vigenTylerVigenSpurious2024" class="csl-entry" role="listitem">
+Vigen, Tyler. 2024. <span>“Tyler <span>Vigen Spurious Correlation</span> #1,172: <span>Butter</span> Consumption Correlates with <span>Economic</span> Output of <span>Washington</span> Metro Area.”</span> TylerVigen.com. January 2024. <a href="https://tylervigen.com/spurious/correlation/1172_butter-consumption_correlates-with_economic-output-of-washington-metro-area">https://tylervigen.com/spurious/correlation/1172_butter-consumption_correlates-with_economic-output-of-washington-metro-area</a>.
+</div>
+</div>
 </section>
 
 </main> <!-- /main -->
