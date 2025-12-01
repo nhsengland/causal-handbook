@@ -2,8 +2,8 @@ project:
   type: book
 
 book:
-  title: "handbook"
-  author: "Norah Jones"
+  title: "Causal Inference for Intervention & Service Evaluations"
+  author: "Jamie Wong"
   date: "12/1/2025"
   chapters:
     - index.qmd

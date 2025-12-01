@@ -1,5 +1,5 @@
-# Preface {.unnumbered}
+# Welcome {.unnumbered}
 
-This is a Quarto book.
+This is a practical handbook on causal inference methods for evaluating policy interventions and service changes within the NHS, with a focus on leveraging observational real-world data to generate robust evidence.
 
-To learn more about Quarto books visit <https://quarto.org/docs/books>.
+The handbook was written initially as part of an NHS England PhD Internship, and will continue to be periodically updated with revisions following feedback from academics, data scientists, and public health practitioners.
