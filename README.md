@@ -6,7 +6,6 @@ A practical handbook on causal inference methods for evaluating policy intervent
 
 DHSC Evaluation Festival presentation slides and a draft of the causal study design selection diagram have been added here for the time being.
 
-\
 
 ## Folders
 
