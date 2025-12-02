@@ -1,1 +1,62 @@
 # Common Assumptions in Causal Inference Methodology
+
+Before delving into individual methods, here’s a short reference of common assumptions that will be referred to throughout this handbook. Not every method relies on all of these assumptions, but this will serve as your go to reference point in case there is any confusion between them later on. Method specific assumptions will be detailed within each methods section as well.
+
+\
+
+## Exchangeability
+
+Markozannes et al., define exchangeability as holding when: *“Treatment assignment is independent of the potential outcomes; this roughly translates to no unmeasured confounders and no informative censoring”* [@markozannesSurveyMethodologiesCausal2021].
+
+Exchangeability can be divided into two types:
+
+1.  Unconditional exchangeability
+    -   Where in a randomized trial, potential outcomes are inherently independent from treatment assignment due to random assignment of treatment.
+2.  Conditional exchangeability
+    -   Where in an observational study, potential outcomes are only independent from treatment assignment given/controlling for a set of measured covariates.
+
+Hernan and Robins’ definition is framed more as conditional exchangeability in their book, given its focus on observational studies, and define exchangeability as holding when: *“The conditional probability of receiving every value of treatment, though not decided by the investigators, depends only on measured covariates,”* i.e. no residual confounding [@hernanCausalInferenceWhat2025].
+
+For example, if we’re studying the relationship between smoking and cardiovascular disease, and sex is known to be independently associated between the two variables and does not lie on the causal pathway (i.e. a known confounder), we would violate the condition by not adjusting for sex in our analysis.
+
+Exchangeability is also referred to as ignorability (ignorable treatment assignment mechanism) or unconfoundedness in the literature.
+
+\
+
+## Consistency
+
+Hernan and Robins define consistency as holding when: “The values of treatment under comparison correspond to well-defined interventions that, in turn, correspond to the versions of treatment in the data” [@hernanCausalInferenceWhat2025].
+
+For example, in a study evaluating the effect of paracetamol on chronic pain, if some participants have one dose a week, and others have one daily, that would violate the condition, as the intervention is not uniformly defined.
+
+\
+
+## Positivity
+
+Hernan and Robins define positivity as holding when: “The probability of receiving every value of treatment conditional on relevant covariants is greater than zero, i.e., positive” [@hernanCausalInferenceWhat2025].
+
+For example, if we’re studying the effect of physical activity on the incidence of obesity, participants who are disabled and bedbound have a 0% chance of receiving the exercise intervention, thereby violating the condition.
+
+\
+
+## Stable Unit Treatment Value Assumption (SUTVA)
+
+The Stable Unit Treatment Value Assumption (SUTVA), as defined by Rubin who coined the term: *“Is simply the a priori assumption that the value of Y for unit u when exposed to treatment t will be the same no matter what mechanism is used to assign treatment t to unit u and no matter what treatments the other units receive”* [@rubinStatisticsCausalInference1986].
+
+A simpler definition and explanation has been published by Markozannes et al.,: *“The stable unit treatment value assumption states that there is no interference among units, that is, the treatment status of a unit does not affect the potential outcomes of other units and it also requires that there is only a single version of the treatment (no hidden variations in treatment; no multiple versions of treatment).”* *“Possible violations of the SUTVA include settings where units interact (e.g., schools, group interventions) or different treatment dosages exist or different modes of administration operate which can affect the potential outcomes”* [@markozannesSurveyMethodologiesCausal2021].
+
+In other words, we can define SUTVA has having two distinct requirements:
+
+1.  No multiple versions of treatment
+2.  No interference between units
+
+A more concrete example would be in the context of evaluating the efficacy of a new flu vaccine, where the assumption would hold as long as:
+
+1.  All versions of the flu vaccines are the same, and are administered in the exact same manner between study participants (i.e., have the same dosage, formulation, and schedule)
+2.  Each study participant is isolated in separate facilities, with limited contact with other trial participants and non-participants
+
+Of course, in practice SUTVA would not hold in an evaluation of a flu vaccine, as study participants would come into contact with other trial participants and non-participants, introducing herd level spillover effects into the population. Do note though that defining the unit of interest differently could change this depending on conditions (e.g., going from an individual level analysis to a city or country level analysis).
+
+SUTVA is also referred to as a non-macro-effect or the partial equilibrium assumption in economics [@morganCounterfactualsCausalInference2014].
+
+Assumptions made when using some of the most common statistical techniques discussed in this handbook can be found in this [paper](https://doi.org/10.1017/s0033291720005127).

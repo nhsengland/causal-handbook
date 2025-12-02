@@ -93,3 +93,7 @@ format:
       - brand
   pdf:
     documentclass: scrreprt
+    classoption:
+      - oneside
+    geometry:
+      - margin=1in

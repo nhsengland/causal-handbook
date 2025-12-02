@@ -54,6 +54,149 @@
     ]
   },
   {
+    "objectID": "01-03-assumptions.html",
+    "href": "01-03-assumptions.html",
+    "title": "3  Common Assumptions in Causal Inference Methodology",
+    "section": "",
+    "text": "3.1 Exchangeability\nBefore delving into individual methods, here’s a short reference of common assumptions that will be referred to throughout this handbook. Not every method relies on all of these assumptions, but this will serve as your go to reference point in case there is any confusion between them later on. Method specific assumptions will be detailed within each methods section as well.\nMarkozannes et al., define exchangeability as holding when: “Treatment assignment is independent of the potential outcomes; this roughly translates to no unmeasured confounders and no informative censoring” (Markozannes, Vourli, and Ntzani 2021).\nExchangeability can be divided into two types:\nHernan and Robins’ definition is framed more as conditional exchangeability in their book, given its focus on observational studies, and define exchangeability as holding when: “The conditional probability of receiving every value of treatment, though not decided by the investigators, depends only on measured covariates,” i.e. no residual confounding (Hernán and Robins 2025).\nFor example, if we’re studying the relationship between smoking and cardiovascular disease, and sex is known to be independently associated between the two variables and does not lie on the causal pathway (i.e. a known confounder), we would violate the condition by not adjusting for sex in our analysis.\nExchangeability is also referred to as ignorability (ignorable treatment assignment mechanism) or unconfoundedness in the literature.",
+    "crumbs": [
+      "Introduction",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Common Assumptions in Causal Inference Methodology</span>"
+    ]
+  },
+  {
+    "objectID": "01-03-assumptions.html#exchangeability",
+    "href": "01-03-assumptions.html#exchangeability",
+    "title": "3  Common Assumptions in Causal Inference Methodology",
+    "section": "",
+    "text": "Unconditional exchangeability\n\nWhere in a randomized trial, potential outcomes are inherently independent from treatment assignment due to random assignment of treatment.\n\nConditional exchangeability\n\nWhere in an observational study, potential outcomes are only independent from treatment assignment given/controlling for a set of measured covariates.",
+    "crumbs": [
+      "Introduction",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Common Assumptions in Causal Inference Methodology</span>"
+    ]
+  },
+  {
+    "objectID": "01-03-assumptions.html#consistency",
+    "href": "01-03-assumptions.html#consistency",
+    "title": "3  Common Assumptions in Causal Inference Methodology",
+    "section": "3.2 Consistency",
+    "text": "3.2 Consistency\nHernan and Robins define consistency as holding when: “The values of treatment under comparison correspond to well-defined interventions that, in turn, correspond to the versions of treatment in the data” (Hernán and Robins 2025).\nFor example, in a study evaluating the effect of paracetamol on chronic pain, if some participants have one dose a week, and others have one daily, that would violate the condition, as the intervention is not uniformly defined.",
+    "crumbs": [
+      "Introduction",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Common Assumptions in Causal Inference Methodology</span>"
+    ]
+  },
+  {
+    "objectID": "01-03-assumptions.html#positivity",
+    "href": "01-03-assumptions.html#positivity",
+    "title": "3  Common Assumptions in Causal Inference Methodology",
+    "section": "3.3 Positivity",
+    "text": "3.3 Positivity\nHernan and Robins define positivity as holding when: “The probability of receiving every value of treatment conditional on relevant covariants is greater than zero, i.e., positive” (Hernán and Robins 2025).\nFor example, if we’re studying the effect of physical activity on the incidence of obesity, participants who are disabled and bedbound have a 0% chance of receiving the exercise intervention, thereby violating the condition.",
+    "crumbs": [
+      "Introduction",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Common Assumptions in Causal Inference Methodology</span>"
+    ]
+  },
+  {
+    "objectID": "01-03-assumptions.html#stable-unit-treatment-value-assumption-sutva",
+    "href": "01-03-assumptions.html#stable-unit-treatment-value-assumption-sutva",
+    "title": "3  Common Assumptions in Causal Inference Methodology",
+    "section": "3.4 Stable Unit Treatment Value Assumption (SUTVA)",
+    "text": "3.4 Stable Unit Treatment Value Assumption (SUTVA)\nThe Stable Unit Treatment Value Assumption (SUTVA), as defined by Rubin who coined the term: “Is simply the a priori assumption that the value of Y for unit u when exposed to treatment t will be the same no matter what mechanism is used to assign treatment t to unit u and no matter what treatments the other units receive” (Rubin 1986).\nA simpler definition and explanation has been published by Markozannes et al.,: “The stable unit treatment value assumption states that there is no interference among units, that is, the treatment status of a unit does not affect the potential outcomes of other units and it also requires that there is only a single version of the treatment (no hidden variations in treatment; no multiple versions of treatment).” “Possible violations of the SUTVA include settings where units interact (e.g., schools, group interventions) or different treatment dosages exist or different modes of administration operate which can affect the potential outcomes” (Markozannes, Vourli, and Ntzani 2021).\nIn other words, we can define SUTVA has having two distinct requirements:\n\nNo multiple versions of treatment\nNo interference between units\n\nA more concrete example would be in the context of evaluating the efficacy of a new flu vaccine, where the assumption would hold as long as:\n\nAll versions of the flu vaccines are the same, and are administered in the exact same manner between study participants (i.e., have the same dosage, formulation, and schedule)\nEach study participant is isolated in separate facilities, with limited contact with other trial participants and non-participants\n\nOf course, in practice SUTVA would not hold in an evaluation of a flu vaccine, as study participants would come into contact with other trial participants and non-participants, introducing herd level spillover effects into the population. Do note though that defining the unit of interest differently could change this depending on conditions (e.g., going from an individual level analysis to a city or country level analysis).\nSUTVA is also referred to as a non-macro-effect or the partial equilibrium assumption in economics (Morgan and Winship 2014).\nAssumptions made when using some of the most common statistical techniques discussed in this handbook can be found in this paper.\n\n\n\n\nHernán, Miguel A., and James M. Robins. 2025. Causal Inference: What If. Boca Raton: Chapman & Hall/CRC. https://miguelhernan.org/whatifbook.\n\n\nMarkozannes, Georgios, Georgia Vourli, and Evangelia Ntzani. 2021. “A Survey of Methodologies on Causal Inference Methods in Meta-Analyses of Randomized Controlled Trials.” Systematic Reviews 10 (1): 170. https://doi.org/10.1186/s13643-021-01726-1.\n\n\nMorgan, Stephen L., and Christopher Winship. 2014. Counterfactuals and Causal Inference: Methods and Principles for Social Research. 2nd ed. Analytical Methods for Social Research. Cambridge: Cambridge University Press. https://doi.org/10.1017/CBO9781107587991.\n\n\nRubin, Donald B. 1986. “Statistics and Causal Inference: Comment: Which Ifs Have Causal Answers.” Journal of the American Statistical Association 81 (396): 961–62. https://doi.org/10.2307/2289065.",
+    "crumbs": [
+      "Introduction",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Common Assumptions in Causal Inference Methodology</span>"
+    ]
+  },
+  {
+    "objectID": "01-04-existing-guidance.html",
+    "href": "01-04-existing-guidance.html",
+    "title": "4  Existing Guidance on Study Design Selection",
+    "section": "",
+    "text": "4.1 NICE Guidance\nPrior to presenting my unifying guidance in my next section, I’ve attached a few existing reports and guides for selecting the appropriate observational causal study design relevant to your key evaluation question of interest. This was done to acknowledge the work that has come before, while also noting key limitations that motivated the development of this unifying guidance.\nIn their report on “methods for the development of NICE public health guidelines,” the National Institute for Health and Care Excellence (NICE) provides a high-level overview of the various epidemiological study designs used in public health research. Included within the report in Appendix E is a flowchart that outlines an “algorithm for classifying quantitative (experimental and observational) study designs (NICE 2012).\nAs you can see, the types of study designs covered are very general, and do not focus on specific types of analytical methods you can use to deal with confounding factors within your study to derive causal inferences. As such, this diagram is most useful for those who are new to the field of epidemiology and public health, and wish to refer to a general overview of experimental and observational study designs.",
+    "crumbs": [
+      "Introduction",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Existing Guidance on Study Design Selection</span>"
+    ]
+  },
+  {
+    "objectID": "01-04-existing-guidance.html#nice-guidance",
+    "href": "01-04-existing-guidance.html#nice-guidance",
+    "title": "4  Existing Guidance on Study Design Selection",
+    "section": "",
+    "text": "Algorithm for classifying quantitative (experimental and observational) study designs (NICE, 2012)",
+    "crumbs": [
+      "Introduction",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Existing Guidance on Study Design Selection</span>"
+    ]
+  },
+  {
+    "objectID": "01-04-existing-guidance.html#ohid-guidance",
+    "href": "01-04-existing-guidance.html#ohid-guidance",
+    "title": "4  Existing Guidance on Study Design Selection",
+    "section": "4.2 OHID Guidance",
+    "text": "4.2 OHID Guidance\nThe Office for Health Improvement and Disparities (OHID) has similarly published some high-level guidance on the use of various evaluation methods, including quasi-experimental methods, to evaluate digital health products (OHID 2021a, 2021b). This guidance is aimed at analysts that are completely new to these methods though, and as such does not go into the specifics of how to perform these analyses in a programming language and/or statistical package such as R, Stata, and Python.",
+    "crumbs": [
+      "Introduction",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Existing Guidance on Study Design Selection</span>"
+    ]
+  },
+  {
+    "objectID": "01-04-existing-guidance.html#new-zealand-transport-agency-guidance",
+    "href": "01-04-existing-guidance.html#new-zealand-transport-agency-guidance",
+    "title": "4  Existing Guidance on Study Design Selection",
+    "section": "4.3 New Zealand Transport Agency Guidance",
+    "text": "4.3 New Zealand Transport Agency Guidance\nThe New Zealand Transport Agency Waka Kotahi has published a report focused on the use of causal inference methods for the evaluation of transport interventions, and includes a causal inference method selection flowchart (Schiff, Wright, and Denne 2017).\nThe methods included are limited to those most often used in the social sciences and econometrics though. These methods largely exploit natural experiments that have occurred in the real world at one point in time to derive causal inferences. There is hence room to expand upon this flowchart further in a more comprehensive manner.\n\n\n\nCausal inference method selection flowchart (Schiff, Wright and Denne, 2017)",
+    "crumbs": [
+      "Introduction",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Existing Guidance on Study Design Selection</span>"
+    ]
+  },
+  {
+    "objectID": "01-04-existing-guidance.html#hm-treasury-guidance",
+    "href": "01-04-existing-guidance.html#hm-treasury-guidance",
+    "title": "4  Existing Guidance on Study Design Selection",
+    "section": "4.4 HM Treasury Guidance",
+    "text": "4.4 HM Treasury Guidance\nThe HM Treasury’s Magenta Book, specifically Figure 3.1 on p.47 (PDF p.54) provides a great diagram providing guidance on when using different experimental and quasi-experimental methods for service evaluation would be the most appropriate (HM Treasury 2020). Unlike the New Zealand Transport Agency’s guidance, the Treasury’s diagram is more descriptive in nature, describing specific contexts where each approach would be most applicable.\nHowever, similar to the New Zealand Transport Agency’s guidance, the quasi-experimental methods presented only encompass methods used more often in econometrics and social sciences, such as difference in differences and regression discontinuity.\nThese methods once again largely exploit natural experiments that have occurred in the real world to derive causal inferences, rather than adjusting for individual covariates which is more popular in epidemiology. Methods focusing on the latter are absent, but this is no surprise due to the Treasury’s area of focus. The guidance presented in this handbook therefore expands upon this diagram to also include such methods.\n\n\n\nDiagram for selecting experimental and quasi-experimental methods (HM Treasury, 2020)\n\n\n\n\n\n\nHM Treasury. 2020. Magenta Book: Central Government Guidance on Evaluation. United Kingdom: HM Treasury. https://assets.publishing.service.gov.uk/media/5e96cab9d3bf7f412b2264b1/HMT_Magenta_Book.pdf.\n\n\nNICE. 2012. “Appendix E Algorithm for Classifying Quantitative (Experimental and Observational) Study Designs | Methods for the Development of NICE Public Health Guidance (Third Edition).” NICE. September 26, 2012. https://www.nice.org.uk/process/pmg4/chapter/appendix-e-algorithm-for-classifying-quantitative-experimental-and-observational-study-designs.\n\n\nOHID. 2021a. “Guidance: Choose Evaluation Methods: Evaluating Digital Health Products.” GOV.UK. May 19, 2021. https://www.gov.uk/guidance/choose-evaluation-methods-evaluating-digital-health-products.\n\n\n———. 2021b. “Guidance: Quasi-experimental Study: Comparative Studies.” GOV.UK. September 8, 2021. https://www.gov.uk/guidance/quasi-experimental-study-comparative-studies.\n\n\nSchiff, A, L Wright, and T Denne. 2017. “Ex-Post Evaluation of Transport Interventions Using Causal Inference Methods.” NZ Transport Agency Waka Kotahi. https://nzta.govt.nz/resources/research/reports/630/.",
+    "crumbs": [
+      "Introduction",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Existing Guidance on Study Design Selection</span>"
+    ]
+  },
+  {
+    "objectID": "01-05-selection-diagram.html",
+    "href": "01-05-selection-diagram.html",
+    "title": "5  New Unifying Guidance on Choosing Causal Inference Methods (Method Selection Tree)",
+    "section": "",
+    "text": "Given the narrow scope of all prior guidance, especially as most of the methods selection diagrams are limited to methods used more within other fields of study, I have opted to create a new method selection tree diagram to help advise with the selection of causal methods going forward.\nA flowchart of all methods mentioned in this handbook is presented below, with descriptors indicating which variables are most appropriate given your evaluation question of interest, and the data available to you. Corresponding chapter numbers of each method are also attached within the flowchart.\nPlease note that the diagram is still a work in progress, and will continue to be updated with input from external experts.",
+    "crumbs": [
+      "Introduction",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>New Unifying Guidance on Choosing Causal Inference Methods (Method Selection Tree)</span>"
+    ]
+  },
+  {
+    "objectID": "01-06-key-resources.html",
+    "href": "01-06-key-resources.html",
+    "title": "6  Key Resources",
+    "section": "",
+    "text": "6.1 Causal Inference: What If (Hernán and Robins 2025)\nThroughout the handbook, there are a few key influential texts that have consolidated contemporary methods used to derive causal inferences from observational data. These texts are widely regarded as being foundational to anyone attempting to dip their toes into the field, and are often used as required reading and/or reference material within undergraduate and postgraduate courses in the econometrics, epidemiology, statistics, and social sciences more broadly.\nI’ve listed some the most frequently cited texts in this handbook below, along with a brief description of their areas of focus. Additional texts that are beyond the scope of this handbook have also been included for reference. A summary table is also included showing which methods are covered by each book in Section 1.7.\nBrady Neal has posted a very useful flowchart on his personal website outlining “which causal inference book you should read,” and covers many of the texts mentioned in this handbook (Neal 2019). If you’re completely new to the field of causal inference, his diagram serves as a great place to begin your journey.\nAuthors: Miguel Hernan – Kolokotrones Professor of Biostatistics and Epidemiology, Harvard T.H. Chan School of Public Health & Director of Harvard CAUSALab James M. Robins – Mitchell L. and Robin LaFoley Dong Professor of Epidemiology, Harvard T.H. Chan School of Public Health\nHernan and Robins’ book was first published in 2020, and has been continuously updated over the past few years. The most up to date version of the book can be found on Hernan’s personal webpage.\nThe book is considered by many in the field of epidemiology to be the definitive guide to the application of causal inference methods, framed within the target trial emulation framework, especially when it comes to estimating causal effects using complex longitudinal data (with a strong focus on G-methods). This is a result of the book being openly available online for the past two decades while it was still being drafted, with many researchers in the field contributing to the book over this period.\nThe book is particularly useful in providing guidance for evaluating sustained and time-varying treatment strategies, and overcoming issues such as immortal time bias within classical methods in epidemiology, which are often issues within the field of pharmacoepidemiology.\nThe book also (very helpfully) includes accompanying R and Stata code hosted on GitHub, which provides practical examples of how the methods covered can be applied to your own data.",
+    "crumbs": [
+      "Introduction",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Key Resources</span>"
+    ]
+  },
+  {
+    "objectID": "01-06-key-resources.html#causal-inference-what-if-hernancausalinferencewhat2025",
+    "href": "01-06-key-resources.html#causal-inference-what-if-hernancausalinferencewhat2025",
+    "title": "6  Key Resources",
+    "section": "",
+    "text": "Hernán, Miguel A., and James M. Robins. 2025. Causal Inference: What If. Boca Raton: Chapman & Hall/CRC. https://miguelhernan.org/whatifbook.\n\n\nNeal, Brady. 2019. “Which Causal Inference Book You Should Read.” November 23, 2019. https://www.bradyneal.com/which-causal-inference-book.",
+    "crumbs": [
+      "Introduction",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Key Resources</span>"
+    ]
+  },
+  {
     "objectID": "02-01-rct.html",
     "href": "02-01-rct.html",
     "title": "8  Randomized Controlled Trials",
@@ -392,7 +535,7 @@
     "href": "references.html",
     "title": "References",
     "section": "",
-    "text": "Cunningham, Scott. 2025. “Mixtape Sessions\n(Github).” 2025. https://github.com/Mixtape-Sessions.\n\n\nDigitale, Jean C., Jeffrey N. Martin, and Medellena Maria Glymour. 2022.\n“Tutorial on Directed Acyclic Graphs.” Journal of\nClinical Epidemiology 142 (February): 264–67. https://doi.org/10.1016/j.jclinepi.2021.08.001.\n\n\nFisher, R A, and F Yates. 1990. Statistical Methods,\nExperimental Design, and Scientific Inference:\nA Re-issue of Statistical\nMethods for Research Workers, the\nDesign of Experiments and Statistical\nMethods and Scientific Inference. Edited by J H\nBennett. Oxford University Press. https://doi.org/10.1093/oso/9780198522294.001.0001.\n\n\nFisher, Ronald A. 1925. “Statistical Methods for\nResearch Workers (Scan of 1st\nEdition).” Classics in the History of Psychology.\n1925. https://psychclassics.yorku.ca/Fisher/Methods/.\n\n\nHernán, Miguel A., and James M. Robins. 2016. “Using Big\nData to Emulate a Target Trial When a\nRandomized Trial Is Not Available.” American\nJournal of Epidemiology 183 (8): 758–64. https://doi.org/10.1093/aje/kwv254.\n\n\nHill, Austin Bradford. 1965. “The Environment and\nDisease: Association or\nCausation?” Proceedings of the Royal Society of\nMedicine 58 (5): 295–300. https://doi.org/10.1177/003591576505800503.\n\n\nHolland, Paul W., Clark Glymour, and Clive Granger. 1985.\n“Statistics and Causal Inference.” ETS\nResearch Report Series 1985 (2): i–72. https://doi.org/10.1002/j.2330-8516.1985.tb00125.x.\n\n\nImbens, Guido W. 2020. “Potential Outcome and\nDirected Acyclic Graph Approaches to\nCausality: Relevance for Empirical\nPractice in Economics.” Journal of\nEconomic Literature 58 (4): 1129–79. https://doi.org/10.1257/jel.20191597.\n\n\nImbens, Guido W., and Donald B. Rubin. 2015. Causal\nInference for Statistics, Social,\nand Biomedical Sciences: An Introduction.\nCambridge: Cambridge University Press. https://doi.org/10.1017/CBO9781139025751.\n\n\nMill, John Stuart. 1843. A System of\nLogic, Ratiocinative and\nInductive: Being a Connected View\nof the Principles of Evidence, and the\nMethods of Scientific Investigation. Vol.\n1. Cambridge Library Collection - Philosophy.\nCambridge: Cambridge University Press. https://doi.org/10.1017/CBO9781139149839.\n\n\nMorgan, Stephen L., and Christopher Winship. 2014. Counterfactuals\nand Causal Inference: Methods and\nPrinciples for Social Research. 2nd ed.\nAnalytical Methods for Social Research.\nCambridge: Cambridge University Press. https://doi.org/10.1017/CBO9781107587991.\n\n\nPearl, Judea. 2009. Causality: Models,\nReasoning, and Inference. 2nd ed.\nCambridge: Cambridge University Press. https://doi.org/10.1017/CBO9780511803161.\n\n\nPearl, Judea, and Dana Mackenzie. 2018. “The Book of\nWhy: The New Science of Cause and\nEffect.” Guide books. 2018. https://dl.acm.org/doi/book/10.5555/3238230.\n\n\nRubin, Donald B. 1974. “Estimating Causal Effects of Treatments in\nRandomized and Nonrandomized Studies.” Journal of Educational\nPsychology 66 (5): 688–701. https://doi.org/10.1037/h0037350.\n\n\nSplawa-Neyman, Jerzy, D. M. Dabrowska, and T. P. Speed. 1990. “On\nthe Application of Probability Theory to\nAgricultural Experiments. Essay on\nPrinciples. Section 9.” Statistical\nScience 5 (4): 465–72. https://doi.org/10.1214/ss/1177012031.\n\n\nVigen, Tyler. 2024. “Tyler Vigen Spurious Correlation\n#1,172: Butter Consumption Correlates with\nEconomic Output of Washington Metro\nArea.” TylerVigen.com. January 2024. https://tylervigen.com/spurious/correlation/1172_butter-consumption_correlates-with_economic-output-of-washington-metro-area.",
+    "text": "Cunningham, Scott. 2025. “Mixtape Sessions\n(Github).” 2025. https://github.com/Mixtape-Sessions.\n\n\nDigitale, Jean C., Jeffrey N. Martin, and Medellena Maria Glymour. 2022.\n“Tutorial on Directed Acyclic Graphs.” Journal of\nClinical Epidemiology 142 (February): 264–67. https://doi.org/10.1016/j.jclinepi.2021.08.001.\n\n\nFisher, R A, and F Yates. 1990. Statistical Methods,\nExperimental Design, and Scientific Inference:\nA Re-issue of Statistical\nMethods for Research Workers, the\nDesign of Experiments and Statistical\nMethods and Scientific Inference. Edited by J H\nBennett. Oxford University Press. https://doi.org/10.1093/oso/9780198522294.001.0001.\n\n\nFisher, Ronald A. 1925. “Statistical Methods for\nResearch Workers (Scan of 1st\nEdition).” Classics in the History of Psychology.\n1925. https://psychclassics.yorku.ca/Fisher/Methods/.\n\n\nHernán, Miguel A., and James M. Robins. 2016. “Using Big\nData to Emulate a Target Trial When a\nRandomized Trial Is Not Available.” American\nJournal of Epidemiology 183 (8): 758–64. https://doi.org/10.1093/aje/kwv254.\n\n\n———. 2025. Causal Inference: What If.\nBoca Raton: Chapman & Hall/CRC. https://miguelhernan.org/whatifbook.\n\n\nHill, Austin Bradford. 1965. “The Environment and\nDisease: Association or\nCausation?” Proceedings of the Royal Society of\nMedicine 58 (5): 295–300. https://doi.org/10.1177/003591576505800503.\n\n\nHM Treasury. 2020. Magenta Book: Central\nGovernment Guidance on Evaluation. United Kingdom: HM\nTreasury. https://assets.publishing.service.gov.uk/media/5e96cab9d3bf7f412b2264b1/HMT_Magenta_Book.pdf.\n\n\nHolland, Paul W., Clark Glymour, and Clive Granger. 1985.\n“Statistics and Causal Inference.” ETS\nResearch Report Series 1985 (2): i–72. https://doi.org/10.1002/j.2330-8516.1985.tb00125.x.\n\n\nImbens, Guido W. 2020. “Potential Outcome and\nDirected Acyclic Graph Approaches to\nCausality: Relevance for Empirical\nPractice in Economics.” Journal of\nEconomic Literature 58 (4): 1129–79. https://doi.org/10.1257/jel.20191597.\n\n\nImbens, Guido W., and Donald B. Rubin. 2015. Causal\nInference for Statistics, Social,\nand Biomedical Sciences: An Introduction.\nCambridge: Cambridge University Press. https://doi.org/10.1017/CBO9781139025751.\n\n\nMarkozannes, Georgios, Georgia Vourli, and Evangelia Ntzani. 2021.\n“A Survey of Methodologies on Causal Inference Methods in\nMeta-Analyses of Randomized Controlled Trials.” Systematic\nReviews 10 (1): 170. https://doi.org/10.1186/s13643-021-01726-1.\n\n\nMill, John Stuart. 1843. A System of\nLogic, Ratiocinative and\nInductive: Being a Connected View\nof the Principles of Evidence, and the\nMethods of Scientific Investigation. Vol.\n1. Cambridge Library Collection - Philosophy.\nCambridge: Cambridge University Press. https://doi.org/10.1017/CBO9781139149839.\n\n\nMorgan, Stephen L., and Christopher Winship. 2014. Counterfactuals\nand Causal Inference: Methods and\nPrinciples for Social Research. 2nd ed.\nAnalytical Methods for Social Research.\nCambridge: Cambridge University Press. https://doi.org/10.1017/CBO9781107587991.\n\n\nNeal, Brady. 2019. “Which Causal Inference Book You Should\nRead.” November 23, 2019. https://www.bradyneal.com/which-causal-inference-book.\n\n\nNICE. 2012. “Appendix E Algorithm for Classifying\nQuantitative (Experimental and Observational) Study Designs |\nMethods for the Development of NICE Public\nHealth Guidance (Third Edition).” NICE. September 26, 2012. https://www.nice.org.uk/process/pmg4/chapter/appendix-e-algorithm-for-classifying-quantitative-experimental-and-observational-study-designs.\n\n\nOHID. 2021a. “Guidance: Choose Evaluation Methods:\nEvaluating Digital Health Products.” GOV.UK. May 19, 2021. https://www.gov.uk/guidance/choose-evaluation-methods-evaluating-digital-health-products.\n\n\n———. 2021b. “Guidance: Quasi-experimental Study: Comparative\nStudies.” GOV.UK. September 8, 2021. https://www.gov.uk/guidance/quasi-experimental-study-comparative-studies.\n\n\nPearl, Judea. 2009. Causality: Models,\nReasoning, and Inference. 2nd ed.\nCambridge: Cambridge University Press. https://doi.org/10.1017/CBO9780511803161.\n\n\nPearl, Judea, and Dana Mackenzie. 2018. “The Book of\nWhy: The New Science of Cause and\nEffect.” Guide books. 2018. https://dl.acm.org/doi/book/10.5555/3238230.\n\n\nRubin, Donald B. 1974. “Estimating Causal Effects of Treatments in\nRandomized and Nonrandomized Studies.” Journal of Educational\nPsychology 66 (5): 688–701. https://doi.org/10.1037/h0037350.\n\n\n———. 1986. “Statistics and Causal Inference:\nComment: Which Ifs Have Causal\nAnswers.” Journal of the American Statistical\nAssociation 81 (396): 961–62. https://doi.org/10.2307/2289065.\n\n\nSchiff, A, L Wright, and T Denne. 2017. “Ex-Post Evaluation of\nTransport Interventions Using Causal Inference Methods.” NZ\nTransport Agency Waka Kotahi. https://nzta.govt.nz/resources/research/reports/630/.\n\n\nSplawa-Neyman, Jerzy, D. M. Dabrowska, and T. P. Speed. 1990. “On\nthe Application of Probability Theory to\nAgricultural Experiments. Essay on\nPrinciples. Section 9.” Statistical\nScience 5 (4): 465–72. https://doi.org/10.1214/ss/1177012031.\n\n\nVigen, Tyler. 2024. “Tyler Vigen Spurious Correlation\n#1,172: Butter Consumption Correlates with\nEconomic Output of Washington Metro\nArea.” TylerVigen.com. January 2024. https://tylervigen.com/spurious/correlation/1172_butter-consumption_correlates-with_economic-output-of-washington-metro-area.",
     "crumbs": [
       "References"
     ]

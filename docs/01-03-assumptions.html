@@ -20,7 +20,27 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -387,8 +407,17 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#exchangeability" id="toc-exchangeability" class="nav-link active" data-scroll-target="#exchangeability"><span class="header-section-number">3.1</span> Exchangeability</a></li>
+  <li><a href="#consistency" id="toc-consistency" class="nav-link" data-scroll-target="#consistency"><span class="header-section-number">3.2</span> Consistency</a></li>
+  <li><a href="#positivity" id="toc-positivity" class="nav-link" data-scroll-target="#positivity"><span class="header-section-number">3.3</span> Positivity</a></li>
+  <li><a href="#stable-unit-treatment-value-assumption-sutva" id="toc-stable-unit-treatment-value-assumption-sutva" class="nav-link" data-scroll-target="#stable-unit-treatment-value-assumption-sutva"><span class="header-section-number">3.4</span> Stable Unit Treatment Value Assumption (SUTVA)</a></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/nhsengland/causal-handbook/edit/main/01-03-assumptions.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -412,8 +441,77 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<p>Before delving into individual methods, here’s a short reference of common assumptions that will be referred to throughout this handbook. Not every method relies on all of these assumptions, but this will serve as your go to reference point in case there is any confusion between them later on. Method specific assumptions will be detailed within each methods section as well.</p>
+<p><br>
+</p>
+<section id="exchangeability" class="level2" data-number="3.1">
+<h2 data-number="3.1" class="anchored" data-anchor-id="exchangeability"><span class="header-section-number">3.1</span> Exchangeability</h2>
+<p>Markozannes et al., define exchangeability as holding when: <em>“Treatment assignment is independent of the potential outcomes; this roughly translates to no unmeasured confounders and no informative censoring”</em> <span class="citation" data-cites="markozannesSurveyMethodologiesCausal2021">(<a href="references.html#ref-markozannesSurveyMethodologiesCausal2021" role="doc-biblioref">Markozannes, Vourli, and Ntzani 2021</a>)</span>.</p>
+<p>Exchangeability can be divided into two types:</p>
+<ol type="1">
+<li>Unconditional exchangeability
+<ul>
+<li>Where in a randomized trial, potential outcomes are inherently independent from treatment assignment due to random assignment of treatment.</li>
+</ul></li>
+<li>Conditional exchangeability
+<ul>
+<li>Where in an observational study, potential outcomes are only independent from treatment assignment given/controlling for a set of measured covariates.</li>
+</ul></li>
+</ol>
+<p>Hernan and Robins’ definition is framed more as conditional exchangeability in their book, given its focus on observational studies, and define exchangeability as holding when: <em>“The conditional probability of receiving every value of treatment, though not decided by the investigators, depends only on measured covariates,”</em> i.e.&nbsp;no residual confounding <span class="citation" data-cites="hernanCausalInferenceWhat2025">(<a href="references.html#ref-hernanCausalInferenceWhat2025" role="doc-biblioref">Hernán and Robins 2025</a>)</span>.</p>
+<p>For example, if we’re studying the relationship between smoking and cardiovascular disease, and sex is known to be independently associated between the two variables and does not lie on the causal pathway (i.e.&nbsp;a known confounder), we would violate the condition by not adjusting for sex in our analysis.</p>
+<p>Exchangeability is also referred to as ignorability (ignorable treatment assignment mechanism) or unconfoundedness in the literature.</p>
+<p><br>
+</p>
+</section>
+<section id="consistency" class="level2" data-number="3.2">
+<h2 data-number="3.2" class="anchored" data-anchor-id="consistency"><span class="header-section-number">3.2</span> Consistency</h2>
+<p>Hernan and Robins define consistency as holding when: “The values of treatment under comparison correspond to well-defined interventions that, in turn, correspond to the versions of treatment in the data” <span class="citation" data-cites="hernanCausalInferenceWhat2025">(<a href="references.html#ref-hernanCausalInferenceWhat2025" role="doc-biblioref">Hernán and Robins 2025</a>)</span>.</p>
+<p>For example, in a study evaluating the effect of paracetamol on chronic pain, if some participants have one dose a week, and others have one daily, that would violate the condition, as the intervention is not uniformly defined.</p>
+<p><br>
+</p>
+</section>
+<section id="positivity" class="level2" data-number="3.3">
+<h2 data-number="3.3" class="anchored" data-anchor-id="positivity"><span class="header-section-number">3.3</span> Positivity</h2>
+<p>Hernan and Robins define positivity as holding when: “The probability of receiving every value of treatment conditional on relevant covariants is greater than zero, i.e., positive” <span class="citation" data-cites="hernanCausalInferenceWhat2025">(<a href="references.html#ref-hernanCausalInferenceWhat2025" role="doc-biblioref">Hernán and Robins 2025</a>)</span>.</p>
+<p>For example, if we’re studying the effect of physical activity on the incidence of obesity, participants who are disabled and bedbound have a 0% chance of receiving the exercise intervention, thereby violating the condition.</p>
+<p><br>
+</p>
+</section>
+<section id="stable-unit-treatment-value-assumption-sutva" class="level2" data-number="3.4">
+<h2 data-number="3.4" class="anchored" data-anchor-id="stable-unit-treatment-value-assumption-sutva"><span class="header-section-number">3.4</span> Stable Unit Treatment Value Assumption (SUTVA)</h2>
+<p>The Stable Unit Treatment Value Assumption (SUTVA), as defined by Rubin who coined the term: <em>“Is simply the a priori assumption that the value of Y for unit u when exposed to treatment t will be the same no matter what mechanism is used to assign treatment t to unit u and no matter what treatments the other units receive”</em> <span class="citation" data-cites="rubinStatisticsCausalInference1986">(<a href="references.html#ref-rubinStatisticsCausalInference1986" role="doc-biblioref">Rubin 1986</a>)</span>.</p>
+<p>A simpler definition and explanation has been published by Markozannes et al.,: <em>“The stable unit treatment value assumption states that there is no interference among units, that is, the treatment status of a unit does not affect the potential outcomes of other units and it also requires that there is only a single version of the treatment (no hidden variations in treatment; no multiple versions of treatment).”</em> <em>“Possible violations of the SUTVA include settings where units interact (e.g., schools, group interventions) or different treatment dosages exist or different modes of administration operate which can affect the potential outcomes”</em> <span class="citation" data-cites="markozannesSurveyMethodologiesCausal2021">(<a href="references.html#ref-markozannesSurveyMethodologiesCausal2021" role="doc-biblioref">Markozannes, Vourli, and Ntzani 2021</a>)</span>.</p>
+<p>In other words, we can define SUTVA has having two distinct requirements:</p>
+<ol type="1">
+<li>No multiple versions of treatment</li>
+<li>No interference between units</li>
+</ol>
+<p>A more concrete example would be in the context of evaluating the efficacy of a new flu vaccine, where the assumption would hold as long as:</p>
+<ol type="1">
+<li>All versions of the flu vaccines are the same, and are administered in the exact same manner between study participants (i.e., have the same dosage, formulation, and schedule)</li>
+<li>Each study participant is isolated in separate facilities, with limited contact with other trial participants and non-participants</li>
+</ol>
+<p>Of course, in practice SUTVA would not hold in an evaluation of a flu vaccine, as study participants would come into contact with other trial participants and non-participants, introducing herd level spillover effects into the population. Do note though that defining the unit of interest differently could change this depending on conditions (e.g., going from an individual level analysis to a city or country level analysis).</p>
+<p>SUTVA is also referred to as a non-macro-effect or the partial equilibrium assumption in economics <span class="citation" data-cites="morganCounterfactualsCausalInference2014">(<a href="references.html#ref-morganCounterfactualsCausalInference2014" role="doc-biblioref">Morgan and Winship 2014</a>)</span>.</p>
+<p>Assumptions made when using some of the most common statistical techniques discussed in this handbook can be found in this <a href="https://doi.org/10.1017/s0033291720005127">paper</a>.</p>
 
 
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
+<div id="ref-hernanCausalInferenceWhat2025" class="csl-entry" role="listitem">
+Hernán, Miguel A., and James M. Robins. 2025. <em>Causal <span>Inference</span>: <span>What If</span></em>. Boca Raton: Chapman &amp; Hall/CRC. <a href="https://miguelhernan.org/whatifbook">https://miguelhernan.org/whatifbook</a>.
+</div>
+<div id="ref-markozannesSurveyMethodologiesCausal2021" class="csl-entry" role="listitem">
+Markozannes, Georgios, Georgia Vourli, and Evangelia Ntzani. 2021. <span>“A Survey of Methodologies on Causal Inference Methods in Meta-Analyses of Randomized Controlled Trials.”</span> <em>Systematic Reviews</em> 10 (1): 170. <a href="https://doi.org/10.1186/s13643-021-01726-1">https://doi.org/10.1186/s13643-021-01726-1</a>.
+</div>
+<div id="ref-morganCounterfactualsCausalInference2014" class="csl-entry" role="listitem">
+Morgan, Stephen L., and Christopher Winship. 2014. <em>Counterfactuals and <span>Causal Inference</span>: <span>Methods</span> and <span>Principles</span> for <span>Social Research</span></em>. 2nd ed. Analytical <span>Methods</span> for <span>Social Research</span>. Cambridge: Cambridge University Press. <a href="https://doi.org/10.1017/CBO9781107587991">https://doi.org/10.1017/CBO9781107587991</a>.
+</div>
+<div id="ref-rubinStatisticsCausalInference1986" class="csl-entry" role="listitem">
+Rubin, Donald B. 1986. <span>“Statistics and <span>Causal Inference</span>: <span>Comment</span>: <span>Which Ifs Have Causal Answers</span>.”</span> <em>Journal of the American Statistical Association</em> 81 (396): 961–62. <a href="https://doi.org/10.2307/2289065">https://doi.org/10.2307/2289065</a>.
+</div>
+</div>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -835,7 +933,7 @@ ul.task-list li input[type="checkbox"] {
 </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions"><ul><li><a href="https://github.com/nhsengland/causal-handbook/edit/main/01-03-assumptions.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li></ul></div></div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/nhsengland/causal-handbook/edit/main/01-03-assumptions.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li></ul></div></div>
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
     <li class="nav-item compact">

@@ -20,7 +20,27 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -387,11 +407,17 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#causal-inference-what-if-hernancausalinferencewhat2025" id="toc-causal-inference-what-if-hernancausalinferencewhat2025" class="nav-link active" data-scroll-target="#causal-inference-what-if-hernancausalinferencewhat2025"><span class="header-section-number">6.1</span> Causal Inference: What If <span class="citation" data-cites="hernanCausalInferenceWhat2025">(Hernán and Robins 2025)</span></a></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/nhsengland/causal-handbook/edit/main/01-06-key-resources.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li></ul></div></nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content page-columns page-full" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./01-00-intro.html">Introduction</a></li><li class="breadcrumb-item"><a href="./01-06-key-resources.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Key Resources</span></a></li></ol></nav>
 <div class="quarto-title">
@@ -412,8 +438,33 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<p>Throughout the handbook, there are a few key influential texts that have consolidated contemporary methods used to derive causal inferences from observational data. These texts are widely regarded as being foundational to anyone attempting to dip their toes into the field, and are often used as required reading and/or reference material within undergraduate and postgraduate courses in the econometrics, epidemiology, statistics, and social sciences more broadly.</p>
+<p>I’ve listed some the most frequently cited texts in this handbook below, along with a brief description of their areas of focus. Additional texts that are beyond the scope of this handbook have also been included for reference. A summary table is also included showing which methods are covered by each book in Section 1.7.</p>
+<p>Brady Neal has posted a very useful flowchart on his personal website outlining “which causal inference book you should read,” and covers many of the texts mentioned in this handbook <span class="citation" data-cites="nealWhichCausalInference2019">(<a href="references.html#ref-nealWhichCausalInference2019" role="doc-biblioref">Neal 2019</a>)</span>. If you’re completely new to the field of causal inference, his diagram serves as a great place to begin your journey.</p>
+<p><a href="images/neal-books-flowchart.svg" target="_blank"> <img src="images/neal-books-flowchart.svg" width="700"> </a></p>
+<p><br>
+</p>
+<section id="causal-inference-what-if-hernancausalinferencewhat2025" class="level2 page-columns page-full" data-number="6.1">
+<h2 data-number="6.1" class="anchored" data-anchor-id="causal-inference-what-if-hernancausalinferencewhat2025"><span class="header-section-number">6.1</span> Causal Inference: What If <span class="citation" data-cites="hernanCausalInferenceWhat2025">(<a href="references.html#ref-hernanCausalInferenceWhat2025" role="doc-biblioref">Hernán and Robins 2025</a>)</span></h2>
+<div class="column-margin-right">
+<p><img src="images/whatif-cover.png" class="img-fluid" width="250"></p>
+</div>
+<p>Authors: Miguel Hernan – <em>Kolokotrones Professor of Biostatistics and Epidemiology, Harvard T.H. Chan School of Public Health &amp; Director of Harvard CAUSALab</em> James M. Robins – <em>Mitchell L. and Robin LaFoley Dong Professor of Epidemiology, Harvard T.H. Chan School of Public Health</em></p>
+<p>Hernan and Robins’ book was first published in 2020, and has been continuously updated over the past few years. The most up to date version of the book can be found on <a href="https://miguelhernan.org/whatifbook">Hernan’s personal webpage</a>.</p>
+<p>The book is considered by many in the field of epidemiology to be the definitive guide to the application of causal inference methods, framed within the target trial emulation framework, especially when it comes to estimating causal effects using complex longitudinal data (with a strong focus on G-methods). This is a result of the book being openly available online for the past two decades while it was still being drafted, with many researchers in the field contributing to the book over this period.</p>
+<p>The book is particularly useful in providing guidance for evaluating sustained and time-varying treatment strategies, and overcoming issues such as immortal time bias within classical methods in epidemiology, which are often issues within the field of pharmacoepidemiology.</p>
+<p>The book also (very helpfully) includes accompanying R and Stata code hosted on <a href="https://remlapmot.github.io/cibookex-r/">GitHub</a>, which provides practical examples of how the methods covered can be applied to your own data.</p>
 
 
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
+<div id="ref-hernanCausalInferenceWhat2025" class="csl-entry" role="listitem">
+Hernán, Miguel A., and James M. Robins. 2025. <em>Causal <span>Inference</span>: <span>What If</span></em>. Boca Raton: Chapman &amp; Hall/CRC. <a href="https://miguelhernan.org/whatifbook">https://miguelhernan.org/whatifbook</a>.
+</div>
+<div id="ref-nealWhichCausalInference2019" class="csl-entry" role="listitem">
+Neal, Brady. 2019. <span>“Which Causal Inference Book You Should Read.”</span> November 23, 2019. <a href="https://www.bradyneal.com/which-causal-inference-book">https://www.bradyneal.com/which-causal-inference-book</a>.
+</div>
+</div>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -835,7 +886,7 @@ ul.task-list li input[type="checkbox"] {
 </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions"><ul><li><a href="https://github.com/nhsengland/causal-handbook/edit/main/01-06-key-resources.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li></ul></div></div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/nhsengland/causal-handbook/edit/main/01-06-key-resources.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li></ul></div></div>
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
     <li class="nav-item compact">
