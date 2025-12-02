@@ -20,7 +20,27 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -387,8 +407,16 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#the-potential-outcomes-framework" id="toc-the-potential-outcomes-framework" class="nav-link active" data-scroll-target="#the-potential-outcomes-framework"><span class="header-section-number">2.1</span> The Potential Outcomes Framework</a></li>
+  <li><a href="#structural-causal-models-and-directed-acyclic-graphs" id="toc-structural-causal-models-and-directed-acyclic-graphs" class="nav-link" data-scroll-target="#structural-causal-models-and-directed-acyclic-graphs"><span class="header-section-number">2.2</span> Structural Causal Models and Directed Acyclic Graphs</a></li>
+  <li><a href="#additional-approaches-to-establishing-causality" id="toc-additional-approaches-to-establishing-causality" class="nav-link" data-scroll-target="#additional-approaches-to-establishing-causality"><span class="header-section-number">2.3</span> Additional Approaches to Establishing Causality</a></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/nhsengland/causal-handbook/edit/main/01-02-history.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -412,8 +440,91 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<section id="the-potential-outcomes-framework" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="the-potential-outcomes-framework"><span class="header-section-number">2.1</span> The Potential Outcomes Framework</h2>
+<p>The field of causal inference has a long history built on insights from multiple disciplines. Multiple schools of thought have been developed, contributing different ideas on how to conceptualise and define the concept of causality.</p>
+<p>One of the most widely adopted ways to conceptualise causal inference in the fields of applied statistics, econometrics, and epidemiology is through the idea of potential outcomes, also referred to as the counterfactual approach to causality. This is where we aim to determine if the outcome for an individual would have been different if given different hypothetical value(s) of the exposure of interest.</p>
+<p>Such counterfactual ideas stretch back to key texts written during the early to mid 19th century:</p>
+<p><em>“If a person eats of a particular dish, and dies in consequence, that is, would not have died if he had not eaten of it, people would be apt to say that eating of that dish was the cause of his death”</em> <span class="citation" data-cites="millSystemLogicRatiocinative1843">(<a href="references.html#ref-millSystemLogicRatiocinative1843" role="doc-biblioref">Mill 1843</a>)</span>.</p>
+<p>However, it wasn’t until Neyman’s 1923 Master’s thesis where the notation for potential outcomes was first formalised, introducing the idea that within randomized experiments, if we’re interested in estimating the effect of a treatment or intervention, each unit in a study for a binary outcome can only have two fixed potential outcomes, one under treatment and one under control <span class="citation" data-cites="splawa-neymanApplicationProbabilityTheory1990">(<a href="references.html#ref-splawa-neymanApplicationProbabilityTheory1990" role="doc-biblioref">Splawa-Neyman, Dabrowska, and Speed 1990</a>)</span>.</p>
+<p>In 1925, Fisher proposed randomizing treatments to study units/participants in order to derive unbiased inferences from experiments, though without reference to potential outcomes or estimating average treatment effects <span class="citation" data-cites="fisherStatisticalMethodsResearch1925 fisherStatisticalMethodsExperimental1990">(<a href="references.html#ref-fisherStatisticalMethodsResearch1925" role="doc-biblioref">Ronald A. Fisher 1925</a>; <a href="references.html#ref-fisherStatisticalMethodsExperimental1990" role="doc-biblioref">R. A. Fisher and Yates 1990</a>)</span>.</p>
+<p>This changed in 1974, where Rubin formally established what we now refer to as the potential outcomes framework, extending these ideas to non-randomized observational studies, and writing formal notation for calculating the average casual effect that is used today <span class="citation" data-cites="rubinEstimatingCausalEffects1974">(<a href="references.html#ref-rubinEstimatingCausalEffects1974" role="doc-biblioref">Rubin 1974</a>)</span>. Holland later named this the Rubin Causal Model, and emphasised the fundamental problem of causal inference:</p>
+<p><em>“It is impossible to observe [the value of the response that would be observed if the unit was exposure to treatment] and [the value that would be observed on the same unit if it were exposed to the control], and therefore it is impossible to observe the effect of [treatment] on [the unit of interest]”</em> <span class="citation" data-cites="hollandStatisticsCausalInference1985">(<a href="references.html#ref-hollandStatisticsCausalInference1985" role="doc-biblioref">Holland, Glymour, and Granger 1985</a>)</span>.</p>
+<p>In short, if we’re interested in evaluating a treatment, one cannot observe both hypothetical outcomes for a single unit or individual, one in a universe where the unit/individual of interest is treated, and another where the same unit/individual is not treated.</p>
+<p>Because the potential outcomes framework mirrors the logic found in randomized trials, the school of thought has underpinned virtually every method covered in this handbook, including those with origins in econometrics and epidemiology.</p>
+<p><br>
+</p>
+</section>
+<section id="structural-causal-models-and-directed-acyclic-graphs" class="level2" data-number="2.2">
+<h2 data-number="2.2" class="anchored" data-anchor-id="structural-causal-models-and-directed-acyclic-graphs"><span class="header-section-number">2.2</span> Structural Causal Models and Directed Acyclic Graphs</h2>
+<p>However, alongside the counterfactual school of thought, competing theories were developed in parallel, the most prominent of which came from Pearl. Rather than framing causation in terms of counterfactual outcomes, Pearl popularised the development of Structural Causal Models (SCMs), which use Directed Acyclic Graphs (DAGs) and structural equations to present causal relationships and underlying assumptions in both a visual and mathematical way <span class="citation" data-cites="pearlCausalityModelsReasoning2009 pearlBookWhyNew2018">(<a href="references.html#ref-pearlCausalityModelsReasoning2009" role="doc-biblioref">Pearl 2009</a>; <a href="references.html#ref-pearlBookWhyNew2018" role="doc-biblioref">Pearl and Mackenzie 2018</a>)</span>.</p>
+<p>I will be delving into the specifics of Directed Acyclic Graphs in their own section later into this handbook. As a brief overview though, DAGs are diagrams which include each of your variables (exposure, covariates, and outcomes) as nodes, connected by arrows that indicate a direct causal relationship between them. Digitale et al., from UCSF have a great tutorial on DAGs if you’d like a brief introduction on the topic <span class="citation" data-cites="digitaleTutorialDirectedAcyclic2022">(<a href="references.html#ref-digitaleTutorialDirectedAcyclic2022" role="doc-biblioref">Digitale, Martin, and Glymour 2022</a>)</span>.</p>
+<p>Historically when these methods were introduced, the two schools of thought were completely split, with econometricians favouring the potential outcomes approach, while computer scientists favoured structural causal models. A great discussion on this is provided by Nobel laureate Imbens (an economist) more recently, who argues that although these two frameworks are complementary, the potential outcomes approach is often preferred for econometrics because it aligns naturally with study designs that exploit policy changes or other “as‑if random” interventions, rather than collecting data on and adjusting for a wide range of individual variables mapped out on a DAG <span class="citation" data-cites="imbensPotentialOutcomeDirected2020">(<a href="references.html#ref-imbensPotentialOutcomeDirected2020" role="doc-biblioref">Imbens 2020</a>)</span>. This type of thinking was how the field of quasi-experimental methods originated, the specifics of which will be discussed in later sections of the handbook.</p>
+<p>Overtime though, some fields such as Epidemiology and Public Health have found ways to combine both school of thought into a single workflow:</p>
+<ol type="1">
+<li>DAGs are drawn to visualise causal relationships, identify confounders of interest, present assumptions made transparently.</li>
+<li>Use back door criteria on the DAG to select the minimal set of covariates that require adjustment of to make an unbiased estimate of the causal contrast of interest (e.g., average treatment effect, average treatment effect on the treated).</li>
+<li>Apply appropriate statistical methods to adjust for the set of covariates, such as regression modelling, to estimate the target causal contrast, under the potential outcomes framework. This hybrid approach works particularly well in settings with clearly defined treatment contrasts (say, drug X vs. drug Y) and rich data from longitudinal studies and electronic health records, which are harder to come by in economics.</li>
+</ol>
+<p>This hybrid approach works particularly well in settings with clearly defined treatment contrasts (say, drug X vs. drug Y) and rich data from longitudinal studies and electronic health records, which are harder to come by in economics.</p>
+<p>If you are interested in reading further into the origins of the potential outcome framework and quasi-experimental designs, Cunningham’s supplementary teaching material hosted on github as part of his “Causal Inference: The Mixtape” book goes into this in more depth <span class="citation" data-cites="cunninghamMixtapeSessionsGithub2025">(<a href="references.html#ref-cunninghamMixtapeSessionsGithub2025" role="doc-biblioref">Cunningham 2025</a>)</span>. His slides of the “<a href="https://nbviewer.org/github/Mixtape-Sessions/Causal-Inference-1/blob/main/Slides/01-Foundations.pdf">Foundation of Causality</a>” in particular focuses on the history of these foundational ideas. The introductory chapter of Morgan and Winships’ “Counterfactuals and Causal Inference,” as well as chapter 2 of Imbens and Rubins’ “Causal Infernece for Statistics, Social, and Biomedical Sciences” also provide a great overview of the historical context behind how causal inference as we know it today was first formalised <span class="citation" data-cites="morganCounterfactualsCausalInference2014 imbensCausalInferenceStatistics2015">(<a href="references.html#ref-morganCounterfactualsCausalInference2014" role="doc-biblioref">Morgan and Winship 2014</a>; <a href="references.html#ref-imbensCausalInferenceStatistics2015" role="doc-biblioref">Imbens and Rubin 2015</a>)</span>.</p>
+<p><br>
+</p>
+</section>
+<section id="additional-approaches-to-establishing-causality" class="level2" data-number="2.3">
+<h2 data-number="2.3" class="anchored" data-anchor-id="additional-approaches-to-establishing-causality"><span class="header-section-number">2.3</span> Additional Approaches to Establishing Causality</h2>
+<p>During the mid-19th century, before Rubin had established the potential outcomes framework, Hill had notably published a seminal paper covering a set of criteria that would help establish causality within epidemiological studies, now commonly referred to as the “Bradford Hill Criteria.” These included: strength, consistency, specificity, temporality, biological gradient, biological plausibility, coherence, experimental evidence, and analogy <span class="citation" data-cites="hillEnvironmentDiseaseAssociation1965">(<a href="references.html#ref-hillEnvironmentDiseaseAssociation1965" role="doc-biblioref">Hill 1965</a>)</span>. The criteria, however, did not provide a practical way for epidemiologists and social scientists more generally to design observational studies targeting causal inference though. The criteria is therefore used more so as a guide for evaluating whether associations are causal while evaluating a set of evidence, and still often used in policy evaluations. Chapter 2 of Lash et al.’s textbook “Modern Epidemiology” provides a great explanation of each criteria if you’d like to delve deeper into this.</p>
+<p>Additional causal frameworks have been built on top of this foundation as well, namely the Target Trial Emulation framework by Hernan and Robins which will be discussed in further detail in its own section <span class="citation" data-cites="hernanUsingBigData2016">(<a href="references.html#ref-hernanUsingBigData2016" role="doc-biblioref">Hernán and Robins 2016</a>)</span>. The framework aims to overcome many of the methodological issues facing classical epidemiological analyses by framing causal questions of interest within an ideal pragmatic randomized trial. This will underpin much of the methods covered as part of the “Epidemiology Methods” section further into the handbook.</p>
 
 
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
+<div id="ref-cunninghamMixtapeSessionsGithub2025" class="csl-entry" role="listitem">
+Cunningham, Scott. 2025. <span>“Mixtape <span>Sessions</span> (<span>Github</span>).”</span> 2025. <a href="https://github.com/Mixtape-Sessions">https://github.com/Mixtape-Sessions</a>.
+</div>
+<div id="ref-digitaleTutorialDirectedAcyclic2022" class="csl-entry" role="listitem">
+Digitale, Jean C., Jeffrey N. Martin, and Medellena Maria Glymour. 2022. <span>“Tutorial on Directed Acyclic Graphs.”</span> <em>Journal of Clinical Epidemiology</em> 142 (February): 264–67. <a href="https://doi.org/10.1016/j.jclinepi.2021.08.001">https://doi.org/10.1016/j.jclinepi.2021.08.001</a>.
+</div>
+<div id="ref-fisherStatisticalMethodsExperimental1990" class="csl-entry" role="listitem">
+Fisher, R A, and F Yates. 1990. <em>Statistical <span>Methods</span>, <span>Experimental Design</span>, and <span>Scientific Inference</span>: <span class="nocase">A Re-issue</span> of <span>Statistical Methods</span> for <span>Research Workers</span>, the <span>Design</span> of <span>Experiments</span> and <span>Statistical Methods</span> and <span>Scientific Inference</span></em>. Edited by J H Bennett. Oxford University Press. <a href="https://doi.org/10.1093/oso/9780198522294.001.0001">https://doi.org/10.1093/oso/9780198522294.001.0001</a>.
+</div>
+<div id="ref-fisherStatisticalMethodsResearch1925" class="csl-entry" role="listitem">
+Fisher, Ronald A. 1925. <span>“Statistical <span>Methods</span> for <span>Research Workers</span> (<span>Scan</span> of 1st <span>Edition</span>).”</span> Classics in the History of Psychology. 1925. <a href="https://psychclassics.yorku.ca/Fisher/Methods/">https://psychclassics.yorku.ca/Fisher/Methods/</a>.
+</div>
+<div id="ref-hernanUsingBigData2016" class="csl-entry" role="listitem">
+Hernán, Miguel A., and James M. Robins. 2016. <span>“Using <span>Big Data</span> to <span>Emulate</span> a <span>Target Trial When</span> a <span>Randomized Trial Is Not Available</span>.”</span> <em>American Journal of Epidemiology</em> 183 (8): 758–64. <a href="https://doi.org/10.1093/aje/kwv254">https://doi.org/10.1093/aje/kwv254</a>.
+</div>
+<div id="ref-hillEnvironmentDiseaseAssociation1965" class="csl-entry" role="listitem">
+Hill, Austin Bradford. 1965. <span>“The <span>Environment</span> and <span>Disease</span>: <span>Association</span> or <span>Causation</span>?”</span> <em>Proceedings of the Royal Society of Medicine</em> 58 (5): 295–300. <a href="https://doi.org/10.1177/003591576505800503">https://doi.org/10.1177/003591576505800503</a>.
+</div>
+<div id="ref-hollandStatisticsCausalInference1985" class="csl-entry" role="listitem">
+Holland, Paul W., Clark Glymour, and Clive Granger. 1985. <span>“Statistics and <span>Causal Inference</span>.”</span> <em>ETS Research Report Series</em> 1985 (2): i–72. <a href="https://doi.org/10.1002/j.2330-8516.1985.tb00125.x">https://doi.org/10.1002/j.2330-8516.1985.tb00125.x</a>.
+</div>
+<div id="ref-imbensPotentialOutcomeDirected2020" class="csl-entry" role="listitem">
+Imbens, Guido W. 2020. <span>“Potential <span>Outcome</span> and <span>Directed Acyclic Graph Approaches</span> to <span>Causality</span>: <span>Relevance</span> for <span>Empirical Practice</span> in <span>Economics</span>.”</span> <em>Journal of Economic Literature</em> 58 (4): 1129–79. <a href="https://doi.org/10.1257/jel.20191597">https://doi.org/10.1257/jel.20191597</a>.
+</div>
+<div id="ref-imbensCausalInferenceStatistics2015" class="csl-entry" role="listitem">
+Imbens, Guido W., and Donald B. Rubin. 2015. <em>Causal <span>Inference</span> for <span>Statistics</span>, <span>Social</span>, and <span>Biomedical Sciences</span>: <span>An Introduction</span></em>. Cambridge: Cambridge University Press. <a href="https://doi.org/10.1017/CBO9781139025751">https://doi.org/10.1017/CBO9781139025751</a>.
+</div>
+<div id="ref-millSystemLogicRatiocinative1843" class="csl-entry" role="listitem">
+Mill, John Stuart. 1843. <em>A <span>System</span> of <span>Logic</span>, <span>Ratiocinative</span> and <span>Inductive</span>: <span>Being</span> a <span>Connected View</span> of the <span>Principles</span> of <span>Evidence</span>, and the <span>Methods</span> of <span>Scientific Investigation</span></em>. Vol. 1. Cambridge <span>Library Collection</span> - <span>Philosophy</span>. Cambridge: Cambridge University Press. <a href="https://doi.org/10.1017/CBO9781139149839">https://doi.org/10.1017/CBO9781139149839</a>.
+</div>
+<div id="ref-morganCounterfactualsCausalInference2014" class="csl-entry" role="listitem">
+Morgan, Stephen L., and Christopher Winship. 2014. <em>Counterfactuals and <span>Causal Inference</span>: <span>Methods</span> and <span>Principles</span> for <span>Social Research</span></em>. 2nd ed. Analytical <span>Methods</span> for <span>Social Research</span>. Cambridge: Cambridge University Press. <a href="https://doi.org/10.1017/CBO9781107587991">https://doi.org/10.1017/CBO9781107587991</a>.
+</div>
+<div id="ref-pearlCausalityModelsReasoning2009" class="csl-entry" role="listitem">
+Pearl, Judea. 2009. <em>Causality: <span>Models</span>, <span>Reasoning</span>, and <span>Inference</span></em>. 2nd ed. Cambridge: Cambridge University Press. <a href="https://doi.org/10.1017/CBO9780511803161">https://doi.org/10.1017/CBO9780511803161</a>.
+</div>
+<div id="ref-pearlBookWhyNew2018" class="csl-entry" role="listitem">
+Pearl, Judea, and Dana Mackenzie. 2018. <span>“The <span>Book</span> of <span>Why</span>: <span>The New Science</span> of <span>Cause</span> and <span>Effect</span>.”</span> Guide books. 2018. <a href="https://dl.acm.org/doi/book/10.5555/3238230">https://dl.acm.org/doi/book/10.5555/3238230</a>.
+</div>
+<div id="ref-rubinEstimatingCausalEffects1974" class="csl-entry" role="listitem">
+Rubin, Donald B. 1974. <span>“Estimating Causal Effects of Treatments in Randomized and Nonrandomized Studies.”</span> <em>Journal of Educational Psychology</em> 66 (5): 688–701. <a href="https://doi.org/10.1037/h0037350">https://doi.org/10.1037/h0037350</a>.
+</div>
+<div id="ref-splawa-neymanApplicationProbabilityTheory1990" class="csl-entry" role="listitem">
+Splawa-Neyman, Jerzy, D. M. Dabrowska, and T. P. Speed. 1990. <span>“On the <span>Application</span> of <span>Probability Theory</span> to <span>Agricultural Experiments</span>. <span>Essay</span> on <span>Principles</span>. <span>Section</span> 9.”</span> <em>Statistical Science</em> 5 (4): 465–72. <a href="https://doi.org/10.1214/ss/1177012031">https://doi.org/10.1214/ss/1177012031</a>.
+</div>
+</div>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -835,7 +946,7 @@ ul.task-list li input[type="checkbox"] {
 </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions"><ul><li><a href="https://github.com/nhsengland/causal-handbook/edit/main/01-02-history.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li></ul></div></div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/nhsengland/causal-handbook/edit/main/01-02-history.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li></ul></div></div>
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
     <li class="nav-item compact">

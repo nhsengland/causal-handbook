@@ -432,10 +432,25 @@ div.csl-indent {
 </header>
 
 
-<p>When performing evaluations of healthcare services or interventions in the NHS, our key evaluation question of interest is almost always causal in nature: • Has our new breast cancer screening programme reduced mortality? • Did implementing a community-based model of care divert patients away from A&amp;E services? • Did implementing a hub and spoke model reduce clinical harm and lower patient waiting times?</p>
+<p>When performing evaluations of healthcare services or interventions in the NHS, our key evaluation question of interest is almost always causal in nature:</p>
+<ul>
+<li>Has our new breast cancer screening programme reduced mortality?</li>
+<li>Did implementing a community-based model of care divert patients away from A&amp;E services?</li>
+<li>Did implementing a hub and spoke model reduce clinical harm and lower patient waiting times?</li>
+</ul>
 <p>Yet many of the methods currently used to evaluate interventions within the NHS are often descriptive in nature. Dashboards are frequently used in this manner, where any changes in an outcome of interest are fully attributed to a single change in implementation in services, without considering whether there are alternative explanations and/or other confounding factors are involved that could instead explain the change instead.</p>
-<p>To better illustrate this point, Tyler Vigen publishes great examples of spurious correlations on his webpage (https://tylervigen.com/spurious-correlations), from which I’ve attached an example of below <span class="citation" data-cites="vigenTylerVigenSpurious2024">Vigen (<a href="references.html#ref-vigenTylerVigenSpurious2024" role="doc-biblioref">2024</a>)</span>:</p>
+<p>To better illustrate this point, Tyler Vigen publishes great examples of spurious correlations on his webpage (https://tylervigen.com/spurious-correlations), from which I’ve attached an example of below <span class="citation" data-cites="vigenTylerVigenSpurious2024">(<a href="references.html#ref-vigenTylerVigenSpurious2024" role="doc-biblioref">Vigen 2024</a>)</span>:</p>
 <p><img src="images/vigen_butter_consumption.png" class="img-fluid"></p>
+<p>As you can see, butter consumption is positively correlated with the economic output of the Washington metro area. Needless to say, I highly doubt butter consumption was actually “greasing the wheels” of the local economy in the Washington metro area! It is therefore imperative that we don’t conflate association with causation when we’re conducting service evaluation as well.</p>
+<p>Many books, papers, and reports have been published providing guidance on how one can estimate the causal effect of different interventions have on specific outcomes, in the absence of a randomised trial. Some resources have even been developed to help narrow down which types of methods would be most appropriate depending on the context. However, much of the guidance has been limited to methods originating from a specific field (e.g., econometrics, social sciences, epidemiology), rather than encompassing all approaches relevant to service and intervention evaluation within the realm of health and social care.</p>
+<p>This handbook aims to bridge this gap in the literature, and establish new unifying guidance for selecting appropriate study designs and analytical methodologies for conducting causal inference in service evaluations. You’ll find:</p>
+<ol type="1">
+<li>A decision tree diagram to aid with method selection</li>
+<li>Concise overviews of each approach</li>
+<li>Pointers to more in-depth resources for technical details about each method (including technical explanations in textbooks, applied examples in the literature, and practical coding exercises)</li>
+</ol>
+<p>Do note that this handbook itself will not be going into too much technical detail about each analytical method, but instead serves as a resource to guide analysts in choosing the appropriate to use for their question.</p>
+<p>I would also like to note that this handbook will primarily focus largely on established statistical methods for causal inference. More novel and experimental machine learning based methods do exist for causal inference. However, most of these methods require additional computational power, have components that are more opaque (akin to a black box), and many of these still haven’t been extensively used in the literature yet. For the purposes of keeping this guide as approachable as possible, and our methods and assumptions as transparent as we can, this is the focus we have chosen for this handbook. An extensions section will be included at the end for those who may be interested in further delving into novel machine methods as well.</p>
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">

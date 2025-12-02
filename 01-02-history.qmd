@@ -1,1 +1,51 @@
 # A Brief History on Conceptualising Causality
+
+## The Potential Outcomes Framework
+
+The field of causal inference has a long history built on insights from multiple disciplines. Multiple schools of thought have been developed, contributing different ideas on how to conceptualise and define the concept of causality.
+
+One of the most widely adopted ways to conceptualise causal inference in the fields of applied statistics, econometrics, and epidemiology is through the idea of potential outcomes, also referred to as the counterfactual approach to causality. This is where we aim to determine if the outcome for an individual would have been different if given different hypothetical value(s) of the exposure of interest.
+
+Such counterfactual ideas stretch back to key texts written during the early to mid 19th century:
+
+*“If a person eats of a particular dish, and dies in consequence, that is, would not have died if he had not eaten of it, people would be apt to say that eating of that dish was the cause of his death”* [@millSystemLogicRatiocinative1843].
+
+However, it wasn’t until Neyman’s 1923 Master’s thesis where the notation for potential outcomes was first formalised, introducing the idea that within randomized experiments, if we’re interested in estimating the effect of a treatment or intervention, each unit in a study for a binary outcome can only have two fixed potential outcomes, one under treatment and one under control [@splawa-neymanApplicationProbabilityTheory1990].
+
+In 1925, Fisher proposed randomizing treatments to study units/participants in order to derive unbiased inferences from experiments, though without reference to potential outcomes or estimating average treatment effects [@fisherStatisticalMethodsResearch1925; @fisherStatisticalMethodsExperimental1990].
+
+This changed in 1974, where Rubin formally established what we now refer to as the potential outcomes framework, extending these ideas to non-randomized observational studies, and writing formal notation for calculating the average casual effect that is used today [@rubinEstimatingCausalEffects1974]. Holland later named this the Rubin Causal Model, and emphasised the fundamental problem of causal inference:
+
+*“It is impossible to observe \[the value of the response that would be observed if the unit was exposure to treatment\] and \[the value that would be observed on the same unit if it were exposed to the control\], and therefore it is impossible to observe the effect of \[treatment\] on \[the unit of interest\]”* [@hollandStatisticsCausalInference1985].
+
+In short, if we’re interested in evaluating a treatment, one cannot observe both hypothetical outcomes for a single unit or individual, one in a universe where the unit/individual of interest is treated, and another where the same unit/individual is not treated.
+
+Because the potential outcomes framework mirrors the logic found in randomized trials, the school of thought has underpinned virtually every method covered in this handbook, including those with origins in econometrics and epidemiology.
+
+\
+
+## Structural Causal Models and Directed Acyclic Graphs
+
+However, alongside the counterfactual school of thought, competing theories were developed in parallel, the most prominent of which came from Pearl. Rather than framing causation in terms of counterfactual outcomes, Pearl popularised the development of Structural Causal Models (SCMs), which use Directed Acyclic Graphs (DAGs) and structural equations to present causal relationships and underlying assumptions in both a visual and mathematical way [@pearlCausalityModelsReasoning2009; @pearlBookWhyNew2018].
+
+I will be delving into the specifics of Directed Acyclic Graphs in their own section later into this handbook. As a brief overview though, DAGs are diagrams which include each of your variables (exposure, covariates, and outcomes) as nodes, connected by arrows that indicate a direct causal relationship between them. Digitale et al., from UCSF have a great tutorial on DAGs if you’d like a brief introduction on the topic [@digitaleTutorialDirectedAcyclic2022].
+
+Historically when these methods were introduced, the two schools of thought were completely split, with econometricians favouring the potential outcomes approach, while computer scientists favoured structural causal models. A great discussion on this is provided by Nobel laureate Imbens (an economist) more recently, who argues that although these two frameworks are complementary, the potential outcomes approach is often preferred for econometrics because it aligns naturally with study designs that exploit policy changes or other “as‑if random” interventions, rather than collecting data on and adjusting for a wide range of individual variables mapped out on a DAG [@imbensPotentialOutcomeDirected2020]. This type of thinking was how the field of quasi-experimental methods originated, the specifics of which will be discussed in later sections of the handbook.
+
+Overtime though, some fields such as Epidemiology and Public Health have found ways to combine both school of thought into a single workflow:
+
+1.  DAGs are drawn to visualise causal relationships, identify confounders of interest, present assumptions made transparently.
+2.  Use back door criteria on the DAG to select the minimal set of covariates that require adjustment of to make an unbiased estimate of the causal contrast of interest (e.g., average treatment effect, average treatment effect on the treated).
+3.  Apply appropriate statistical methods to adjust for the set of covariates, such as regression modelling, to estimate the target causal contrast, under the potential outcomes framework. This hybrid approach works particularly well in settings with clearly defined treatment contrasts (say, drug X vs. drug Y) and rich data from longitudinal studies and electronic health records, which are harder to come by in economics.
+
+This hybrid approach works particularly well in settings with clearly defined treatment contrasts (say, drug X vs. drug Y) and rich data from longitudinal studies and electronic health records, which are harder to come by in economics.
+
+If you are interested in reading further into the origins of the potential outcome framework and quasi-experimental designs, Cunningham’s supplementary teaching material hosted on github as part of his “Causal Inference: The Mixtape” book goes into this in more depth [@cunninghamMixtapeSessionsGithub2025]. His slides of the “[Foundation of Causality](https://nbviewer.org/github/Mixtape-Sessions/Causal-Inference-1/blob/main/Slides/01-Foundations.pdf)” in particular focuses on the history of these foundational ideas. The introductory chapter of Morgan and Winships’ “Counterfactuals and Causal Inference,” as well as chapter 2 of Imbens and Rubins’ “Causal Infernece for Statistics, Social, and Biomedical Sciences” also provide a great overview of the historical context behind how causal inference as we know it today was first formalised [@morganCounterfactualsCausalInference2014; @imbensCausalInferenceStatistics2015].
+
+\
+
+## Additional Approaches to Establishing Causality
+
+During the mid-19th century, before Rubin had established the potential outcomes framework, Hill had notably published a seminal paper covering a set of criteria that would help establish causality within epidemiological studies, now commonly referred to as the “Bradford Hill Criteria.” These included: strength, consistency, specificity, temporality, biological gradient, biological plausibility, coherence, experimental evidence, and analogy [@hillEnvironmentDiseaseAssociation1965]. The criteria, however, did not provide a practical way for epidemiologists and social scientists more generally to design observational studies targeting causal inference though. The criteria is therefore used more so as a guide for evaluating whether associations are causal while evaluating a set of evidence, and still often used in policy evaluations. Chapter 2 of Lash et al.’s textbook “Modern Epidemiology” provides a great explanation of each criteria if you’d like to delve deeper into this. 
+
+Additional causal frameworks have been built on top of this foundation as well, namely the Target Trial Emulation framework by Hernan and Robins which will be discussed in further detail in its own section [@hernanUsingBigData2016]. The framework aims to overcome many of the methodological issues facing classical epidemiological analyses by framing causal questions of interest within an ideal pragmatic randomized trial. This will underpin much of the methods covered as part of the “Epidemiology Methods” section further into the handbook.
