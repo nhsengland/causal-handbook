@@ -6,7 +6,12 @@ Hi, my name is Jamie and I’m an MRC funded PhD student at UCL, focusing on the
 
 Before my PhD, I previously graduated with a BSc in Population Health Sciences (Data Science) from UCL, and an NIHR funded MSc in Epidemiology from the London School of Hygiene and Tropical Medicine.
 
-Prior to my PhD, my interest in researching the application of causal inference methods in observational data stemmed from my varied experience working across multiple areas of public health research, including: • Performing secondary analysis on a nutritional labelling RCT at the NIHR Obesity Policy Research Unit • Supporting cancer trials as a Clinical Trials Assistant in the MRC Clinical Trials Unit • Identifying barriers to STI testing at the NIHR Health Protection Research Unit in Blood Borne and Sexually Transmitted Infections • Quantifying the effects of acute and long-term exposure of air pollutants on respiratory related hospital admissions and related outcomes at UCL • Evaluating the risk of long-term adverse events in cancer survivors using electronic health record data at LSHTM
+Prior to my PhD, my interest in researching the application of causal inference methods in observational data stemmed from my varied experience working across multiple areas of public health research, including: 
+- Performing secondary analysis on a nutritional labelling RCT at the NIHR Obesity Policy Research Unit 
+- Supporting cancer trials as a Clinical Trials Assistant in the MRC Clinical Trials Unit 
+- Identifying barriers to STI testing at the NIHR Health Protection Research Unit in Blood Borne and Sexually Transmitted Infections 
+- Quantifying the effects of acute and long-term exposure of air pollutants on respiratory related hospital admissions and related outcomes at UCL 
+- Evaluating the risk of long-term adverse events in cancer survivors using electronic health record data at LSHTM
 
 Having worked with both randomized trials and observational data, focusing my research on causal inference in real-world data felt like a natural next step.
 
