@@ -311,7 +311,7 @@
     "href": "02-02-dag.html",
     "title": "9  Directed Acyclic Graphs",
     "section": "",
-    "text": "TBC",
+    "text": "Coming Soon",
     "crumbs": [
       "Key Concepts in Causal Inference",
       "<span class='chapter-number'>9</span>  <span class='chapter-title'>Directed Acyclic Graphs</span>"
@@ -322,7 +322,7 @@
     "href": "02-03-tte.html",
     "title": "10  Target Trial Emulation",
     "section": "",
-    "text": "TBC",
+    "text": "Coming Soon",
     "crumbs": [
       "Key Concepts in Causal Inference",
       "<span class='chapter-number'>10</span>  <span class='chapter-title'>Target Trial Emulation</span>"
@@ -333,7 +333,7 @@
     "href": "02-04-strategies.html",
     "title": "11  Defining Treatment Strategies",
     "section": "",
-    "text": "TBC",
+    "text": "Coming Soon",
     "crumbs": [
       "Key Concepts in Causal Inference",
       "<span class='chapter-number'>11</span>  <span class='chapter-title'>Defining Treatment Strategies</span>"
@@ -344,7 +344,7 @@
     "href": "03-00-quasi-methods.html",
     "title": "Quasi-Experimental Methods",
     "section": "",
-    "text": "TBC",
+    "text": "Coming Soon",
     "crumbs": [
       "Quasi-Experimental Methods"
     ]
@@ -354,7 +354,7 @@
     "href": "03-01-did.html",
     "title": "12  Difference-in-Differences",
     "section": "",
-    "text": "TBC",
+    "text": "Coming Soon",
     "crumbs": [
       "Quasi-Experimental Methods",
       "<span class='chapter-number'>12</span>  <span class='chapter-title'>Difference-in-Differences</span>"
@@ -365,7 +365,7 @@
     "href": "03-02-its.html",
     "title": "13  Interrupted Time Series",
     "section": "",
-    "text": "13.1 Standard Interrupted Time Series Analysis\nTBC",
+    "text": "13.1 Standard Interrupted Time Series Analysis\nComing Soon\nComing Soon",
     "crumbs": [
       "Quasi-Experimental Methods",
       "<span class='chapter-number'>13</span>  <span class='chapter-title'>Interrupted Time Series</span>"
@@ -376,7 +376,7 @@
     "href": "03-02-its.html#controlled-interrupted-time-series-analysis",
     "title": "13  Interrupted Time Series",
     "section": "13.2 Controlled Interrupted Time Series Analysis",
-    "text": "13.2 Controlled Interrupted Time Series Analysis",
+    "text": "13.2 Controlled Interrupted Time Series Analysis\nComing Soon",
     "crumbs": [
       "Quasi-Experimental Methods",
       "<span class='chapter-number'>13</span>  <span class='chapter-title'>Interrupted Time Series</span>"
@@ -387,7 +387,7 @@
     "href": "03-03-synth.html",
     "title": "14  Synthetic Controls",
     "section": "",
-    "text": "TBC",
+    "text": "Coming Soon",
     "crumbs": [
       "Quasi-Experimental Methods",
       "<span class='chapter-number'>14</span>  <span class='chapter-title'>Synthetic Controls</span>"
@@ -398,7 +398,7 @@
     "href": "03-04-rdd.html",
     "title": "15  Regression Discontinuity",
     "section": "",
-    "text": "TBC",
+    "text": "Coming Soon",
     "crumbs": [
       "Quasi-Experimental Methods",
       "<span class='chapter-number'>15</span>  <span class='chapter-title'>Regression Discontinuity</span>"
@@ -409,7 +409,7 @@
     "href": "03-05-iv.html",
     "title": "16  Instrumental Variables",
     "section": "",
-    "text": "TBC",
+    "text": "Coming Soon",
     "crumbs": [
       "Quasi-Experimental Methods",
       "<span class='chapter-number'>16</span>  <span class='chapter-title'>Instrumental Variables</span>"
@@ -420,7 +420,7 @@
     "href": "03-06-ext.html",
     "title": "17  Extensions of Quasi-Experimental Designs",
     "section": "",
-    "text": "17.1 Negative Controls\nTBC",
+    "text": "17.1 Negative Controls\nComing Soon\nComing Soon",
     "crumbs": [
       "Quasi-Experimental Methods",
       "<span class='chapter-number'>17</span>  <span class='chapter-title'>Extensions of Quasi-Experimental Designs</span>"
@@ -431,7 +431,7 @@
     "href": "03-06-ext.html#sensitivity-analysis",
     "title": "17  Extensions of Quasi-Experimental Designs",
     "section": "17.2 Sensitivity Analysis",
-    "text": "17.2 Sensitivity Analysis",
+    "text": "17.2 Sensitivity Analysis\nComing Soon",
     "crumbs": [
       "Quasi-Experimental Methods",
       "<span class='chapter-number'>17</span>  <span class='chapter-title'>Extensions of Quasi-Experimental Designs</span>"
@@ -442,7 +442,7 @@
     "href": "04-00-adj-methods.html",
     "title": "Adjustment-Based Methods",
     "section": "",
-    "text": "TBC",
+    "text": "Coming Soon",
     "crumbs": [
       "Adjustment-Based Methods"
     ]
@@ -452,7 +452,7 @@
     "href": "04-01-outreg.html",
     "title": "18  Outcome Regression (Selection on Observables)",
     "section": "",
-    "text": "TBC",
+    "text": "Coming Soon",
     "crumbs": [
       "Adjustment-Based Methods",
       "<span class='chapter-number'>18</span>  <span class='chapter-title'>Outcome Regression (Selection on Observables)</span>"
@@ -463,7 +463,7 @@
     "href": "04-02-match.html",
     "title": "19  Matching (Exact & Covariate)",
     "section": "",
-    "text": "TBC",
+    "text": "Coming Soon",
     "crumbs": [
       "Adjustment-Based Methods",
       "<span class='chapter-number'>19</span>  <span class='chapter-title'>Matching (Exact & Covariate)</span>"
@@ -474,7 +474,7 @@
     "href": "04-03-propensity.html",
     "title": "20  Propensity Scores",
     "section": "",
-    "text": "20.1 Estimating Propensity Scores\nTBC",
+    "text": "20.1 Estimating Propensity Scores\nComing Soon\nComing Soon",
     "crumbs": [
       "Adjustment-Based Methods",
       "<span class='chapter-number'>20</span>  <span class='chapter-title'>Propensity Scores</span>"
@@ -485,7 +485,7 @@
     "href": "04-03-propensity.html#propensity-score-matching",
     "title": "20  Propensity Scores",
     "section": "20.2 Propensity Score Matching",
-    "text": "20.2 Propensity Score Matching",
+    "text": "20.2 Propensity Score Matching\nComing Soon",
     "crumbs": [
       "Adjustment-Based Methods",
       "<span class='chapter-number'>20</span>  <span class='chapter-title'>Propensity Scores</span>"
@@ -496,7 +496,7 @@
     "href": "04-04-gmethods.html",
     "title": "21  G-Methods: An Introduction",
     "section": "",
-    "text": "TBC",
+    "text": "Coming Soon",
     "crumbs": [
       "Adjustment-Based Methods",
       "<span class='chapter-number'>21</span>  <span class='chapter-title'>G-Methods: An Introduction</span>"
@@ -507,7 +507,7 @@
     "href": "04-05-ipw.html",
     "title": "22  G-Methods 1: Inverse Probability Weighting",
     "section": "",
-    "text": "TBC",
+    "text": "Coming Soon",
     "crumbs": [
       "Adjustment-Based Methods",
       "<span class='chapter-number'>22</span>  <span class='chapter-title'>G-Methods 1: Inverse Probability Weighting</span>"
@@ -518,7 +518,7 @@
     "href": "04-06-gformula.html",
     "title": "23  G-Methods 2: Parametric G-Formula",
     "section": "",
-    "text": "23.1 Parametric G-Formula (Non-Iterative Expectation)",
+    "text": "23.1 Parametric G-Formula (Non-Iterative Expectation)\nComing Soon",
     "crumbs": [
       "Adjustment-Based Methods",
       "<span class='chapter-number'>23</span>  <span class='chapter-title'>G-Methods 2: Parametric G-Formula</span>"
@@ -529,7 +529,7 @@
     "href": "04-06-gformula.html#iterative-conditional-expectation-ice-g-formula",
     "title": "23  G-Methods 2: Parametric G-Formula",
     "section": "23.2 Iterative Conditional Expectation (ICE) G-Formula",
-    "text": "23.2 Iterative Conditional Expectation (ICE) G-Formula",
+    "text": "23.2 Iterative Conditional Expectation (ICE) G-Formula\nComing Soon",
     "crumbs": [
       "Adjustment-Based Methods",
       "<span class='chapter-number'>23</span>  <span class='chapter-title'>G-Methods 2: Parametric G-Formula</span>"
@@ -540,7 +540,7 @@
     "href": "04-07-ext.html",
     "title": "24  Extensions of Adjustment-Based Methods",
     "section": "",
-    "text": "TBC",
+    "text": "Coming Soon",
     "crumbs": [
       "Adjustment-Based Methods",
       "<span class='chapter-number'>24</span>  <span class='chapter-title'>Extensions of Adjustment-Based Methods</span>"
@@ -551,7 +551,7 @@
     "href": "05-00-case-studies.html",
     "title": "Applying Causal Methods: Worked Examples in the NHS",
     "section": "",
-    "text": "TBC",
+    "text": "Coming Soon",
     "crumbs": [
       "Applying Causal Methods: Worked Examples in the NHS"
     ]
@@ -561,7 +561,7 @@
     "href": "05-01-doac-h2h.html",
     "title": "25  Case Study 1a: DOAC Head-to-Head Emulated Trial",
     "section": "",
-    "text": "TBC",
+    "text": "Coming Soon",
     "crumbs": [
       "Applying Causal Methods: Worked Examples in the NHS",
       "<span class='chapter-number'>25</span>  <span class='chapter-title'>Case Study 1a: DOAC Head-to-Head Emulated Trial</span>"
@@ -572,7 +572,7 @@
     "href": "05-02-doac-its.html",
     "title": "26  Case Study 1b: DOAC Policy Prescription Change Interrupted Time Series Analyses",
     "section": "",
-    "text": "TBC",
+    "text": "Coming Soon",
     "crumbs": [
       "Applying Causal Methods: Worked Examples in the NHS",
       "<span class='chapter-number'>26</span>  <span class='chapter-title'>Case Study 1b: DOAC Policy Prescription Change Interrupted Time Series Analyses</span>"
@@ -583,7 +583,7 @@
     "href": "05-03-oph-its.html",
     "title": "27  # Case Study 2: Ophthalmology Hub of Care Model Interrupted Time Series Analyses",
     "section": "",
-    "text": "TBC",
+    "text": "Coming Soon",
     "crumbs": [
       "Applying Causal Methods: Worked Examples in the NHS",
       "<span class='chapter-number'>27</span>  <span class='chapter-title'>Case Study 2: Ophthalmology Hub of Care Model Interrupted Time Series Analyses</span>"
@@ -594,7 +594,7 @@
     "href": "06-barriers.html",
     "title": "28  Practical Barriers to Implementation: Common Challenges in Causal Inference",
     "section": "",
-    "text": "TBC",
+    "text": "Coming Soon",
     "crumbs": [
       "<span class='chapter-number'>28</span>  <span class='chapter-title'>Practical Barriers to Implementation: Common Challenges in Causal Inference</span>"
     ]
@@ -604,7 +604,7 @@
     "href": "07-conclusion.html",
     "title": "29  Conclusion",
     "section": "",
-    "text": "TBC",
+    "text": "Coming Soon",
     "crumbs": [
       "<span class='chapter-number'>29</span>  <span class='chapter-title'>Conclusion</span>"
     ]
@@ -614,7 +614,7 @@
     "href": "99-about.html",
     "title": "30  About the Author & Acknowledgements",
     "section": "",
-    "text": "30.1 About Me\nHi, my name is Jamie and I’m an MRC funded PhD student at UCL, focusing on the application of causal inference methods within Epidemiology, Data Science, and Health Economics.\nBefore my PhD, I previously graduated with a BSc in Population Health Sciences (Data Science) from UCL, and an NIHR funded MSc in Epidemiology from the London School of Hygiene and Tropical Medicine.\nPrior to my PhD, my interest in researching the application of causal inference methods in observational data stemmed from my varied experience working across multiple areas of public health research, including: • Performing secondary analysis on a nutritional labelling RCT at the NIHR Obesity Policy Research Unit • Supporting cancer trials as a Clinical Trials Assistant in the MRC Clinical Trials Unit • Identifying barriers to STI testing at the NIHR Health Protection Research Unit in Blood Borne and Sexually Transmitted Infections • Quantifying the effects of acute and long-term exposure of air pollutants on respiratory related hospital admissions and related outcomes at UCL • Evaluating the risk of long-term adverse events in cancer survivors using electronic health record data at LSHTM\nHaving worked with both randomized trials and observational data, focusing my research on causal inference in real-world data felt like a natural next step.\nIf you have any questions do feel free to reach out to me via the following channels: UCL Email: jamie.wong [at] ucl.ac.uk NHS Email: laichunjamie.wong [at] nhs.net LinkedIn: https://www.linkedin.com/in/jamiewlc/ GitHub: https://github.com/jamiewlc",
+    "text": "30.1 About Me\nHi, my name is Jamie and I’m an MRC funded PhD student at UCL, focusing on the application of causal inference methods within Epidemiology, Data Science, and Health Economics.\nBefore my PhD, I previously graduated with a BSc in Population Health Sciences (Data Science) from UCL, and an NIHR funded MSc in Epidemiology from the London School of Hygiene and Tropical Medicine.\nPrior to my PhD, my interest in researching the application of causal inference methods in observational data stemmed from my varied experience working across multiple areas of public health research, including: - Performing secondary analysis on a nutritional labelling RCT at the NIHR Obesity Policy Research Unit - Supporting cancer trials as a Clinical Trials Assistant in the MRC Clinical Trials Unit - Identifying barriers to STI testing at the NIHR Health Protection Research Unit in Blood Borne and Sexually Transmitted Infections - Quantifying the effects of acute and long-term exposure of air pollutants on respiratory related hospital admissions and related outcomes at UCL - Evaluating the risk of long-term adverse events in cancer survivors using electronic health record data at LSHTM\nHaving worked with both randomized trials and observational data, focusing my research on causal inference in real-world data felt like a natural next step.\nIf you have any questions do feel free to reach out to me via the following channels: UCL Email: jamie.wong [at] ucl.ac.uk NHS Email: laichunjamie.wong [at] nhs.net LinkedIn: https://www.linkedin.com/in/jamiewlc/ GitHub: https://github.com/jamiewlc",
     "crumbs": [
       "<span class='chapter-number'>30</span>  <span class='chapter-title'>About the Author & Acknowledgements</span>"
     ]
