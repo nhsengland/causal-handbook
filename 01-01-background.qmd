@@ -10,7 +10,7 @@ Yet many of the methods currently used to evaluate interventions within the NHS 
 
 To better illustrate this point, Tyler Vigen publishes great examples of spurious correlations on his webpage (https://tylervigen.com/spurious-correlations), from which I’ve attached an example of below [@vigenTylerVigenSpurious2024]:
 
-![](images/vigen_butter_consumption.png)
+![](images/01-01-vigen-butter.png){fig-align="center"}
 
 As you can see, butter consumption is positively correlated with the economic output of the Washington metro area. Needless to say, I highly doubt butter consumption was actually “greasing the wheels” of the local economy in the Washington metro area! It is therefore imperative that we don’t conflate association with causation when we’re conducting service evaluation as well.
 

@@ -8,10 +8,10 @@ The handbook was written initially as part of an NHS England PhD Internship done
 
 ::: {layout="[1,2,1]" layout-valign="center" .center}
 
-![](images/NHS_England.jpg){width=100}
+![](images/logo-nhse.jpg){width=100}
 
-![](images/NHS_NCL_ICB.png){width=230}
+![](images/logo-ncl-icb.png){width=230}
 
-![](images/UCL.png){width=180}
+![](images/logo-ucl.png){width=180}
 
 :::

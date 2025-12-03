@@ -8,7 +8,7 @@ Prior to presenting my unifying guidance in my next section, I’ve attached a f
 
 In their report on “methods for the development of NICE public health guidelines,” the National Institute for Health and Care Excellence (NICE) provides a high-level overview of the various epidemiological study designs used in public health research. Included within the report in Appendix E is a flowchart that outlines an “algorithm for classifying quantitative (experimental and observational) study designs [@niceAppendixAlgorithmClassifying2012].
 
-![Algorithm for classifying quantitative (experimental and observational) study designs (NICE, 2012)](images/nice-study-designs.jpg)
+![Algorithm for classifying quantitative (experimental and observational) study designs (NICE, 2012)](images/01-04-nice-study-designs.jpg)
 
 As you can see, the types of study designs covered are very general, and do not focus on specific types of analytical methods you can use to deal with confounding factors within your study to derive causal inferences. As such, this diagram is most useful for those who are new to the field of epidemiology and public health, and wish to refer to a general overview of experimental and observational study designs.
 
@@ -26,7 +26,7 @@ The New Zealand Transport Agency Waka Kotahi has published a report focused on t
 
 The methods included are limited to those most often used in the social sciences and econometrics though. These methods largely exploit natural experiments that have occurred in the real world at one point in time to derive causal inferences. There is hence room to expand upon this flowchart further in a more comprehensive manner.
 
-![Causal inference method selection flowchart (Schiff, Wright and Denne, 2017)](images/schiff-causal-flowchart.png)
+![Causal inference method selection flowchart (Schiff, Wright and Denne, 2017)](images/01-04-schiff-causal-flowchart.png)
 
 \
 
@@ -38,4 +38,4 @@ However, similar to the New Zealand Transport Agency’s guidance, the quasi-exp
 
 These methods once again largely exploit natural experiments that have occurred in the real world to derive causal inferences, rather than adjusting for individual covariates which is more popular in epidemiology. Methods focusing on the latter are absent, but this is no surprise due to the Treasury’s area of focus. The guidance presented in this handbook therefore expands upon this diagram to also include such methods.
 
-![Diagram for selecting experimental and quasi-experimental methods (HM Treasury, 2020)](images/treasury-magenta-diagram.png)
+![Diagram for selecting experimental and quasi-experimental methods (HM Treasury, 2020)](images/01-04-treasury-magenta-diagram.png)

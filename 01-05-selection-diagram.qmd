@@ -1,4 +1,4 @@
-# New Unifying Guidance on Choosing Causal Inference Methods (Method Selection Tree)
+# Unifying Guidance on Choosing Causal Inference Methods (Decision Tree Diagram)
 
 Given the narrow scope of all prior guidance, especially as most of the methods selection diagrams are limited to methods used more within other fields of study, I have opted to create a new method selection tree diagram to help advise with the selection of causal methods going forward.
 
@@ -7,11 +7,17 @@ A flowchart of all methods mentioned in this handbook is presented below, with d
 **Please note that the diagram is still a work in progress, and will continue to be updated with input from external experts.**
 
 ::: {.content-visible when-format="html"}
-<a href="images/jw-causal-methods-diagram.svg" target="_blank">
-  <img src="images/jw-causal-methods-diagram.svg">
-</a>
+<figure style="text-align: center;">
+  <a href="images/01-05-jw-causal-methods-diagram.svg" target="_blank">
+    <img src="images/01-05-jw-causal-methods-diagram.svg">
+  </a>
+  <figcaption>
+    Causal Methods Decision Tree Diagram<br>
+    (Clicking on the image will enlarge it in a new tab)
+  </figcaption>
+</figure>
 :::
 
 ::: {.content-visible when-format="pdf"}
-![Please click on the image to open the diagram in a new tab, where you will be able to enlarge it](images/jw-causal-methods-diagram.png)
+![](images/01-05-jw-causal-methods-diagram.png)
 :::

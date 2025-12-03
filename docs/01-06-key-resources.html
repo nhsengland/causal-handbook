@@ -52,7 +52,7 @@ div.csl-indent {
 <meta name="quarto:offset" content="./">
 <link href="./01-07-text-method-coverage.html" rel="next">
 <link href="./01-05-selection-diagram.html" rel="prev">
-<link href="./images/nhs-logo-square.jpg" rel="icon" type="image/jpeg">
+<link href="./images/logo-nhs-square.jpg" rel="icon" type="image/jpeg">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -197,7 +197,7 @@ div.csl-indent {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./01-05-selection-diagram.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">New Unifying Guidance on Choosing Causal Inference Methods (Method Selection Tree)</span></span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Unifying Guidance on Choosing Causal Inference Methods (Decision Tree Diagram)</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -413,11 +413,15 @@ div.csl-indent {
    
   <ul>
   <li><a href="#causal-inference-what-if-hernancausalinferencewhat2025" id="toc-causal-inference-what-if-hernancausalinferencewhat2025" class="nav-link active" data-scroll-target="#causal-inference-what-if-hernancausalinferencewhat2025"><span class="header-section-number">6.1</span> Causal Inference: What If <span class="citation" data-cites="hernanCausalInferenceWhat2025">(Hernán and Robins 2025)</span></a></li>
+  <li><a href="#causal-inference-the-mixtape-cunninghamcausalinferencemixtape2021" id="toc-causal-inference-the-mixtape-cunninghamcausalinferencemixtape2021" class="nav-link" data-scroll-target="#causal-inference-the-mixtape-cunninghamcausalinferencemixtape2021"><span class="header-section-number">6.2</span> Causal Inference: The Mixtape <span class="citation" data-cites="cunninghamCausalInferenceMixtape2021">(Cunningham 2021)</span></a></li>
+  <li><a href="#mostly-harmless-econometrics-an-empiricists-companion-angristmostlyharmlesseconometrics2009-mastering-metrics-the-path-from-cause-to-effect-angristmasteringmetricspath2015" id="toc-mostly-harmless-econometrics-an-empiricists-companion-angristmostlyharmlesseconometrics2009-mastering-metrics-the-path-from-cause-to-effect-angristmasteringmetricspath2015" class="nav-link" data-scroll-target="#mostly-harmless-econometrics-an-empiricists-companion-angristmostlyharmlesseconometrics2009-mastering-metrics-the-path-from-cause-to-effect-angristmasteringmetricspath2015"><span class="header-section-number">6.3</span> Mostly Harmless Econometrics: An Empiricist’s Companion <span class="citation" data-cites="angristMostlyHarmlessEconometrics2009">(Angrist and Pischke 2009)</span> &amp; Mastering ’Metrics: The Path from Cause to Effect <span class="citation" data-cites="angristMasteringMetricsPath2015">(Angrist and Pischke 2015)</span></a></li>
+  <li><a href="#counterfactuals-and-causal-inference-methods-and-principles-for-social-research-morgancounterfactualscausalinference2014" id="toc-counterfactuals-and-causal-inference-methods-and-principles-for-social-research-morgancounterfactualscausalinference2014" class="nav-link" data-scroll-target="#counterfactuals-and-causal-inference-methods-and-principles-for-social-research-morgancounterfactualscausalinference2014"><span class="header-section-number">6.4</span> Counterfactuals and Causal Inference: Methods and Principles for Social Research <span class="citation" data-cites="morganCounterfactualsCausalInference2014">(Morgan and Winship 2014)</span></a></li>
+  <li><a href="#other-notable-texts" id="toc-other-notable-texts" class="nav-link" data-scroll-target="#other-notable-texts"><span class="header-section-number">6.5</span> Other Notable Texts</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/nhsengland/causal-handbook/edit/main/01-06-key-resources.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li></ul></div></nav>
     </div>
 <!-- main -->
-<main class="content page-columns page-full" id="quarto-document-content">
+<main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./01-00-intro.html">Introduction</a></li><li class="breadcrumb-item"><a href="./01-06-key-resources.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Key Resources</span></a></li></ol></nav>
 <div class="quarto-title">
@@ -441,27 +445,175 @@ div.csl-indent {
 <p>Throughout the handbook, there are a few key influential texts that have consolidated contemporary methods used to derive causal inferences from observational data. These texts are widely regarded as being foundational to anyone attempting to dip their toes into the field, and are often used as required reading and/or reference material within undergraduate and postgraduate courses in the econometrics, epidemiology, statistics, and social sciences more broadly.</p>
 <p>I’ve listed some the most frequently cited texts in this handbook below, along with a brief description of their areas of focus. Additional texts that are beyond the scope of this handbook have also been included for reference. A summary table is also included showing which methods are covered by each book in Section 1.7.</p>
 <p>Brady Neal has posted a very useful flowchart on his personal website outlining “which causal inference book you should read,” and covers many of the texts mentioned in this handbook <span class="citation" data-cites="nealWhichCausalInference2019">(<a href="references.html#ref-nealWhichCausalInference2019" role="doc-biblioref">Neal 2019</a>)</span>. If you’re completely new to the field of causal inference, his diagram serves as a great place to begin your journey.</p>
-<p><a href="images/neal-books-flowchart.svg" target="_blank"> <img src="images/neal-books-flowchart.svg" width="700"> </a></p>
+<figure style="text-align: center;" class="figure">
+<a href="images/01-06-neal-books-flowchart.svg" target="_blank"> <img src="images/01-06-neal-books-flowchart.svg" width="700" class="figure-img"> </a>
+<figcaption>
+Causal Books Flowchart (Neal, 2019)
+</figcaption>
+</figure>
 <p><br>
 </p>
-<section id="causal-inference-what-if-hernancausalinferencewhat2025" class="level2 page-columns page-full" data-number="6.1">
+<section id="causal-inference-what-if-hernancausalinferencewhat2025" class="level2" data-number="6.1">
 <h2 data-number="6.1" class="anchored" data-anchor-id="causal-inference-what-if-hernancausalinferencewhat2025"><span class="header-section-number">6.1</span> Causal Inference: What If <span class="citation" data-cites="hernanCausalInferenceWhat2025">(<a href="references.html#ref-hernanCausalInferenceWhat2025" role="doc-biblioref">Hernán and Robins 2025</a>)</span></h2>
-<div class="column-margin-right">
-<p><img src="images/whatif-cover.png" class="img-fluid" width="250"></p>
+<div style="float: right; margin: 0 0 1em 1em; width: 220px;">
+<p><img src="images/01-06-bkcover-whatif.png" class="img-fluid" width="220"></p>
 </div>
-<p>Authors: Miguel Hernan – <em>Kolokotrones Professor of Biostatistics and Epidemiology, Harvard T.H. Chan School of Public Health &amp; Director of Harvard CAUSALab</em> James M. Robins – <em>Mitchell L. and Robin LaFoley Dong Professor of Epidemiology, Harvard T.H. Chan School of Public Health</em></p>
-<p>Hernan and Robins’ book was first published in 2020, and has been continuously updated over the past few years. The most up to date version of the book can be found on <a href="https://miguelhernan.org/whatifbook">Hernan’s personal webpage</a>.</p>
+<p><strong>Authors</strong><br>
+Miguel Hernan – <em>Kolokotrones Professor of Biostatistics and Epidemiology, Harvard T.H. Chan School of Public Health &amp; Director of Harvard CAUSALab</em></p>
+<p>James M. Robins – <em>Mitchell L. and Robin LaFoley Dong Professor of Epidemiology, Harvard T.H. Chan School of Public Health</em></p>
+<p><strong>Content</strong><br>
+Hernan and Robins’ book was first published in 2020, and has been continuously updated over the past few years. The most up to date version of the book can be found on <a href="https://miguelhernan.org/whatifbook">Hernan’s personal webpage</a>.</p>
 <p>The book is considered by many in the field of epidemiology to be the definitive guide to the application of causal inference methods, framed within the target trial emulation framework, especially when it comes to estimating causal effects using complex longitudinal data (with a strong focus on G-methods). This is a result of the book being openly available online for the past two decades while it was still being drafted, with many researchers in the field contributing to the book over this period.</p>
 <p>The book is particularly useful in providing guidance for evaluating sustained and time-varying treatment strategies, and overcoming issues such as immortal time bias within classical methods in epidemiology, which are often issues within the field of pharmacoepidemiology.</p>
 <p>The book also (very helpfully) includes accompanying R and Stata code hosted on <a href="https://remlapmot.github.io/cibookex-r/">GitHub</a>, which provides practical examples of how the methods covered can be applied to your own data.</p>
+<p><br>
+</p>
+</section>
+<section id="causal-inference-the-mixtape-cunninghamcausalinferencemixtape2021" class="level2" data-number="6.2">
+<h2 data-number="6.2" class="anchored" data-anchor-id="causal-inference-the-mixtape-cunninghamcausalinferencemixtape2021"><span class="header-section-number">6.2</span> Causal Inference: The Mixtape <span class="citation" data-cites="cunninghamCausalInferenceMixtape2021">(<a href="references.html#ref-cunninghamCausalInferenceMixtape2021" role="doc-biblioref">Cunningham 2021</a>)</span></h2>
+<div style="float: right; margin: 0 0 1em 1em; width: 220px;">
+<p><img src="images/01-06-bkcover-causal-mixtape.jpg" class="img-fluid" width="220"></p>
+</div>
+<p><strong>Author</strong><br>
+Scott Cunningham – <em>Ben H. Williams Professor of Economics at Baylor University</em></p>
+<p><strong>Content</strong><br>
+Cunningham’s book aimed to consolidate many of the causal inference methods from econometrics (e.g., regression discontinuity, instrumental variables, difference-in-differences) that were scattered across various other textbooks, and in addition provides worked examples of Stata, R, and Python code for each section.</p>
+<p>More specifically, Cunningham was mainly inspired by the work of Morgan and Winship, Angrist and Pischke, as well as Imbens and Rubin, which are all cited in this handbook as well. However, unlike these other texts, Cunningham’s book is written in a very approachable manner for beginners, and is a great starting point to get to develop an understanding of various types of causal inference methods from an economist’s perspective.</p>
+<p>The book and accompanying code is available openly <a href="https://mixtape.scunning.com/">online</a>.</p>
+<p>Cunningham has also begun hosting a course based on the contents of the book, and has posted all the accompanying content (both slides and code) onto his <a href="https://github.com/Mixtape-Sessions">GitHub page</a> for those who wish to delve deeper into the history and application of these methods.</p>
+<p><br>
+</p>
+</section>
+<section id="mostly-harmless-econometrics-an-empiricists-companion-angristmostlyharmlesseconometrics2009-mastering-metrics-the-path-from-cause-to-effect-angristmasteringmetricspath2015" class="level2" data-number="6.3">
+<h2 data-number="6.3" class="anchored" data-anchor-id="mostly-harmless-econometrics-an-empiricists-companion-angristmostlyharmlesseconometrics2009-mastering-metrics-the-path-from-cause-to-effect-angristmasteringmetricspath2015"><span class="header-section-number">6.3</span> Mostly Harmless Econometrics: An Empiricist’s Companion <span class="citation" data-cites="angristMostlyHarmlessEconometrics2009">(<a href="references.html#ref-angristMostlyHarmlessEconometrics2009" role="doc-biblioref">Angrist and Pischke 2009</a>)</span> &amp; Mastering ’Metrics: The Path from Cause to Effect <span class="citation" data-cites="angristMasteringMetricsPath2015">(<a href="references.html#ref-angristMasteringMetricsPath2015" role="doc-biblioref">Angrist and Pischke 2015</a>)</span></h2>
+<div style="float: right; margin: 0 0 1em 1em; width: 220px;">
+<img src="images/01-06-bkcover-mastering-metrics.jpg" class="img-fluid" width="220">
+<div style="height: 8px;">
+
+</div>
+<p><img src="images/01-06-bkcover-mostly-harmless-econometrics.jpg" class="img-fluid" width="220"></p>
+</div>
+<p><strong>Authors</strong><br>
+Joshua D. Angrist – <em>Ford Professor of Economics at MIT and Nobel Prize Laureate (Economics)</em></p>
+<p>Jörn-Steffen Pischke – <em>Professor of Economics at LSE</em></p>
+<p><strong>Content</strong><br>
+Angrist and Pischke have written two textbooks on causal methods in econometrics, covering largely the same topics and methods across both: randomized trials, regression modelling, instrumental variables, regression discontinuity designs, and differences-in-differences.</p>
+<p>However, Mastering ’Metrics is a much less technical book and easier to digest, especially for those new to causal inference methodology and/or do not have a background in mathematics. It therefore serves as a better starting point for newcomers, alongside Cumming’s book, for those who want a book tackling causal inference form an economist’s perspective, and is often included as accompanying reading for undergraduate and postgraduate level applied causal inference courses.</p>
+<p>Stata code for the empirical examples presented in the book has also been shared publicly <a href="https://www.masteringmetrics.com/resources/">online</a>. The examples have also been translated into R by Jeffrey Arnold on his <a href="https://jrnold.github.io/masteringmetrics/">GitHub page</a>.</p>
+<p>Mostly Harmless Econometrics provides an expanded overview of each of the methods covered within Mastering ’Metrics, but is written in a much more mathematical manner. There is no accompanying code with this book either. It may therefore be worth using as a resource to delve deeper in to specific methods covered after first reading through some of the other textbooks mentioned in this handbook first.</p>
+<p><br>
+</p>
+</section>
+<section id="counterfactuals-and-causal-inference-methods-and-principles-for-social-research-morgancounterfactualscausalinference2014" class="level2" data-number="6.4">
+<h2 data-number="6.4" class="anchored" data-anchor-id="counterfactuals-and-causal-inference-methods-and-principles-for-social-research-morgancounterfactualscausalinference2014"><span class="header-section-number">6.4</span> Counterfactuals and Causal Inference: Methods and Principles for Social Research <span class="citation" data-cites="morganCounterfactualsCausalInference2014">(<a href="references.html#ref-morganCounterfactualsCausalInference2014" role="doc-biblioref">Morgan and Winship 2014</a>)</span></h2>
+<div style="float: right; margin: 0 0 1em 1em; width: 220px;">
+<p><img src="images/01-06-bkcover-counterfactuals-causal-inf.jpg" class="img-fluid" width="220"></p>
+</div>
+<p><strong>Authors</strong><br>
+Stephen L. Morgan – <em>Bloomberg Distinguished Professor of Sociology and Education at Johns Hopkins University</em></p>
+<p>Christopher Winship – <em>Diker-Tishman Research Professor of Sociology</em></p>
+<p><strong>Content</strong><br>
+Morgan and Winships’ book provides a deep dive into the potential outcomes framework, directed acyclic graphs (DAGs), and instrumental variables, with substantial mathematical detail. If you are particularly interested in the mathematical intuition behind these specific topics, this is a great book to refer to.</p>
+<p>However, its sections on other econometrics/social science methods such as interrupted time series models and regression discontinuity designs are less detailed than that of other texts. It also does not provide any accompanying code. It is therefore best suited in helping analyst develop a stronger understanding of the intuition behind the potential outcomes framework and causal graphs.</p>
+<p><br>
+</p>
+</section>
+<section id="other-notable-texts" class="level2" data-number="6.5">
+<h2 data-number="6.5" class="anchored" data-anchor-id="other-notable-texts"><span class="header-section-number">6.5</span> Other Notable Texts</h2>
+<p><strong><em>Causal Inference for Statistics, Social, and Biomedical Sciences: An Introduction</em></strong> <span class="citation" data-cites="imbensCausalInferenceStatistics2015">(<a href="references.html#ref-imbensCausalInferenceStatistics2015" role="doc-biblioref">Imbens and Rubin 2015</a>)</span></p>
+<p>Building off of Rubin’s potential outcomes framework, Imbens and Rubins’ book is focused on methods for analysing randomized experiments, the potential outcomes framework, and specifically matching and instrumental variables. The topics covered are described in great mathematical detail. However, the text lacks content regarding some of the other methods covered as part of this handbook.</p>
+<p><br>
+</p>
+<p><strong><em>Causality: Models, Reasoning, and Inference</em></strong> <span class="citation" data-cites="pearlCausalityModelsReasoning2009">(<a href="references.html#ref-pearlCausalityModelsReasoning2009" role="doc-biblioref">Pearl 2009</a>)</span><br>
+<strong><em>Causal Inference in Statistics: A Primer</em></strong> <span class="citation" data-cites="pearlCausalInferenceStatistics2016">(<a href="references.html#ref-pearlCausalInferenceStatistics2016" role="doc-biblioref">Pearl, Glymour, and Jewell 2016</a>)</span><br>
+<strong><em>The Book of Why: The New Science of Cause and Effect</em></strong> <span class="citation" data-cites="pearlBookWhyNew2018">(<a href="references.html#ref-pearlBookWhyNew2018" role="doc-biblioref">Pearl and Mackenzie 2018</a>)</span></p>
+<p>Pearl’s collection of books provides options for learning more about structural causal models (SCMs) depending on the target audience, and is particularly useful for those looking to apply machine learning technical for modelling causal relationships, given Pearl’s background in computer science:</p>
+<ul>
+<li>Causality (2009) serves as the most detailed and technical reference text for advanced readers, providing a comprehensive guide to DAGs and do-calculus while assuming that the reader has a strong mathematical background.</li>
+<li>The Primer (2016) distils all key concepts in causality in a manner that is more accessible to students and researchers.</li>
+<li>The Book of Why (2018) was written with a general audience in mind, introducing the DAG-focused way of causal thinking Pearl is most famous for in an approachable manner.</li>
+</ul>
+<p><br>
+</p>
+<p><strong><em>Observation and Experiment: An Introduction to Causal Inference</em></strong> <span class="citation" data-cites="rosenbaumObservationExperimentIntroduction2017">(<a href="references.html#ref-rosenbaumObservationExperimentIntroduction2017" role="doc-biblioref">Rosenbaum 2017</a>)</span><br>
+<strong><em>Design of Observational Studies</em></strong> <span class="citation" data-cites="rosenbaumDesignObservationalStudies2020">(<a href="references.html#ref-rosenbaumDesignObservationalStudies2020" role="doc-biblioref">Rosenbaum 2020</a>)</span><br>
+<strong><em>Causal Inference</em></strong> <span class="citation" data-cites="rosenbaumCausalInference2023">(<a href="references.html#ref-rosenbaumCausalInference2023" role="doc-biblioref">Rosenbaum 2023</a>)</span></p>
+<p>Rosenbaum’s collection of books provide an alternative source for getting a good overview of causal inference methods from a statistical perspective, given that he is a statistician by training. His books, similar to Pearl’s have been written with different audiences in mind:</p>
+<ul>
+<li>Observation and Experiment (2017) serves as the most accessible introduction among the three. It is intended for a wide audience, including applied researchers and students, and focuses on the logic of design and inference in observational studies, without focusing too heavily on mathematical details. It introduces key concepts like matching, instrumental variables, and sensitivity analysis.</li>
+<li>Design of Observational Studies (2020) is a more technical text that dives deeply into matching methods, instrumental variables, and sensitivity analyses. It also puts strong emphasis on the fundamental design of observational studies, and how they can mimic randomized experiments as closely as possible.</li>
+<li>Causal Inference (2023) is Rosenbaum’s most comprehensive and mathematically detailed text. It consolidates and extends many of the ideas from his earlier books while introducing more advanced content. It is best suited for researchers or methodologists with strong statistical backgrounds who want a complete overview of causal inference from Rosenbaum’s design-based perspective.</li>
+</ul>
+<p><br>
+</p>
+<p><strong><em>Experimental and Quasi-Experimental Designs for Generalized Causal Inference</em></strong> <span class="citation" data-cites="shadishExperimentalQuasiexperimentalDesigns2002">(<a href="references.html#ref-shadishExperimentalQuasiexperimentalDesigns2002" role="doc-biblioref">Shadish, Cook, and Campbell 2002</a>)</span></p>
+<p>Shadish, Cook, and Campbells’ text, although slightly older than the rest of these, still provides a great overview of quasi-experiments, with a key focus on interrupted time series analysis and regression discontinuity designs. It has been used over the past two decades as a key tool for policy evaluation, and is a great reference text, especially as Campbell was the person who first coined and laid the groundwork for quasi-experimental study designs in 1963.</p>
+<p><br>
+</p>
+<p><strong><em>Targeted Learning: Causal Inference for Observational and Experimental Data</em></strong> <span class="citation" data-cites="vanderlaanTargetedLearningCausal2011">(<a href="references.html#ref-vanderlaanTargetedLearningCausal2011" role="doc-biblioref">Van Der Laan and Rose 2011</a>)</span><br>
+<strong><em>Targeted Learning in Data Science: Causal Inference for Complex Longitudinal Studies</em></strong> <span class="citation" data-cites="vanderlaanTargetedLearningData2018">(<a href="references.html#ref-vanderlaanTargetedLearningData2018" role="doc-biblioref">Van Der Laan and Rose 2018</a>)</span></p>
+<p>Van Der Laan and Roses’ texts formalise the Targeted Maximum Likelihood Estimation (TMLE) framework, a semi-parametric approach to causal inference that integrates machine learning for outcome and propensity score estimation. They are best suited for readers with a background in statistics or computer science, who wish to delve deeper into combining machine learning models with causal inference when dealing with high-dimensional and longitudinal data.</p>
+<p><br>
+</p>
+<p><strong><em>Explanation in Causal Inference: Methods for Mediation and Interaction</em></strong> <span class="citation" data-cites="vanderweeleExplanationCausalInference2015">(<a href="references.html#ref-vanderweeleExplanationCausalInference2015" role="doc-biblioref">Vanderweele 2015</a>)</span></p>
+<p>This text is the seminal book of Vanderweele, and serves as the most comprehensive text on mediation and interaction in causal inference. It is particularly relevant for individuals wishing to describe mechanisms and pathways between specific variables of interest. While not directly covered in this handbook due to it being beyond the scope of service and intervention evaluation, it’s an excellent reference for those interested in incorporating effect decomposition and/or mediation analysis into their work.</p>
+<p><br>
+</p>
+<p><strong><em>Modern Epidemiology (Chapters 2-3)</em></strong> <span class="citation" data-cites="vanderweeleExplanationCausalInference2015">(<a href="references.html#ref-vanderweeleExplanationCausalInference2015" role="doc-biblioref">Vanderweele 2015</a>)</span></p>
+<p>Chapters 2-3 of Lash et al.s’ book provide great introductory perspective on causal inference from an epidemiological point of view, covering the Bradford Hill criteria, the potential outcomes framework, and DAGs. It is a particularly good resource for public health practitioners who are looking for a text that bridges the gap between traditional epidemiological criteria for causal inference and more modern causal inference frameworks.</p>
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
+<div id="ref-angristMostlyHarmlessEconometrics2009" class="csl-entry" role="listitem">
+Angrist, Joshua D., and Jorn-Steffen Pischke. 2009. <em>Mostly <span>Harmless Econometrics</span>: <span>An Empiricist</span>’s <span>Companion</span></em>. Princeton University Press. <a href="https://doi.org/10.2307/j.ctvcm4j72">https://doi.org/10.2307/j.ctvcm4j72</a>.
+</div>
+<div id="ref-angristMasteringMetricsPath2015" class="csl-entry" role="listitem">
+Angrist, Joshua D., and Jörn-Steffen Pischke. 2015. <span>“Mastering ’<span>Metrics</span>: <span>The Path</span> from <span>Cause</span> to <span>Effect</span>.”</span> 2015. <a href="https://press.princeton.edu/books/paperback/9780691152844/mastering-metrics">https://press.princeton.edu/books/paperback/9780691152844/mastering-metrics</a>.
+</div>
+<div id="ref-cunninghamCausalInferenceMixtape2021" class="csl-entry" role="listitem">
+Cunningham, Scott. 2021. <em>Causal <span>Inference</span>: <span>The Mixtape</span></em>. Yale University Press. <a href="https://doi.org/10.2307/j.ctv1c29t27">https://doi.org/10.2307/j.ctv1c29t27</a>.
+</div>
 <div id="ref-hernanCausalInferenceWhat2025" class="csl-entry" role="listitem">
 Hernán, Miguel A., and James M. Robins. 2025. <em>Causal <span>Inference</span>: <span>What If</span></em>. Boca Raton: Chapman &amp; Hall/CRC. <a href="https://miguelhernan.org/whatifbook">https://miguelhernan.org/whatifbook</a>.
 </div>
+<div id="ref-imbensCausalInferenceStatistics2015" class="csl-entry" role="listitem">
+Imbens, Guido W., and Donald B. Rubin. 2015. <em>Causal <span>Inference</span> for <span>Statistics</span>, <span>Social</span>, and <span>Biomedical Sciences</span>: <span>An Introduction</span></em>. Cambridge: Cambridge University Press. <a href="https://doi.org/10.1017/CBO9781139025751">https://doi.org/10.1017/CBO9781139025751</a>.
+</div>
+<div id="ref-morganCounterfactualsCausalInference2014" class="csl-entry" role="listitem">
+Morgan, Stephen L., and Christopher Winship. 2014. <em>Counterfactuals and <span>Causal Inference</span>: <span>Methods</span> and <span>Principles</span> for <span>Social Research</span></em>. 2nd ed. Analytical <span>Methods</span> for <span>Social Research</span>. Cambridge: Cambridge University Press. <a href="https://doi.org/10.1017/CBO9781107587991">https://doi.org/10.1017/CBO9781107587991</a>.
+</div>
 <div id="ref-nealWhichCausalInference2019" class="csl-entry" role="listitem">
 Neal, Brady. 2019. <span>“Which Causal Inference Book You Should Read.”</span> November 23, 2019. <a href="https://www.bradyneal.com/which-causal-inference-book">https://www.bradyneal.com/which-causal-inference-book</a>.
+</div>
+<div id="ref-pearlCausalityModelsReasoning2009" class="csl-entry" role="listitem">
+Pearl, Judea. 2009. <em>Causality: <span>Models</span>, <span>Reasoning</span>, and <span>Inference</span></em>. 2nd ed. Cambridge: Cambridge University Press. <a href="https://doi.org/10.1017/CBO9780511803161">https://doi.org/10.1017/CBO9780511803161</a>.
+</div>
+<div id="ref-pearlCausalInferenceStatistics2016" class="csl-entry" role="listitem">
+Pearl, Judea, Madelyn Glymour, and Nicholas P. Jewell. 2016. <em>Causal <span>Inference</span> in <span>Statistics</span>: <span>A Primer</span></em>. Wiley. <a href="https://www.wiley.com/en-us/Causal+Inference+in+Statistics%3A+A+Primer-p-9781119186861">https://www.wiley.com/en-us/Causal+Inference+in+Statistics%3A+A+Primer-p-9781119186861</a>.
+</div>
+<div id="ref-pearlBookWhyNew2018" class="csl-entry" role="listitem">
+Pearl, Judea, and Dana Mackenzie. 2018. <span>“The <span>Book</span> of <span>Why</span>: <span>The New Science</span> of <span>Cause</span> and <span>Effect</span>.”</span> Guide books. 2018. <a href="https://dl.acm.org/doi/book/10.5555/3238230">https://dl.acm.org/doi/book/10.5555/3238230</a>.
+</div>
+<div id="ref-rosenbaumObservationExperimentIntroduction2017" class="csl-entry" role="listitem">
+Rosenbaum, Paul R. 2017. <em>Observation and <span>Experiment</span>: <span>An Introduction</span> to <span>Causal Inference</span></em>. Harvard University Press. <a href="https://www.jstor.org/stable/j.ctv253f7k2">https://www.jstor.org/stable/j.ctv253f7k2</a>.
+</div>
+<div id="ref-rosenbaumDesignObservationalStudies2020" class="csl-entry" role="listitem">
+———. 2020. <em>Design of <span>Observational Studies</span></em>. Springer <span>Series</span> in <span>Statistics</span>. Cham: Springer International Publishing. <a href="https://doi.org/10.1007/978-3-030-46405-9">https://doi.org/10.1007/978-3-030-46405-9</a>.
+</div>
+<div id="ref-rosenbaumCausalInference2023" class="csl-entry" role="listitem">
+———. 2023. <em>Causal <span>Inference</span></em>. The MIT Press. <a href="https://doi.org/10.7551/mitpress/14244.001.0001">https://doi.org/10.7551/mitpress/14244.001.0001</a>.
+</div>
+<div id="ref-shadishExperimentalQuasiexperimentalDesigns2002" class="csl-entry" role="listitem">
+Shadish, William R., Thomas D. Cook, and Donald T. Campbell. 2002. <em>Experimental and Quasi-Experimental Designs for Generalized Causal Inference</em>. Experimental and Quasi-Experimental Designs for Generalized Causal Inference. Boston, MA, US: <span>Houghton, Mifflin and Company</span>.
+</div>
+<div id="ref-vanderlaanTargetedLearningCausal2011" class="csl-entry" role="listitem">
+Van Der Laan, Mark J., and Sherri Rose. 2011. <em>Targeted <span>Learning</span>: <span>Causal Inference</span> for <span>Observational</span> and <span>Experimental Data</span></em>. Springer <span>Series</span> in <span>Statistics</span>. New York, NY: Springer. <a href="https://doi.org/10.1007/978-1-4419-9782-1">https://doi.org/10.1007/978-1-4419-9782-1</a>.
+</div>
+<div id="ref-vanderlaanTargetedLearningData2018" class="csl-entry" role="listitem">
+———. 2018. <em>Targeted <span>Learning</span> in <span>Data Science</span>: <span>Causal Inference</span> for <span>Complex Longitudinal Studies</span></em>. Springer <span>Series</span> in <span>Statistics</span>. Cham: Springer International Publishing. <a href="https://doi.org/10.1007/978-3-319-65304-4">https://doi.org/10.1007/978-3-319-65304-4</a>.
+</div>
+<div id="ref-vanderweeleExplanationCausalInference2015" class="csl-entry" role="listitem">
+Vanderweele, Tyler J. 2015. <em>Explanation in Causal Inference: <span>Methods</span> for Mediation and Interaction</em>. Explanation in Causal Inference: <span>Methods</span> for Mediation and Interaction. New York, NY, US: Oxford University Press.
 </div>
 </div>
 </section>
@@ -868,8 +1020,8 @@ Neal, Brady. 2019. <span>“Which Causal Inference Book You Should Read.”</spa
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./01-05-selection-diagram.html" class="pagination-link" aria-label="New Unifying Guidance on Choosing Causal Inference Methods (Method Selection Tree)">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">New Unifying Guidance on Choosing Causal Inference Methods (Method Selection Tree)</span></span>
+      <a href="./01-05-selection-diagram.html" class="pagination-link" aria-label="Unifying Guidance on Choosing Causal Inference Methods (Decision Tree Diagram)">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Unifying Guidance on Choosing Causal Inference Methods (Decision Tree Diagram)</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">

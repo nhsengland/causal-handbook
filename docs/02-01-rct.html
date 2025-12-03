@@ -20,7 +20,27 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -32,7 +52,7 @@ ul.task-list li input[type="checkbox"] {
 <meta name="quarto:offset" content="./">
 <link href="./02-02-dag.html" rel="next">
 <link href="./02-00-key-concepts.html" rel="prev">
-<link href="./images/nhs-logo-square.jpg" rel="icon" type="image/jpeg">
+<link href="./images/logo-nhs-square.jpg" rel="icon" type="image/jpeg">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -177,7 +197,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./01-05-selection-diagram.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">New Unifying Guidance on Choosing Causal Inference Methods (Method Selection Tree)</span></span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Unifying Guidance on Choosing Causal Inference Methods (Decision Tree Diagram)</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -387,8 +407,18 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#exchangeability" id="toc-exchangeability" class="nav-link active" data-scroll-target="#exchangeability"><span class="header-section-number">8.1</span> Exchangeability</a></li>
+  <li><a href="#consistency" id="toc-consistency" class="nav-link" data-scroll-target="#consistency"><span class="header-section-number">8.2</span> Consistency</a></li>
+  <li><a href="#positivity" id="toc-positivity" class="nav-link" data-scroll-target="#positivity"><span class="header-section-number">8.3</span> Positivity</a></li>
+  <li><a href="#stable-unit-treatment-value-assumption-sutva" id="toc-stable-unit-treatment-value-assumption-sutva" class="nav-link" data-scroll-target="#stable-unit-treatment-value-assumption-sutva"><span class="header-section-number">8.4</span> Stable Unit Treatment Value Assumption (SUTVA)</a></li>
+  <li><a href="#other-trial-designs-and-further-reading" id="toc-other-trial-designs-and-further-reading" class="nav-link" data-scroll-target="#other-trial-designs-and-further-reading"><span class="header-section-number">8.5</span> Other Trial Designs and Further Reading</a></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/nhsengland/causal-handbook/edit/main/02-01-rct.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -412,9 +442,161 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>TBC</p>
+<p>Before considering specific methods for conducting causal inference, it is worth first considering how randomized experiments, commonly referred to as randomized controlled trials (RCTs), address many of the challenges and issues encountered in observational evaluations of interventions and services, and why it’s considered to be the gold standard for causal inference.</p>
+<p>To understand why this is, it’s worth considering the common assumptions present in causal inference methodology covered in section 1.3, and how the fundamental design of RCTs overcome each of these.</p>
+<p><br>
+</p>
+<section id="exchangeability" class="level2" data-number="8.1">
+<h2 data-number="8.1" class="anchored" data-anchor-id="exchangeability"><span class="header-section-number">8.1</span> Exchangeability</h2>
+<p>Consider once again the fundamental problem of causal inference: we cannot physically observe both counterfactual outcomes in real life for an individual, one under treatment and the other without. However, this specific difference is inherently what we’re trying to measure, which Hernan and Robins illustrate well in the diagram presented below.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/02-01-causation.png" class="img-fluid figure-img"></p>
+<figcaption>Defining Causation | p.12 of (Hernán and Robins, 2025)</figcaption>
+</figure>
+</div>
+<p>As such, our best option is to establish two groups of individuals that share the same distributions of all relevant characteristics, ideally so close to the point where they are essentially clones of each other. The ideal way to do this is through randomizing study participants to each treatment group, as given a sufficient sample size, participant characteristics should in theory be equally distributed between both groups. Therefore, estimated average treatment effects should be the same regardless of which of the randomized groups actually receives treatment, hence becoming “exchangeable”. Angrist and Pischke summarise this concept quite well:</p>
+<p><em>“Random assignment works not by eliminating individual differences but rather by ensuring that the mix of individuals being compared is the same”</em> <span class="citation" data-cites="angristMasteringMetricsPath2015">(<a href="references.html#ref-angristMasteringMetricsPath2015" role="doc-biblioref">Angrist and Pischke 2015</a>)</span></p>
+<p>Of course, given random chance, there is still a possibility that participant characteristics do not end up being completely equally distributed between treatment groups. This can, however, be confirmed through descriptive statistics, and individual covariates can be adjusted for post-hoc as well through regression modelling to ensure exchangeability between treatment groups.</p>
+<p><br>
+</p>
+</section>
+<section id="consistency" class="level2" data-number="8.2">
+<h2 data-number="8.2" class="anchored" data-anchor-id="consistency"><span class="header-section-number">8.2</span> Consistency</h2>
+<p>In the protocol of an RCT written before patients are recruited, treatment strategies are clearly outlined within trial protocols. Almost all contemporary trials adhere to the CONSORT and SPIRIT checklists, first published in 1996 and 2013 respectively, which provide guidance on recommended items to address within trial protocols <span class="citation" data-cites="beggImprovingQualityReporting1996 chanSPIRIT2013Statement2013 chanSPIRIT2013Explanation2013">(<a href="references.html#ref-beggImprovingQualityReporting1996" role="doc-biblioref">Begg et al. 1996</a>; <a href="references.html#ref-chanSPIRIT2013Statement2013" role="doc-biblioref">Chan, Tetzlaff, Altman, et al. 2013</a>; <a href="references.html#ref-chanSPIRIT2013Explanation2013" role="doc-biblioref">Chan, Tetzlaff, Gøtzsche, et al. 2013</a>)</span>. In particular, the section on interventions in the SPIRIT checklist explicitly states to include information on:</p>
+<ul>
+<li><em>“Interventions for each group with sufficient detail to allow replication, including how and when they will be administered.”</em></li>
+<li><em>“Criteria for discontinuing or modifying allocation intervention for given trial participant (e.g., drug dose change in response to harms, participant request, or improving/worsening disease).”</em></li>
+<li><em>“Relevant concomitant care and interventions that are permitted or prohibited during the trial.”</em> <span class="citation" data-cites="chanSPIRIT2013Statement2013">(<a href="references.html#ref-chanSPIRIT2013Statement2013" role="doc-biblioref">Chan, Tetzlaff, Altman, et al. 2013</a>)</span></li>
+</ul>
+<p>By explicitly detailing the intervention strategy in advance of carrying out the trial, the treatment strategy each study participant receives is uniformly defined. In other words, this rules out ambiguity in treatment definition: for example, avoiding situations where one participant receives a drug daily while another receives it weekly, or where participants receive different doses of the same drug, despite both being labelled as “treated.” Such variation would undermine the validity of the treatment contrast.</p>
+<p><br>
+</p>
+</section>
+<section id="positivity" class="level2" data-number="8.3">
+<h2 data-number="8.3" class="anchored" data-anchor-id="positivity"><span class="header-section-number">8.3</span> Positivity</h2>
+<p>Within the SPIRIT checklist, it is also advised that all trials report on the:</p>
+<p>“Inclusion and exclusion criteria for participants. If applicable, eligibility criteria for study centers and individuals who will perform the interventions (e.g., surgeons, psychotherapists)” <span class="citation" data-cites="chanSPIRIT2013Statement2013">(<a href="references.html#ref-chanSPIRIT2013Statement2013" role="doc-biblioref">Chan, Tetzlaff, Altman, et al. 2013</a>)</span>.</p>
+<p>By explicitly defining what conditions participants would have to meet before becoming eligible for the trial, we ensure that all participants are physically capable of, and hence have a probability greater than zero to adhere to the treatment strategy of interest.</p>
+<p>For example, in a trial evaluating the effect of anticoagulation therapies (e.g., warfarin or a DOAC) in preventing stroke in patients with atrial fibrillation, participants with a history of gastrointestinal bleeding or a known bleeding disorder (e.g., haemophilia) would typically be excluded. Including them would violate the positivity assumption, as it would be medically inadvisable, and therefore impossible to assign them to the treatment arm in the trial.</p>
+<p><br>
+</p>
+</section>
+<section id="stable-unit-treatment-value-assumption-sutva" class="level2" data-number="8.4">
+<h2 data-number="8.4" class="anchored" data-anchor-id="stable-unit-treatment-value-assumption-sutva"><span class="header-section-number">8.4</span> Stable Unit Treatment Value Assumption (SUTVA)</h2>
+<p>As a reminder, SUTVA has two distinct requirements:</p>
+<ol type="1">
+<li>No multiple versions of treatment</li>
+<li>No interference between units</li>
+</ol>
+<p>The first of these is already covered by meeting the consistency assumption. However, achieving the no interference requirement is not automatically guaranteed, and requires additional considerations in the design of a trial.</p>
+<p>A common method of strengthening the no interference assumption is through blinding, and ideally double-blinding, where neither study participants or investigators are aware of the treatment assigned to each individual. Blinding can help reduce the chances of behavioural changes or spillover effects in study participants compared to if they were aware of the treatment they were assigned to. For example, A study participant who is aware of being on a novel therapy may choose to share their treatment with family members and friends who might be in the control group if they experience an improvement. However, blinding is not always feasible, especially in trials where a specific procedure or physical intervention is visibly administered.</p>
+<p>Physically separating treatment groups may also be an option to address SUTVA, especially for social and public health interventions. Cluster-randomized designs, where entire clusters of individuals (e.g., entire households, schools, or communities) are randomized as a whole to receive an intervention or not. This approach allows the trial to account for interactions between individuals within the same cluster, preserving internal validity by focusing estimation on between-cluster differences in treatment effects.</p>
+<p><br>
+</p>
+</section>
+<section id="other-trial-designs-and-further-reading" class="level2" data-number="8.5">
+<h2 data-number="8.5" class="anchored" data-anchor-id="other-trial-designs-and-further-reading"><span class="header-section-number">8.5</span> Other Trial Designs and Further Reading</h2>
+<p>The picture I’ve painted here is quite simplified though. Aside from standard two-armed trials that I’ve mainly described in this section, many other more intricate designs exist to overcome issues present in such a simple design. I’ve included brief overviews of a selection of alternative designs that would be useful to consider, especially as many of these designs can also be emulated using observational data. Please note that this list is not exhaustive, and is presented more for inspiration on the types of trials you may choose to emulate in a causal inference study of observational data:</p>
+<p><br>
+</p>
+<p><strong>Core Designs</strong></p>
+<ol type="1">
+<li><p><strong><em>Parallel Group RCT</em></strong><br>
+This is the conventional two-arm trial that is most commonly considered, where <em>“patients are randomized to the new treatment or to the standard treatment and followed-up to determine the effect of each treatment in parallel groups”</em> <span class="citation" data-cites="wangClinicalTrialsPractical2006">(<a href="references.html#ref-wangClinicalTrialsPractical2006" role="doc-biblioref">Wang and Bakhai 2006</a>)</span>.</p>
+<p>For further details, please refer to the following texts: <span class="citation" data-cites="wangClinicalTrialsPractical2006 pocockClinicalTrialsPractical2013 piantadosiPrinciplesPracticeClinical2022">(<a href="references.html#ref-wangClinicalTrialsPractical2006" role="doc-biblioref">Wang and Bakhai 2006</a>; <a href="references.html#ref-pocockClinicalTrialsPractical2013" role="doc-biblioref">Pocock 2013</a>; <a href="references.html#ref-piantadosiPrinciplesPracticeClinical2022" role="doc-biblioref">Piantadosi and Meinert 2022</a>)</span></p></li>
+<li><p><strong><em>Crossover Trials</em></strong><br>
+<em>“Crossover trials randomize patients to different sequences of treatments, but all patients eventually get all treatments in varying order, ie, the patient is his/her own control”</em> <span class="citation" data-cites="wangClinicalTrialsPractical2006">(<a href="references.html#ref-wangClinicalTrialsPractical2006" role="doc-biblioref">Wang and Bakhai 2006</a>)</span>.</p>
+<p>For further details, please refer to the following texts: <span class="citation" data-cites="wangClinicalTrialsPractical2006 pocockClinicalTrialsPractical2013 piantadosiPrinciplesPracticeClinical2022">(<a href="references.html#ref-wangClinicalTrialsPractical2006" role="doc-biblioref">Wang and Bakhai 2006</a>; <a href="references.html#ref-pocockClinicalTrialsPractical2013" role="doc-biblioref">Pocock 2013</a>; <a href="references.html#ref-piantadosiPrinciplesPracticeClinical2022" role="doc-biblioref">Piantadosi and Meinert 2022</a>)</span></p></li>
+<li><p><strong><em>Factorial Trials</em></strong><br>
+<em>“Factorial trials assign patients to more than one treatment-comparison group. These are randomized in one trial at the same time, ie, while drug A is being tested against placebo, patients are re-randomized to drug B or placebo, making four possible treatment combinations in total”</em> <span class="citation" data-cites="wangClinicalTrialsPractical2006">(<a href="references.html#ref-wangClinicalTrialsPractical2006" role="doc-biblioref">Wang and Bakhai 2006</a>)</span>.</p>
+<p><em>“A factorial structure is the only design that can assess treatment interactions, so this type of trial is required for those important therapeutic questions. When interactions between treatments are absent, which is not a trivial requirement, a factorial design can estimate each of several treatment effects from the same data. For example, two treatments can sometimes be evaluated using the same number of subjects ordinarily used to test a single therapy”</em> <span class="citation" data-cites="piantadosiPrinciplesPracticeClinical2022">(<a href="references.html#ref-piantadosiPrinciplesPracticeClinical2022" role="doc-biblioref">Piantadosi and Meinert 2022</a>)</span>.</p>
+<p>For further details, please refer to the following texts: <span class="citation" data-cites="wangClinicalTrialsPractical2006 pocockClinicalTrialsPractical2013 piantadosiPrinciplesPracticeClinical2022">(<a href="references.html#ref-wangClinicalTrialsPractical2006" role="doc-biblioref">Wang and Bakhai 2006</a>; <a href="references.html#ref-pocockClinicalTrialsPractical2013" role="doc-biblioref">Pocock 2013</a>; <a href="references.html#ref-piantadosiPrinciplesPracticeClinical2022" role="doc-biblioref">Piantadosi and Meinert 2022</a>)</span></p></li>
+<li><p><strong><em>Equivalence (Clinical or Bioequivalence), Superiority, &amp; Non-Inferiority Trials</em></strong><br>
+<em>“A [clinical] equivalence study is designed to prove that two drugs have the same clinical benefit. Hence, the trial should demonstrate that the effect of the new drug differs from the effect of the current treatment by a margin that is clinically unimportant.”</em></p>
+<p>A bioequivalence study <em>“compares the pharmacokinetic (PK) parameters derived from plasma or blood concentrations of the compound,”</em> in order to understand whether <em>“the same number of drug compound molecules occupying the same number of receptors will have similar clinical effects.”</em></p>
+<p><em>“A superiority study aims to show that a new drug is more effective than the comparative treatment (placebo or current best treatment). Most clinical trials belong to this category.”</em></p>
+<p><em>“A noninferiority study aims to show that the effect of a new treatment cannot be said to be significantly weaker than that of the current treatment”</em> <span class="citation" data-cites="wangClinicalTrialsPractical2006">(<a href="references.html#ref-wangClinicalTrialsPractical2006" role="doc-biblioref">Wang and Bakhai 2006</a>)</span>.</p>
+<p>For further details, please refer to the following texts: <span class="citation" data-cites="wangClinicalTrialsPractical2006 piantadosiPrinciplesPracticeClinical2022">(<a href="references.html#ref-wangClinicalTrialsPractical2006" role="doc-biblioref">Wang and Bakhai 2006</a>; <a href="references.html#ref-piantadosiPrinciplesPracticeClinical2022" role="doc-biblioref">Piantadosi and Meinert 2022</a>)</span></p></li>
+<li><p><strong><em>Multicenter Trials</em></strong><br>
+<em>“A multicenter trial is a trial that is performed simultaneously at many centers following the same protocol.”</em> <em>“[It] has several advantages over a single-center study, namely: it allows a large number of patients to be recruited in a shorter time; the results are more generalizable and contemporary to a broader population at large; and such studies are critical in trials involving patients with rare presentations or diseases”</em> <span class="citation" data-cites="wangClinicalTrialsPractical2006">(<a href="references.html#ref-wangClinicalTrialsPractical2006" role="doc-biblioref">Wang and Bakhai 2006</a>)</span>.</p>
+<p>For further details, please refer to the following texts: <span class="citation" data-cites="wangClinicalTrialsPractical2006 piantadosiPrinciplesPracticeClinical2022">(<a href="references.html#ref-wangClinicalTrialsPractical2006" role="doc-biblioref">Wang and Bakhai 2006</a>; <a href="references.html#ref-piantadosiPrinciplesPracticeClinical2022" role="doc-biblioref">Piantadosi and Meinert 2022</a>)</span></p></li>
+<li><p><em><strong>Cluster Randomized Trials</strong><br>
+</em>“Cluster randomized trials are performed when larger groups (eg, patients of a single practitioner or hospital) are randomized instead of individual patients.”* <em>“When individual randomization proves inappropriate, CRTs can be used to reduce the potential for contamination within treatment groups”</em> <span class="citation" data-cites="wangClinicalTrialsPractical2006">(<a href="references.html#ref-wangClinicalTrialsPractical2006" role="doc-biblioref">Wang and Bakhai 2006</a>)</span>.</p>
+<p>For further details, please refer to the following texts: <span class="citation" data-cites="wangClinicalTrialsPractical2006 piantadosiPrinciplesPracticeClinical2022">(<a href="references.html#ref-wangClinicalTrialsPractical2006" role="doc-biblioref">Wang and Bakhai 2006</a>; <a href="references.html#ref-piantadosiPrinciplesPracticeClinical2022" role="doc-biblioref">Piantadosi and Meinert 2022</a>)</span></p></li>
+</ol>
+<p><br>
+</p>
+<p><strong>Advanced Designs (A Non-Exhaustive List of Examples)</strong></p>
+<ol start="7" type="1">
+<li><p><strong><em>Adaptive Trials</em></strong> <em>“In adaptive trials, patient outcomes are observed and analysed at predefined interim points and predetermined modifications to study design can be implemented based on these observations”</em> <span class="citation" data-cites="bothwellAdaptiveDesignClinical2018">(<a href="references.html#ref-bothwellAdaptiveDesignClinical2018" role="doc-biblioref">Bothwell et al. 2018</a>)</span>.</p>
+<p>For further details, please refer to the following texts: <span class="citation" data-cites="jennisonGroupSequentialMethods1999 bothwellAdaptiveDesignClinical2018 piantadosiPrinciplesPracticeClinical2022">(<a href="references.html#ref-jennisonGroupSequentialMethods1999" role="doc-biblioref">Jennison and Turnbull 1999</a>; <a href="references.html#ref-bothwellAdaptiveDesignClinical2018" role="doc-biblioref">Bothwell et al. 2018</a>; <a href="references.html#ref-piantadosiPrinciplesPracticeClinical2022" role="doc-biblioref">Piantadosi and Meinert 2022</a>)</span>. In particular, Bothwell et al.’s paper has very handy definitions of different types of adaptive designs within Table 1.</p></li>
+<li><p><strong><em>Stepped Wedge Cluster Randomized Trials</em></strong> <em>“A stepped wedge design is a type of crossover design in which different clusters cross over (switch treatments) at different time points. In addition, the clusters cross over in one direction only—typically, from control to intervention.”</em></p>
+<p><em>“In a parallel or traditional crossover design, the intervention must be implemented in half of the total clusters simultaneously. However, limited resources or geographical constraints may make this logistically impossible. The stepped wedge design allows the researcher to implement the intervention in a smaller fraction of the clusters at each time point”</em> <span class="citation" data-cites="husseyDesignAnalysisStepped2007">(<a href="references.html#ref-husseyDesignAnalysisStepped2007" role="doc-biblioref">Hussey and Hughes 2007</a>)</span>.</p>
+<p>For further details, please refer to the following texts: <span class="citation" data-cites="husseyDesignAnalysisStepped2007 hemmingSteppedWedgeCluster2015 piantadosiPrinciplesPracticeClinical2022">(<a href="references.html#ref-husseyDesignAnalysisStepped2007" role="doc-biblioref">Hussey and Hughes 2007</a>; <a href="references.html#ref-hemmingSteppedWedgeCluster2015" role="doc-biblioref">Hemming et al. 2015</a>; <a href="references.html#ref-piantadosiPrinciplesPracticeClinical2022" role="doc-biblioref">Piantadosi and Meinert 2022</a>)</span>.</p></li>
+<li><p><strong><em>Master Protocols: Umbrella Trials, Basket Trials, &amp; Platform Trials</em></strong> <em>“Master protocols coordinate several closely linked investigations into a single trial, enabling efficient use of resources”</em> <span class="citation" data-cites="piantadosiPrinciplesPracticeClinical2022">(<a href="references.html#ref-piantadosiPrinciplesPracticeClinical2022" role="doc-biblioref">Piantadosi and Meinert 2022</a>)</span>. <em>“Master protocols are often classified into “basket trials”, “umbrella trials”, and “platform trials””</em> <span class="citation" data-cites="parkSystematicReviewBasket2019">(<a href="references.html#ref-parkSystematicReviewBasket2019" role="doc-biblioref">Park et al. 2019</a>)</span>.</p>
+<p><em>“Umbrella trials select patients from a certain disease site (e.g., lung cancer), perform genetic testing on patients, and assign them to multiple treatments according to the matched drug targets.”</em></p>
+<p><em>“Basket trials take patients from multiple disease sites but with a certain mutation (e.g., BRAF mutation) and assign them to the corresponding target therapy (e.g., BRAF inhibitors).”</em></p>
+<p><em>“Platform trials provide efficient screening of multiple treatments in a certain disease in which a steady flow of patients is available. A common control group such as the standard of care can be incorporated as the reference groups. New treatments can be added to the platform and evaluated. If a treatment is promising, it can “graduate” and, if a treatment is not promising, it can be dropped from the platform. The trial can run perpetually to efficiently screen for effective treatments”</em> <span class="citation" data-cites="piantadosiPrinciplesPracticeClinical2022">(<a href="references.html#ref-piantadosiPrinciplesPracticeClinical2022" role="doc-biblioref">Piantadosi and Meinert 2022</a>)</span>.</p>
+<p>For further details, please refer to the following texts: <span class="citation" data-cites="parkSystematicReviewBasket2019 piantadosiPrinciplesPracticeClinical2022">(<a href="references.html#ref-parkSystematicReviewBasket2019" role="doc-biblioref">Park et al. 2019</a>; <a href="references.html#ref-piantadosiPrinciplesPracticeClinical2022" role="doc-biblioref">Piantadosi and Meinert 2022</a>)</span>.</p></li>
+<li><p><strong><em>Multi-arm Multi-stage Platform Trials</em></strong> Multi-arm Multi-stage (MAMS) trials are a type of platform trial. <em>“The MAMS design aims to speed up the evaluation of new therapies and improve success rates in identifying effective ones.”</em> <em>“In this framework, multiple experimental treatments are compared against a common control arm in several stages. This approach has several advantages over the more traditional designs since it obviates the need for multiple two-arm studies, and allows poorly performing experimental treatments to be discontinued during the study”</em> <span class="citation" data-cites="piantadosiPrinciplesPracticeClinical2022">(<a href="references.html#ref-piantadosiPrinciplesPracticeClinical2022" role="doc-biblioref">Piantadosi and Meinert 2022</a>)</span>.</p>
+<p>For further details, please refer to the following texts: <span class="citation" data-cites="roystonDesignsClinicalTrials2011 wasonOptimalDesignMultiarm2012 wasonRecommendationsMultiarmMultistage2012 piantadosiPrinciplesPracticeClinical2022">(<a href="references.html#ref-roystonDesignsClinicalTrials2011" role="doc-biblioref">Royston et al. 2011</a>; <a href="references.html#ref-wasonOptimalDesignMultiarm2012" role="doc-biblioref">J. M. S. Wason and Jaki 2012</a>; <a href="references.html#ref-wasonRecommendationsMultiarmMultistage2012" role="doc-biblioref">J. Wason et al. 2012</a>; <a href="references.html#ref-piantadosiPrinciplesPracticeClinical2022" role="doc-biblioref">Piantadosi and Meinert 2022</a>)</span>.</p></li>
+<li><p><strong><em>Sequential, Multiple Assignment, Randomized Trials (SMART)</em></strong> <em>“A SMART is a type of multi-stage, factorial, randomized trial, in which some or all participants are randomized at two or more decision points. Whether a patient is randomized at the second or a later decision point, and the available treatment options, may depend on the patient’s response to prior treatment”</em> <span class="citation" data-cites="kidwellSequentialMultipleAssignment2023">(<a href="references.html#ref-kidwellSequentialMultipleAssignment2023" role="doc-biblioref">Kidwell and Almirall 2023</a>)</span>.</p>
+<p>For further details, please refer to the following texts: <span class="citation" data-cites="piantadosiPrinciplesPracticeClinical2022 kidwellSequentialMultipleAssignment2023">(<a href="references.html#ref-piantadosiPrinciplesPracticeClinical2022" role="doc-biblioref">Piantadosi and Meinert 2022</a>; <a href="references.html#ref-kidwellSequentialMultipleAssignment2023" role="doc-biblioref">Kidwell and Almirall 2023</a>)</span>.</p></li>
+</ol>
 
 
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
+<div id="ref-angristMasteringMetricsPath2015" class="csl-entry" role="listitem">
+Angrist, Joshua D., and Jörn-Steffen Pischke. 2015. <span>“Mastering ’<span>Metrics</span>: <span>The Path</span> from <span>Cause</span> to <span>Effect</span>.”</span> 2015. <a href="https://press.princeton.edu/books/paperback/9780691152844/mastering-metrics">https://press.princeton.edu/books/paperback/9780691152844/mastering-metrics</a>.
+</div>
+<div id="ref-beggImprovingQualityReporting1996" class="csl-entry" role="listitem">
+Begg, Colin, Mildred Cho, Susan Eastwood, Richard Horton, David Moher, Ingram Olkin, Roy Pitkin, et al. 1996. <span>“Improving the <span>Quality</span> of <span>Reporting</span> of <span>Randomized Controlled Trials</span>: <span>The CONSORT Statement</span>.”</span> <em>JAMA</em> 276 (8): 637–39. <a href="https://doi.org/10.1001/jama.1996.03540080059030">https://doi.org/10.1001/jama.1996.03540080059030</a>.
+</div>
+<div id="ref-bothwellAdaptiveDesignClinical2018" class="csl-entry" role="listitem">
+Bothwell, Laura E., Jerry Avorn, Nazleen F. Khan, and Aaron S. Kesselheim. 2018. <span>“Adaptive Design Clinical Trials: A Review of the Literature and <span>ClinicalTrials</span>.gov.”</span> <em>BMJ Open</em> 8 (2): e018320. <a href="https://doi.org/10.1136/bmjopen-2017-018320">https://doi.org/10.1136/bmjopen-2017-018320</a>.
+</div>
+<div id="ref-chanSPIRIT2013Statement2013" class="csl-entry" role="listitem">
+Chan, An-Wen, Jennifer M. Tetzlaff, Douglas G. Altman, Andreas Laupacis, Peter C. Gøtzsche, Karmela Krleža-Jerić, Asbjørn Hróbjartsson, et al. 2013. <span>“<span>SPIRIT</span> 2013 <span>Statement</span>: <span>Defining Standard Protocol Items</span> for <span>Clinical Trials</span>.”</span> <em>Annals of Internal Medicine</em> 158 (3): 200–207. <a href="https://doi.org/10.7326/0003-4819-158-3-201302050-00583">https://doi.org/10.7326/0003-4819-158-3-201302050-00583</a>.
+</div>
+<div id="ref-chanSPIRIT2013Explanation2013" class="csl-entry" role="listitem">
+Chan, An-Wen, Jennifer M. Tetzlaff, Peter C. Gøtzsche, Douglas G. Altman, Howard Mann, Jesse A. Berlin, Kay Dickersin, et al. 2013. <span>“<span>SPIRIT</span> 2013 Explanation and Elaboration: Guidance for Protocols of Clinical Trials.”</span> <em>BMJ</em> 346 (January): e7586. <a href="https://doi.org/10.1136/bmj.e7586">https://doi.org/10.1136/bmj.e7586</a>.
+</div>
+<div id="ref-hemmingSteppedWedgeCluster2015" class="csl-entry" role="listitem">
+Hemming, K., T. P. Haines, P. J. Chilton, A. J. Girling, and R. J. Lilford. 2015. <span>“The Stepped Wedge Cluster Randomised Trial: Rationale, Design, Analysis, and Reporting.”</span> <em>BMJ</em> 350 (February): h391. <a href="https://doi.org/10.1136/bmj.h391">https://doi.org/10.1136/bmj.h391</a>.
+</div>
+<div id="ref-husseyDesignAnalysisStepped2007" class="csl-entry" role="listitem">
+Hussey, Michael A., and James P. Hughes. 2007. <span>“Design and Analysis of Stepped Wedge Cluster Randomized Trials.”</span> <em>Contemporary Clinical Trials</em> 28 (2): 182–91. <a href="https://doi.org/10.1016/j.cct.2006.05.007">https://doi.org/10.1016/j.cct.2006.05.007</a>.
+</div>
+<div id="ref-jennisonGroupSequentialMethods1999" class="csl-entry" role="listitem">
+Jennison, Christopher, and Bruce W. Turnbull. 1999. <em>Group <span>Sequential Methods</span> with <span>Applications</span> to <span>Clinical Trials</span></em>. New York: <span>Chapman and Hall/CRC</span>. <a href="https://doi.org/10.1201/9780367805326">https://doi.org/10.1201/9780367805326</a>.
+</div>
+<div id="ref-kidwellSequentialMultipleAssignment2023" class="csl-entry" role="listitem">
+Kidwell, Kelley M., and Daniel Almirall. 2023. <span>“Sequential, <span>Multiple Assignment</span>, <span>Randomized Trial Designs</span>.”</span> <em>JAMA</em> 329 (4): 336–37. <a href="https://doi.org/10.1001/jama.2022.24324">https://doi.org/10.1001/jama.2022.24324</a>.
+</div>
+<div id="ref-parkSystematicReviewBasket2019" class="csl-entry" role="listitem">
+Park, Jay J. H., Ellie Siden, Michael J. Zoratti, Louis Dron, Ofir Harari, Joel Singer, Richard T. Lester, Kristian Thorlund, and Edward J. Mills. 2019. <span>“Systematic Review of Basket Trials, Umbrella Trials, and Platform Trials: A Landscape Analysis of Master Protocols.”</span> <em>Trials</em> 20 (1): 572. <a href="https://doi.org/10.1186/s13063-019-3664-1">https://doi.org/10.1186/s13063-019-3664-1</a>.
+</div>
+<div id="ref-piantadosiPrinciplesPracticeClinical2022" class="csl-entry" role="listitem">
+Piantadosi, Steven, and Curtis L. Meinert, eds. 2022. <em>Principles and <span>Practice</span> of <span>Clinical Trials</span></em>. Cham: Springer International Publishing. <a href="https://doi.org/10.1007/978-3-319-52636-2_196">https://doi.org/10.1007/978-3-319-52636-2_196</a>.
+</div>
+<div id="ref-pocockClinicalTrialsPractical2013" class="csl-entry" role="listitem">
+Pocock, Stuart J. 2013. <em>Clinical <span>Trials</span>: <span>A Practical Approach</span></em>. John Wiley &amp; Sons, Ltd. <a href="https://doi.org/10.1002/9781118793916.fmatter">https://doi.org/10.1002/9781118793916.fmatter</a>.
+</div>
+<div id="ref-roystonDesignsClinicalTrials2011" class="csl-entry" role="listitem">
+Royston, Patrick, Friederike M-S Barthel, Mahesh KB Parmar, Babak Choodari-Oskooei, and Valerie Isham. 2011. <span>“Designs for Clinical Trials with Time-to-Event Outcomes Based on Stopping Guidelines for Lack of Benefit.”</span> <em>Trials</em> 12 (1): 81. <a href="https://doi.org/10.1186/1745-6215-12-81">https://doi.org/10.1186/1745-6215-12-81</a>.
+</div>
+<div id="ref-wangClinicalTrialsPractical2006" class="csl-entry" role="listitem">
+Wang, Duolao, and Ameet Bakhai. 2006. <em>Clinical <span>Trials</span>: <span>A Practical Guide</span> to <span>Design</span>, <span>Analysis</span>, and <span>Reporting</span></em>. Remedica.
+</div>
+<div id="ref-wasonOptimalDesignMultiarm2012" class="csl-entry" role="listitem">
+Wason, James M. S., and Thomas Jaki. 2012. <span>“Optimal Design of Multi-Arm Multi-Stage Trials.”</span> <em>Statistics in Medicine</em> 31 (30): 4269–79. <a href="https://doi.org/10.1002/sim.5513">https://doi.org/10.1002/sim.5513</a>.
+</div>
+<div id="ref-wasonRecommendationsMultiarmMultistage2012" class="csl-entry" role="listitem">
+Wason, James, Dominic Magirr, Martin Law, and Thomas Jaki. 2012. <span>“Some Recommendations for Multi-Arm Multi-Stage Trials.”</span> <em>Statistical Methods in Medical Research</em>, December. <a href="https://doi.org/10.1177/0962280212465498">https://doi.org/10.1177/0962280212465498</a>.
+</div>
+</div>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -836,7 +1018,7 @@ ul.task-list li input[type="checkbox"] {
 </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions"><ul><li><a href="https://github.com/nhsengland/causal-handbook/edit/main/02-01-rct.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li></ul></div></div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/nhsengland/causal-handbook/edit/main/02-01-rct.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li></ul></div></div>
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
     <li class="nav-item compact">

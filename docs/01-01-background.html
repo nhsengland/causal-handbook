@@ -52,7 +52,7 @@ div.csl-indent {
 <meta name="quarto:offset" content="./">
 <link href="./01-02-history.html" rel="next">
 <link href="./01-00-intro.html" rel="prev">
-<link href="./images/nhs-logo-square.jpg" rel="icon" type="image/jpeg">
+<link href="./images/logo-nhs-square.jpg" rel="icon" type="image/jpeg">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -197,7 +197,7 @@ div.csl-indent {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./01-05-selection-diagram.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">New Unifying Guidance on Choosing Causal Inference Methods (Method Selection Tree)</span></span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Unifying Guidance on Choosing Causal Inference Methods (Decision Tree Diagram)</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -440,7 +440,11 @@ div.csl-indent {
 </ul>
 <p>Yet many of the methods currently used to evaluate interventions within the NHS are often descriptive in nature. Dashboards are frequently used in this manner, where any changes in an outcome of interest are fully attributed to a single change in implementation in services, without considering whether there are alternative explanations and/or other confounding factors are involved that could instead explain the change instead.</p>
 <p>To better illustrate this point, Tyler Vigen publishes great examples of spurious correlations on his webpage (https://tylervigen.com/spurious-correlations), from which I’ve attached an example of below <span class="citation" data-cites="vigenTylerVigenSpurious2024">(<a href="references.html#ref-vigenTylerVigenSpurious2024" role="doc-biblioref">Vigen 2024</a>)</span>:</p>
-<p><img src="images/vigen_butter_consumption.png" class="img-fluid"></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/01-01-vigen-butter.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
 <p>As you can see, butter consumption is positively correlated with the economic output of the Washington metro area. Needless to say, I highly doubt butter consumption was actually “greasing the wheels” of the local economy in the Washington metro area! It is therefore imperative that we don’t conflate association with causation when we’re conducting service evaluation as well.</p>
 <p>Many books, papers, and reports have been published providing guidance on how one can estimate the causal effect of different interventions have on specific outcomes, in the absence of a randomised trial. Some resources have even been developed to help narrow down which types of methods would be most appropriate depending on the context. However, much of the guidance has been limited to methods originating from a specific field (e.g., econometrics, social sciences, epidemiology), rather than encompassing all approaches relevant to service and intervention evaluation within the realm of health and social care.</p>
 <p>This handbook aims to bridge this gap in the literature, and establish new unifying guidance for selecting appropriate study designs and analytical methodologies for conducting causal inference in service evaluations. You’ll find:</p>
