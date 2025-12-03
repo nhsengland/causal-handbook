@@ -111,19 +111,19 @@ The picture I’ve painted here is quite simplified though. Aside from standard 
 
 **Advanced Designs (A Non-Exhaustive List of Examples)**
 
-7.	***Adaptive Trials***
+7.	***Adaptive Trials***  
     *“In adaptive trials, patient outcomes are observed and analysed at predefined interim points and predetermined modifications to study design can be implemented based on these observations”* [@bothwellAdaptiveDesignClinical2018].
 
     For further details, please refer to the following texts: [@jennisonGroupSequentialMethods1999; @bothwellAdaptiveDesignClinical2018; @piantadosiPrinciplesPracticeClinical2022]. In particular, Bothwell et al.’s paper has very handy definitions of different types of adaptive designs within Table 1.
 
-8.	***Stepped Wedge Cluster Randomized Trials***
+8.	***Stepped Wedge Cluster Randomized Trials***  
     *“A stepped wedge design is a type of crossover design in which different clusters cross over (switch treatments) at different time points. In addition, the clusters cross over in one direction only—typically, from control to intervention.”*
 
     *“In a parallel or traditional crossover design, the intervention must be implemented in half of the total clusters simultaneously. However, limited resources or geographical constraints may make this logistically impossible. The stepped wedge design allows the researcher to implement the intervention in a smaller fraction of the clusters at each time point”* [@husseyDesignAnalysisStepped2007].
 
     For further details, please refer to the following texts: [@husseyDesignAnalysisStepped2007; @hemmingSteppedWedgeCluster2015; @piantadosiPrinciplesPracticeClinical2022].
 
-9.	***Master Protocols: Umbrella Trials, Basket Trials, & Platform Trials***
+9.	***Master Protocols: Umbrella Trials, Basket Trials, & Platform Trials***  
     *“Master protocols coordinate several closely linked investigations into a single trial, enabling efficient use of resources”* [@piantadosiPrinciplesPracticeClinical2022]. *“Master protocols are often classified into “basket trials”, “umbrella trials”, and “platform trials””* [@parkSystematicReviewBasket2019].
 
     *“Umbrella trials select patients from a certain disease site (e.g., lung cancer), perform genetic testing on patients, and assign them to multiple treatments according to the matched drug targets.”*
@@ -134,12 +134,12 @@ The picture I’ve painted here is quite simplified though. Aside from standard 
 
     For further details, please refer to the following texts: [@parkSystematicReviewBasket2019; @piantadosiPrinciplesPracticeClinical2022].
 
-10.	***Multi-arm Multi-stage Platform Trials***
+10.	***Multi-arm Multi-stage Platform Trials***  
     Multi-arm Multi-stage (MAMS) trials are a type of platform trial. *“The MAMS design aims to speed up the evaluation of new therapies and improve success rates in identifying effective ones.”* *“In this framework, multiple experimental treatments are compared against a common control arm in several stages. This approach has several advantages over the more traditional designs since it obviates the need for multiple two-arm studies, and allows poorly performing experimental treatments to be discontinued during the study”* [@piantadosiPrinciplesPracticeClinical2022].
 
     For further details, please refer to the following texts: [@roystonDesignsClinicalTrials2011; @wasonOptimalDesignMultiarm2012; @wasonRecommendationsMultiarmMultistage2012; @piantadosiPrinciplesPracticeClinical2022].
 
-11.	***Sequential, Multiple Assignment, Randomized Trials (SMART)***
+11.	***Sequential, Multiple Assignment, Randomized Trials (SMART)***  
     *“A SMART is a type of multi-stage, factorial, randomized trial, in which some or all participants are randomized at two or more decision points. Whether a patient is randomized at the second or a later decision point, and the available treatment options, may depend on the patient’s response to prior treatment”* [@kidwellSequentialMultipleAssignment2023].
 
     For further details, please refer to the following texts: [@piantadosiPrinciplesPracticeClinical2022; @kidwellSequentialMultipleAssignment2023].

@@ -2,7 +2,7 @@
 
 A practical handbook on causal inference methods for evaluating policy interventions and service changes within the NHS, with a focus on leveraging observational real-world data to generate robust evidence.
 
-🚨Work In Progress - To Be Completed by Jan 2025🚨
+🚨Work In Progress - First Draft To Be Completed by the End of Jan 2026🚨
 
 DHSC Evaluation Festival presentation slides and a draft of the causal study design selection diagram have been added here for the time being.
 

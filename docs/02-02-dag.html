@@ -20,7 +20,27 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -387,8 +407,23 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#graphically-representing-causal-relationships" id="toc-graphically-representing-causal-relationships" class="nav-link active" data-scroll-target="#graphically-representing-causal-relationships"><span class="header-section-number">9.1</span> Graphically Representing Causal Relationships</a></li>
+  <li><a href="#an-introduction-to-dags" id="toc-an-introduction-to-dags" class="nav-link" data-scroll-target="#an-introduction-to-dags"><span class="header-section-number">9.2</span> An Introduction to DAGs</a></li>
+  <li><a href="#blocking-causal-pathways-frontdoor-and-backdoor-adjustment" id="toc-blocking-causal-pathways-frontdoor-and-backdoor-adjustment" class="nav-link" data-scroll-target="#blocking-causal-pathways-frontdoor-and-backdoor-adjustment"><span class="header-section-number">9.3</span> Blocking Causal Pathways: Frontdoor and Backdoor Adjustment</a></li>
+  <li><a href="#d-separation" id="toc-d-separation" class="nav-link" data-scroll-target="#d-separation"><span class="header-section-number">9.4</span> D-Separation</a></li>
+  <li><a href="#backdoor-paths" id="toc-backdoor-paths" class="nav-link" data-scroll-target="#backdoor-paths"><span class="header-section-number">9.5</span> Backdoor Paths</a></li>
+  <li><a href="#frontdoor-paths" id="toc-frontdoor-paths" class="nav-link" data-scroll-target="#frontdoor-paths"><span class="header-section-number">9.6</span> Frontdoor Paths</a></li>
+  <li><a href="#common-causal-phenomena-illustrated-by-dags" id="toc-common-causal-phenomena-illustrated-by-dags" class="nav-link" data-scroll-target="#common-causal-phenomena-illustrated-by-dags"><span class="header-section-number">9.7</span> Common Causal Phenomena Illustrated by DAGs</a></li>
+  <li><a href="#additional-resources" id="toc-additional-resources" class="nav-link" data-scroll-target="#additional-resources"><span class="header-section-number">9.8</span> Additional Resources</a></li>
+  <li><a href="#statistically-testing-the-validity-of-dags" id="toc-statistically-testing-the-validity-of-dags" class="nav-link" data-scroll-target="#statistically-testing-the-validity-of-dags"><span class="header-section-number">9.9</span> Statistically Testing the Validity of DAGs</a></li>
+  <li><a href="#alternative-methods-for-covariate-selection" id="toc-alternative-methods-for-covariate-selection" class="nav-link" data-scroll-target="#alternative-methods-for-covariate-selection"><span class="header-section-number">9.10</span> Alternative Methods for Covariate Selection</a></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/nhsengland/causal-handbook/edit/main/02-02-dag.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -412,9 +447,234 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Coming Soon</p>
+<section id="graphically-representing-causal-relationships" class="level2" data-number="9.1">
+<h2 data-number="9.1" class="anchored" data-anchor-id="graphically-representing-causal-relationships"><span class="header-section-number">9.1</span> Graphically Representing Causal Relationships</h2>
+<p>Unlike randomized experiments, when conducting observational studies, we are fundamentally unable to randomize individuals into distinct treatment and control groups, as data was collected retrospectively. Therefore, we have to consider ways to emulate randomized treatment assignment, of which there are various options depending on the evaluation question of interest.</p>
+<p>Before attempting to emulate randomized treatment assignment though, it is strong recommended, especially in the field of epidemiology, to first map out the assumed causal network that links together your treatments, outcomes, as well as any other variables of interest. This process allows us to clarify which confounding variables need to be adjusted for, which can be safely ignored, and which could introduce bias if handled improperly. We can thereby be explicit about the assumptions underlying any statistical models we develop afterwards. The most popular tool for this purpose is the Directed Acyclic Graph, often shortened as DAG.</p>
+<p>While graphical representations of causal relationships have a long history, with DAGs originating from the field of mathematics, specifically graph theory, it wasn’t until one of Pearl’s landmark papers “Causal Diagrams for Empirical Research” where the idea of incorporating causal diagrams in empirical research was first consolidated <span class="citation" data-cites="pearlCausalDiagramsEmpirical1995">(<a href="references.html#ref-pearlCausalDiagramsEmpirical1995" role="doc-biblioref">Pearl 1995</a>)</span>. Greenland, Pearl and Robins’ similarly notable paper “Causal Diagrams for Epidemiologic Research” published a few years later further extended and popularized these ideas to the field of epidemiology, establishing how DAGs can be used for confounder selection and identifying when incorrectly adjusting for certain variables, known as colliders, may induce biased results <span class="citation" data-cites="greenlandCausalDiagramsEpidemiologic1999">(<a href="references.html#ref-greenlandCausalDiagramsEpidemiologic1999" role="doc-biblioref">Greenland, Pearl, and Robins 1999</a>)</span>.</p>
+<p><br>
+</p>
+</section>
+<section id="an-introduction-to-dags" class="level2" data-number="9.2">
+<h2 data-number="9.2" class="anchored" data-anchor-id="an-introduction-to-dags"><span class="header-section-number">9.2</span> An Introduction to DAGs</h2>
+<p>DAGs are structured with nodes indicating individual variables of interest, connected by one way arrows (referred to as directed edges in mathematics). Unique properties of DAGs are found in their name. They are “directed” given that arrows within them only point in one direction, and “acyclic” due to variables measured at a single time point cannot influence themselves in a feedback loop. If the same variable is measured at multiple time points (e.g., BMI at baseline, at 6 months, at 12 months…), these can be treated as separate nodes to reflect temporal ordering.</p>
+<p>Nodes are often described using terminology for a family tree. A variable that causally influences another along a directed path is referred to as an ancestor (or a parent if the influence is direct). Variables that lie downstream (i.e., those that are affected by the ancestor) are called descendants (or children, if directly influenced). These relationships help define how information and causal effects can flow through the DAG.</p>
+<p><br>
+</p>
+</section>
+<section id="blocking-causal-pathways-frontdoor-and-backdoor-adjustment" class="level2" data-number="9.3">
+<h2 data-number="9.3" class="anchored" data-anchor-id="blocking-causal-pathways-frontdoor-and-backdoor-adjustment"><span class="header-section-number">9.3</span> Blocking Causal Pathways: Frontdoor and Backdoor Adjustment</h2>
+<p>Pearl’s framework for causal diagrams revolves around the idea of blocking or closing paths through which spurious associations might flow, and is described in great detail in their book “Causality” <span class="citation" data-cites="pearlCausalityModelsReasoning2009">(<a href="references.html#ref-pearlCausalityModelsReasoning2009" role="doc-biblioref">Pearl 2009</a>)</span>. These associations may result from random chance or from unmeasured variables. When estimating causal effects, the goal is to block all non-causal pathways between the treatment and the outcome to eliminate these biases. These pathways fall into two main categories: backdoor and frontdoor paths.</p>
+<p><br>
+</p>
+</section>
+<section id="d-separation" class="level2" data-number="9.4">
+<h2 data-number="9.4" class="anchored" data-anchor-id="d-separation"><span class="header-section-number">9.4</span> D-Separation</h2>
+<p>Before going over frontdoor and backdoor paths in detail, it’s worth understanding how paths can be considered open or blocked in a DAG. This is governed by a set of criteria called D-separation, where “D” stands for directional. D-separation provides formal rules for deciding whether one set of variables is statistically independent of another, once we condition on a third set. In other words, it tells us when information can or cannot flow through a path in the graph.</p>
+<p>Hernán provides the following succinct definitions of D-separation rules in his free online course about causal diagrams on HarvardX <span class="citation" data-cites="hernanCausalDiagramsDraw2017">(<a href="references.html#ref-hernanCausalDiagramsDraw2017" role="doc-biblioref">Hernán 2017</a>)</span>.</p>
+<ol type="1">
+<li><em>“If there are no variables being conditioned on, a path is blocked if and only if two arrowheads on the path collide at some variable on the path.”</em>
+<ul>
+<li>The path between A and Y here is blocked by collider L:<br>
+<strong>A → L ← Y [Blocked]</strong></li>
+</ul></li>
+<li><em>“Any path that contains a noncollider that has been conditioned on is blocked.”</em>
+<ul>
+<li>The path between A to Y through B is open here:<br>
+<strong>A → B → Y [Open]</strong></li>
+<li>However, if we condition on / adjust for B, signified by drawing a box around B, we block the path between A to Y:<br>
+<strong>A → <span style="border:1px solid black; padding:2px 6px;">B</span> → Y [Blocked]</strong></li>
+</ul></li>
+<li><em>“A collider that has been conditioned on does not block a path.”</em>
+<ul>
+<li>Previously our path between A and Y here was blocked by collider L:<br>
+<strong>A → L ← Y [Blocked]</strong></li>
+<li>However, if we condition on / adjust for L, signified by drawing a box around L, we open up the path between A to Y:<br>
+<strong>A → <span style="border:1px solid black; padding:2px 6px;">L</span> ← Y [Open]</strong></li>
+</ul></li>
+<li>“A collider that has a descendant that has been condition on does not block a path.”
+<ul>
+<li>Previously our path between A and Y here was blocked by collider L:<br>
+<strong>A → L ← Y [Blocked]</strong></li>
+<li>However, if we condition on / adjust for a descendant of L, S, signified by drawing a box around <span style="border:1px solid black; padding:2px 6px;">S</span>, we open up the path between A to Y:<br>
+<strong>A → L ← Y AND L → <span style="border:1px solid black; padding:2px 6px;">S</span>, &nbsp;&nbsp;&nbsp; i.e., A → S AND Y → L → <span style="border:1px solid black; padding:2px 6px;">S</span> [Open]</strong></li>
+</ul></li>
+</ol>
+<p><span class="citation" data-cites="hernanCausalDiagramsDraw2017">(<a href="references.html#ref-hernanCausalDiagramsDraw2017" role="doc-biblioref">Hernán 2017</a>)</span></p>
+<p>With these rules in mind, we can now continue to how backdoor and frontdoor paths use D-separation to determine which variables to adjust for in our analyses.</p>
+<p><br>
+</p>
+</section>
+<section id="backdoor-paths" class="level2" data-number="9.5">
+<h2 data-number="9.5" class="anchored" data-anchor-id="backdoor-paths"><span class="header-section-number">9.5</span> Backdoor Paths</h2>
+<p>A backdoor path is any path from the treatment to the outcome that starts with an arrow pointing into the treatment. These paths generally reflect confounding and can bias the estimate of the treatment effect if not properly addressed. Confounding is a situation where additional variables, known as confounders, distort the causal relationship between the treatment and outcome of interest.</p>
+<p>Pearl’s backdoor criterion specifies that we can identify a causal effect of a treatment [A] on an outcome [Y] by adjusting for a set of covariates [Z] if:</p>
+<ol type="1">
+<li>No variables in the set of covariates [Z] are a descendant of the treatment [A].
+<ul>
+<li>i.e., they cannot lie on the causal pathway between the<br>
+<strong>Treatment [A] → Outcome [Y]</strong></li>
+<li>Adjusting for a descendant of A (referred to as a mediator) would block part of the causal effect itself, leading to an underestimate of the total effect of treatment [A] on outcome [Y].</li>
+</ul></li>
+<li>The set of covariates [Z] blocks every path between the treatment [A] and outcome [Y] that starts with an arrow pointing into the treatment [A] (i.e., all backdoor paths).</li>
+</ol>
+<p>When these criteria is met, we can estimate the causal effect by conditioning on the set of covariates [Z], which restores the conditional exchangeability assumption discussed in previous chapters. This is conceptually equivalent to the idea that, once we account for the set of covariates [Z], the assignment of treatment [A] can be considered as good as randomised (i.e., participant characteristics are equally distributed between the treatment groups).</p>
+<p>Pearl represented the backdoor criterion in a diagram in his book “Causality” attached below. Adjusting for X<sub>3</sub> + X<sub>4</sub> or X<sub>4</sub> + X<sub>5</sub> (all of which would be considered confounders in this scenario) would correctly adjust to all backdoor paths, as the remaining variables that are not descendants of Xi would have all their paths connecting X<sub>i</sub> and X<sub>j</sub> blocked.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/02-02-backdoor.png" class="img-fluid figure-img"></p>
+<figcaption>A diagram representing the backdoor criterion | p.80 (Pearl, 2009)</figcaption>
+</figure>
+</div>
+<p>For example, if X<sub>3</sub> + X<sub>4</sub> were adjusted for:</p>
+<ol type="1">
+<li>X<sub>1</sub>’s path to X<sub>i</sub> and X<sub>j</sub> would be blocked by X<sub>3</sub> and X<sub>4</sub></li>
+<li>X<sub>2</sub> would only have a path to X<sub>j</sub> through X<sub>5</sub>, but not to X<sub>i</sub> as this is blocked by X<sub>4</sub></li>
+<li>X<sub>5</sub> only has a path to X<sub>j</sub> and not X<sub>i</sub></li>
+</ol>
+<p>If only X4 was adjusted for, a new path between Xi and Xj would be created:<br>
+<strong>X<sub>i</sub> ← X<sub>3</sub> ← X<sub>1</sub> → <span style="border:1px solid black; padding:2px 6px;">X<sub>4</sub></span> ← X<sub>2</sub> → X<sub>5</sub> → X<sub>j</sub></strong></p>
+<p>This is due to rule #3 of D-separation defined by Hernán, as conditioning on a blocked pathway opens up the path.</p>
+<p>If only X<sub>6</sub> was adjusted for, we would violate Pearl’s criterion, as the variable is a descendant of X<sub>i</sub> (i.e., a mediator between X<sub>i</sub> and X<sub>j</sub>). This would block part of the causal effect between X<sub>i</sub> and X<sub>j</sub>, biasing results.</p>
+<p><br>
+</p>
+<p><strong>A Practical Example</strong></p>
+<p>To provide a practical example of backdoor adjustment, imagine a situation where we wish to evaluate the impact of a community exercise programme on reducing cardiovascular-related hospitalisations:</p>
+<ul>
+<li><em>Age and underlying health conditions may affect both the likelihood of participating in the programme and the risk of hospitalisation. These are confounders lying on backdoor paths, which must be blocked by adjusting for them in our analysis to obtain an unbiased estimate of the exercise programme’s effect on cardiovascular-related hospitalisations.</em></li>
+</ul>
+<p>However, there are some variables which should not be adjusted for:</p>
+<ol type="1">
+<li><p><strong><em>Incorrectly adjusting for a collider</em></strong><br>
+Suppose individuals are more likely to receive the programme if they are either highly motivated or referred by their GP due to elevated blood pressure. If we adjust for referral status, which we know to be collider through the following path:<br>
+Exercise ← Motivation → <span style="border:1px solid black; padding:2px 6px;">Referral</span> ← Blood Pressure → Hospitalisation</p>
+<p>If we adjust for referral in a regression model, we’re comparing people with the same referral status. But since referral happens for different reasons, this creates a spurious and false path between motivation and blood pressure.</p>
+<p>For example, among referred individuals, those who are more motivated are more likely to have lower blood pressure and be healthier overall, thereby inherently having a lower risk of hospitalisation, and vice versa. This leads to selection bias, as the people being compared may already differ in their risk of hospitalisation, even before the programme. As a result, the programme’s effect may be overestimated, not because it’s more effective, but because adjusting for referral has distorted the comparison.</p></li>
+<li><p><strong><em>Incorrectly adjusting for a descendant of the treatment (a mediator)</em></strong><br>
+Suppose we also have access to data on post-programme weight loss. Weight loss lies on the causal pathway between the treatment (participation in the exercise programme) to the outcome (hospitalisations).</p>
+<p>Adjusting for this mediator (a descendant of the treatment) would block part of the causal effect we are trying to estimate, resulting in an underestimate of the total effect of the programme. This violates the backdoor criterion, which explicitly states that descendants of the treatment should not be included in the adjustment set when estimating the total causal effect.</p></li>
+</ol>
+<p>Therefore, DAGs are not only useful in helping identify confounders to adjust for, but also in helping avoid adjustments for variables that would induce bias, either through introducing spurious associations by opening backdoor paths, or through incorrectly adjusting for a mediator.</p>
+<p><br>
+</p>
+</section>
+<section id="frontdoor-paths" class="level2" data-number="9.6">
+<h2 data-number="9.6" class="anchored" data-anchor-id="frontdoor-paths"><span class="header-section-number">9.6</span> Frontdoor Paths</h2>
+<p>A frontdoor path is a path where the causal effect flows from the treatment [A] to a mediator or set of mediators [M], which then influences the outcome [Y]. Under certain assumptions, frontdoor adjustment can be used when backdoor paths cannot be directly blocked.</p>
+<p>To use frontdoor adjustment for estimating a causal effect, we must satisfy three criteria:</p>
+<ol type="1">
+<li>The mediator(s) [M] fully intercepts all directed paths from the treatment [A] to outcome [Y]
+<ul>
+<li>i.e., there are no direct paths from the treatment [A] to the outcome [Y] that bypasses the mediator(s) [M]<br>
+<strong>Treatment [A] → Mediator(s) [M] → Outcome [Y]</strong></li>
+</ul></li>
+<li>There are no unblocked backdoor paths from the treatment [A] to the mediator(s) [M]
+<ul>
+<li>i.e., there must be no unmeasured confounders between the treatment [A] and the mediator(s) [M]</li>
+</ul></li>
+<li>All backdoor paths from mediator(s) [M] to the outcome [Y] are blocked by conditioning on the treatment [A]
+<ul>
+<li>i.e., there must be no unmeasured confounders between the mediator(s) [M] and the outcome [Y]</li>
+</ul></li>
+</ol>
+<p>Pearl similarly represented the frontdoor criterion in another diagram in his book “Causality” attached below, outlining how it can be used to estimate a causal effect.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/02-02-frontdoor.png" class="img-fluid figure-img"></p>
+<figcaption>A diagram representing the frontdoor criterion | p.81 (Pearl, 2009)</figcaption>
+</figure>
+</div>
+<p>In short, the process described in the diagram can be performed as follows:</p>
+<ol type="1">
+<li>Model the relationship between the treatment [A] and the mediator(s) [M]:
+<ul>
+<li>Estimate the distribution of the mediator(s) [M] given treatment [A]</li>
+<li>e.g., fit a regression model where mediator(s) [M] is the outcome and treatment [A] is the predictor</li>
+</ul></li>
+<li>Model the relationship between the mediator(s) [M] and the outcome [Y], adjusting for the treatment:
+<ul>
+<li>Estimate the conditional distribution of the outcome [Y] given mediator(s) [M] and treatment [A]</li>
+<li>i.e., fit a regression model regressing the outcome [Y] on both mediator(s) [M] and treatment [A]</li>
+</ul></li>
+<li>Combine the two models to simulate the total causal effect of the treatment [A] on the outcome [Y]:
+<ul>
+<li>Use the first model to predict the distribution of the mediator(s) [M] under different values of treatment [A]</li>
+<li>Then use the second model to estimate the expected outcome [Y] for each predicted value of the mediator(s) [M]</li>
+<li>Finally, average these predictions to estimate the causal effect of the treatment [A] on outcome [Y]</li>
+</ul></li>
+</ol>
+<p>In essence, this two-step procedure reconstructs the causal effect by tracing how the treatment [A] affects the mediator(s) [M], and how the mediator(s) [M] affects the outcome [Y], bypassing the backdoor pathways (i.e., confounding) that may exist between the treatment [A] and outcome [Y] directly.</p>
+<p>Do note, however, that in the field of epidemiology, backdoor adjustment is typically preferred over frontdoor adjustment, as it is often unrealistic to assume that all mediators lying between the treatment and the outcome have been correctly identified and measured. This assumption is essential for valid frontdoor adjustment, but rarely holds when answering causal epidemiological questions using real world data.</p>
+<p><br>
+</p>
+<p><strong>A Practical Example</strong></p>
+<p>To provide a practical example of frontdoor adjustment, imagine a situation where we wish to evaluate the effect of an alcohol awareness focused public health campaign on liver disease hospitalisations:</p>
+<ul>
+<li>Say we do not have a measure individual alcohol consumption, which is a major confounder. However, we do observe whether individuals attended alcohol counselling services, which is a mediator between exposure to the public health campaign and liver disease hospitalisation.</li>
+<li>If counselling attendance causally affects liver disease risk, and there are no unmeasured confounders on the paths mentioned above, a frontdoor approach could recover the causal effect.</li>
+<li>Do note, however, that this approach relies on the strong assumption that alcohol counselling is the only mediator of the campaign’s effect on liver disease. Such an assumption is often implausible in real world settings, where multiple other mechanisms may also mediate the relationship.</li>
+</ul>
+<p><br>
+</p>
+</section>
+<section id="common-causal-phenomena-illustrated-by-dags" class="level2" data-number="9.7">
+<h2 data-number="9.7" class="anchored" data-anchor-id="common-causal-phenomena-illustrated-by-dags"><span class="header-section-number">9.7</span> Common Causal Phenomena Illustrated by DAGs</h2>
+<p>To further consolidate some of the causal phenomena mentioned above which can be illustrated in DAGs, Igelström et al.&nbsp;provide a helpful visual summary of these in their 2022 paper where they present a table of key concepts with visual and text descriptions attached to each <span class="citation" data-cites="igelstromCausalInferenceEffect2022">(<a href="references.html#ref-igelstromCausalInferenceEffect2022" role="doc-biblioref">Igelström et al. 2022</a>)</span>. This is a great point of reference to refer back to while considering whether the use of methods covered in later chapters are appropriate for evaluating your key evaluation question of interest.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/02-02-causal-phenomena.jpg" class="img-fluid figure-img"></p>
+<figcaption>Common causal phenomena represented in DAGs (Igelström et al., 2022)</figcaption>
+</figure>
+</div>
+<p><br>
+</p>
+</section>
+<section id="additional-resources" class="level2" data-number="9.8">
+<h2 data-number="9.8" class="anchored" data-anchor-id="additional-resources"><span class="header-section-number">9.8</span> Additional Resources</h2>
+<p>DAGitty is an excellent tool for making your own DAGs, with both an online tool that you can use in your browser, as well as an R package named “dagitty.” The tool also, very usefully, provides information on the minimal adjustment set of variables needed to block all backdoor pathways and estimate an unbiased causal effect after designing a DAG. Both tools can be access through their <a href="https://www.dagitty.net/">website</a>.</p>
+<p>If you are interested in getting a more comprehensive overview of DAGs, I would highly recommend auditing the free online HarvardX course <a href="https://pll.harvard.edu/course/causal-diagrams-draw-your-assumptions-your-conclusions">“Causal Diagrams: Draw Your Assumptions Before Your Conclusions”</a> taught by Hernan as well.</p>
+<p><br>
+</p>
+</section>
+<section id="statistically-testing-the-validity-of-dags" class="level2" data-number="9.9">
+<h2 data-number="9.9" class="anchored" data-anchor-id="statistically-testing-the-validity-of-dags"><span class="header-section-number">9.9</span> Statistically Testing the Validity of DAGs</h2>
+<p><strong>Further details coming soon</strong></p>
+<p>DAGs can be tested statistically against both continuous and categorical data that you already have within your dataset <span class="citation" data-cites="ankanTestingGraphicalCausal2021">(<a href="references.html#ref-ankanTestingGraphicalCausal2021" role="doc-biblioref">Ankan, Wortel, and Textor 2021</a>)</span>…</p>
+<p>Note that although this can help verify the validity of a DAG based on existing data, these methods are unable to help identify whether there are additional variables that are not included in the DAG but should have been present.</p>
+<p><br>
+</p>
+</section>
+<section id="alternative-methods-for-covariate-selection" class="level2" data-number="9.10">
+<h2 data-number="9.10" class="anchored" data-anchor-id="alternative-methods-for-covariate-selection"><span class="header-section-number">9.10</span> Alternative Methods for Covariate Selection</h2>
+<p><strong>Further details coming soon</strong></p>
+<p>There are alternatively automated ways that are used to select variables of interest in situations where you have high dimensional data (e.g., 90k+ vars), this is where LASSO regression might be useful.</p>
+<p>However, this comes at the expense of potentially incorrectly adjusting for specific covariates in your models <span class="citation" data-cites="lauComparativeEffectivenessSafety2022">(<a href="references.html#ref-lauComparativeEffectivenessSafety2022" role="doc-biblioref">Lau et al. 2022</a>)</span>…</p>
 
 
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
+<div id="ref-ankanTestingGraphicalCausal2021" class="csl-entry" role="listitem">
+Ankan, Ankur, Inge M. N. Wortel, and Johannes Textor. 2021. <span>“Testing <span>Graphical Causal Models Using</span> the <span>R Package</span> <span>‘Dagitty’</span>.”</span> <em>Current Protocols</em> 1 (2): e45. <a href="https://doi.org/10.1002/cpz1.45">https://doi.org/10.1002/cpz1.45</a>.
+</div>
+<div id="ref-greenlandCausalDiagramsEpidemiologic1999" class="csl-entry" role="listitem">
+Greenland, Sander, Judea Pearl, and James M. Robins. 1999. <span>“Causal <span>Diagrams</span> for <span>Epidemiologic Research</span>.”</span> <em>Epidemiology</em> 10 (1): 37. <a href="https://journals.lww.com/epidem/abstract/1999/01000/causal_diagrams_for_epidemiologic_research.8.aspx?casa_token=t1bYrLdrL5EAAAAA:jek7bcCsZNWdAWZSBuH4WUKpadC7BXnvKae9-OTeDK57f6KworoLmwgGS6PNX3AQRq8JEB4WL12pwWt-l9cMm5g_JwByHr78">https://journals.lww.com/epidem/abstract/1999/01000/causal_diagrams_for_epidemiologic_research.8.aspx?casa_token=t1bYrLdrL5EAAAAA:jek7bcCsZNWdAWZSBuH4WUKpadC7BXnvKae9-OTeDK57f6KworoLmwgGS6PNX3AQRq8JEB4WL12pwWt-l9cMm5g_JwByHr78</a>.
+</div>
+<div id="ref-hernanCausalDiagramsDraw2017" class="csl-entry" role="listitem">
+Hernán, Miguel. 2017. <span>“Causal <span>Diagrams</span>: <span>Draw Your Assumptions Before Your Conclusions</span> (<span>Online Course</span>).”</span> Harvard University. August 16, 2017. <a href="https://pll.harvard.edu/course/causal-diagrams-draw-your-assumptions-your-conclusions">https://pll.harvard.edu/course/causal-diagrams-draw-your-assumptions-your-conclusions</a>.
+</div>
+<div id="ref-igelstromCausalInferenceEffect2022" class="csl-entry" role="listitem">
+Igelström, Erik, Peter Craig, Jim Lewsey, John Lynch, Anna Pearce, and Srinivasa Vittal Katikireddi. 2022. <span>“Causal Inference and Effect Estimation Using Observational Data.”</span> <em>J Epidemiol Community Health</em> 76 (11): 960–66. <a href="https://doi.org/10.1136/jech-2022-219267">https://doi.org/10.1136/jech-2022-219267</a>.
+</div>
+<div id="ref-lauComparativeEffectivenessSafety2022" class="csl-entry" role="listitem">
+Lau, Wallis C. Y., Carmen Olga Torre, Kenneth K. C. Man, Henry Morgan Stewart, Sarah Seager, Mui Van Zandt, Christian Reich, et al. 2022. <span>“Comparative <span>Effectiveness</span> and <span>Safety Between Apixaban</span>, <span>Dabigatran</span>, <span>Edoxaban</span>, and <span>Rivaroxaban Among Patients With Atrial Fibrillation</span>.”</span> <em>Annals of Internal Medicine</em> 175 (11): 1515–24. <a href="https://doi.org/10.7326/M22-0511">https://doi.org/10.7326/M22-0511</a>.
+</div>
+<div id="ref-pearlCausalDiagramsEmpirical1995" class="csl-entry" role="listitem">
+Pearl, Judea. 1995. <span>“Causal Diagrams for Empirical Research.”</span> <em>Biometrika</em> 82 (4): 669–88. <a href="https://doi.org/10.1093/biomet/82.4.669">https://doi.org/10.1093/biomet/82.4.669</a>.
+</div>
+<div id="ref-pearlCausalityModelsReasoning2009" class="csl-entry" role="listitem">
+———. 2009. <em>Causality: <span>Models</span>, <span>Reasoning</span>, and <span>Inference</span></em>. 2nd ed. Cambridge: Cambridge University Press. <a href="https://doi.org/10.1017/CBO9780511803161">https://doi.org/10.1017/CBO9780511803161</a>.
+</div>
+</div>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -836,7 +1096,7 @@ ul.task-list li input[type="checkbox"] {
 </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions"><ul><li><a href="https://github.com/nhsengland/causal-handbook/edit/main/02-02-dag.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li></ul></div></div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/nhsengland/causal-handbook/edit/main/02-02-dag.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li></ul></div></div>
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
     <li class="nav-item compact">
