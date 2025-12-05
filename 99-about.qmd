@@ -20,8 +20,10 @@ GitHub: https://github.com/jamiewlc
 
 ## Acknowledgements
 
-This handbook was written during my PhD placement with NHS England and the North Central London Integrated Care Board as part of the NHS England Data science PhD internship programme.
+This handbook was developed during my PhD placement with NHS England and the North Central London Integrated Care Board (NCL ICB) as part of the NHS England Data Science PhD Internship Programme. I am grateful to both organisations for providing the opportunity, data access, and collaborative environment that enabled this work.
 
-My internship was supervised by Jonathan Pearson (NHS England) and Emily Baldwin (NCL ICB), who were incredibly supportive of my work for the duration of my project.
+I would like to express my sincere thanks to my internship supervisors, Jonathan Pearson (NHS England) and Emily Baldwin (NCL ICB), whose guidance, support, and encouragement were invaluable throughout the project.
 
-I would also like to thank my academic supervisors from UCL, Dr Michalis Katsoulis, Prof Manuel Gomes, and Dr Sophie Eastwood for their help and support throughout the process
+I am also deeply grateful to my academic supervisors at UCL, Dr Michalis Katsoulis, Prof Manuel Gomes, and Dr Sophie Eastwood, for their continued support in shaping the causal analyses and the writing of this handbook.
+
+I would also like to thank colleagues across the NHS England Applied Data Science and AI team and the NCL ICB Analytics team for their advice and feedback during the development of this work, especially Jo Lam and Adam Hollings at NHS England, as well as Tom Shallcross, Felix Peckitt, Anita Garrick, and Enrico Panizzo at the NCL ICB.
