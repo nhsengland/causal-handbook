@@ -12,7 +12,7 @@ The handbook was written initially as part of an NHS England PhD Internship done
 
 ![](images/logo-ncl-icb.png){width=250 style="display:block; margin-left:0; margin-right:auto;"}
 
-![](images/logo-ucl.svg){width=200 style="display:block; margin-left:auto; margin-right:0;"}
+![](images/logo-ucl.png){width=200 style="display:block; margin-left:auto; margin-right:0;"}
 
 :::
 
@@ -26,7 +26,7 @@ The handbook was written initially as part of an NHS England PhD Internship done
 
 ![](images/logo-ncl-icb.png){width=230}
 
-![](images/logo-ucl.svg){width=180}
+![](images/logo-ucl.png){width=180}
 
 :::
 
